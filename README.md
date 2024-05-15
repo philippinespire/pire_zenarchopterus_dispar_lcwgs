@@ -21,10 +21,11 @@ mkdir 1st_sequencing_run
 </details>
 
 
-<details><summary>1. Copy raw data.</summary>
+<details><summary>1. Copy raw data</summary>
 <p>
 
 ```
+cd pire_zenarchopterus_dispar_lcwgs
 rsync -r /archive/carpenterlab/pire/downloads/zenarchopterus_dispar/1st_sequencing_run-lcwgs/fq_raw 1st_sequencing_run
 ```
 
