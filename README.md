@@ -31,3 +31,51 @@ rsync -r /archive/carpenterlab/pire/downloads/zenarchopterus_dispar/1st_sequenci
 
 </p>
 </details>
+
+<details><summary>2. Proofread the decode file</summary>
+<p>
+
+Proofread the decode file
+```
+cat Zdi_LCWGS-test_SequenceNameDecode.txt
+```
+Checked that I have sequencing data for all individuals in the decode file
+```
+ls *1.fq.gz | wc -l 
+ls *2.fq.gz | wc -l
+```
+Number of lines:
+```
+wc -l Zdi_LCWGS-test_SequenceNameDecode.txt
+```
+Are there duplicates?
+```
+cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
+```
+
+</p>
+</details>
+
+<details><summary>5. Perform a renaming dry run</summary>
+<p>
+
+  ```
+  cd fq_raw
+  salloc
+
+  bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Zdi_LCWGS-test_SequenceNameDecode.txt
+  ```
+</p>
+</details>
+
+<details><summary>6. Rename the file</summary>
+<p>
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Zdi_LCWGS-test_SequenceNameDecode.txt rename
+```
+
+</p>
+</details>
+
+</p>
