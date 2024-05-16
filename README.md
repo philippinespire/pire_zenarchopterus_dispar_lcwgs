@@ -60,10 +60,10 @@ cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
 <p>
 
   ```
-  cd fq_raw
-  salloc
+  [hpc-0356@wahab-01 1st_sequencing_run]$ cd fq_raw/
+  [hpc-0356@wahab-01 fq_raw]$ salloc
 
-  bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Zdi_LCWGS-test_SequenceNameDecode.txt
+  [hpc-0356@e1-w6420b-02 fq_raw]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Zdi_LCWGS-test_SequenceNameDecode.txt
   ```
 </p>
 </details>
@@ -72,10 +72,21 @@ cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
 <p>
 
 ```
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Zdi_LCWGS-test_SequenceNameDecode.txt rename
+[hpc-0356@e1-w6420b-02 fq_raw]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Zdi_LCWGS-test_SequenceNameDecode.txt rename
 ```
 
 </p>
 </details>
 
 </p>
+
+<details><summary>7. Check data quality</summary>
+<p>
+
+Executed Multi_FASTQC.sh 
+
+directory changed to 1st_sequencing_run
+```
+[hpc-0356@wahab-01 fq_raw]$ cd ..
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch --mail-user=gmazzei@ucsc.edu --mail-type=END /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
+```
