@@ -1,0 +1,28 @@
+[2024-05-16 21:53:29,279] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2024-05-16 21:53:29,281] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2024-05-16 21:53:29,281] multiqc                                            [DEBUG  ]  New config: {'max_table_rows': 3000}
+[2024-05-16 21:53:29,281] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename 1st_fastp_report --outdir fq_fp1 fq_fp1
+[2024-05-16 21:53:29,786] multiqc                                            [WARNING]  MultiQC Version v1.22 now available!
+[2024-05-16 21:53:29,786] multiqc                                            [DEBUG  ]  Working dir : /home/hpc-0356/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run
+[2024-05-16 21:53:29,787] multiqc                                            [DEBUG  ]  Template    : default
+[2024-05-16 21:53:29,787] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2024-05-16 21:53:29,788] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2024-05-16 21:53:29,788] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpt8e9fqe_
+[2024-05-16 21:53:30,000] multiqc                                            [INFO   ]  Search path : /home/hpc-0356/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_fp1
+[2024-05-16 21:53:50,806] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 791] // [skipped_no_match: 624] // [skipped_ignore_pattern: 461]
+[2024-05-16 21:53:51,843] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2024-05-16 21:53:51,844] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2024-05-16 21:53:51,847] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2024-05-16 21:53:51,869] multiqc.modules.snippy.snippy                      [INFO   ]  Found 1 reports
+[2024-05-16 21:53:51,869] multiqc.plots.bargraph                             [WARNING]  Tried to make bar plot, but had no data: snippy_variants
+[2024-05-16 21:53:52,484] multiqc.modules.fastp.fastp                        [INFO   ]  Found 111 reports
+[2024-05-16 21:54:36,450] multiqc                                            [INFO   ]  Compressing plot data
+[2024-05-16 21:54:45,780] multiqc                                            [WARNING]  Deleting    : fq_fp1/1st_fastp_report.html   (-f was specified)
+[2024-05-16 21:54:45,785] multiqc                                            [WARNING]  Deleting    : fq_fp1/1st_fastp_report_data   (-f was specified)
+[2024-05-16 21:54:45,839] multiqc                                            [WARNING]  Deleting    : fq_fp1/1st_fastp_report_plots   (-f was specified)
+[2024-05-16 21:54:45,902] multiqc                                            [INFO   ]  Report      : fq_fp1/1st_fastp_report.html
+[2024-05-16 21:54:45,902] multiqc                                            [INFO   ]  Data        : fq_fp1/1st_fastp_report_data
+[2024-05-16 21:54:45,902] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpt8e9fqe_/multiqc_data' to 'fq_fp1/1st_fastp_report_data'
+[2024-05-16 21:54:46,855] multiqc                                            [INFO   ]  Plots       : fq_fp1/1st_fastp_report_plots
+[2024-05-16 21:54:46,855] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpt8e9fqe_/multiqc_plots' to 'fq_fp1/1st_fastp_report_plots'
+[2024-05-16 21:54:47,327] multiqc                                            [INFO   ]  MultiQC complete
