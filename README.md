@@ -21,7 +21,7 @@ mkdir 1st_sequencing_run
 </details>
 
 
-<details><summary>1. Copy raw data</summary>
+<details><summary>1. Get raw data</summary>
 <p>
 
 ```
@@ -80,7 +80,7 @@ cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
 
 </p>
 
-<details><summary>7. Check data quality</summary>
+<details><summary>7. Check the quality of raw data</summary>
 <p>
 
 Executed Multi_FASTQC.sh 
@@ -98,9 +98,9 @@ Potential issues:
   * GC content - 
 	* Alb: 46-65%, Contemp: 46-93%
   * number of reads - 
-	* Alb: 0.014-54.7 mil, Contemp: 0.038-9.8 mil
+	* Alb: 0-54.8 mil, Contemp: 0-9.8 mil
 ```
-<details><summary>Output:</summary>
+<details><summary>Multi_FASTQC Report:</summary>
 <p>
   
   ```
@@ -339,5 +339,165 @@ Zdi-CDup_071-Ex1-12H-lcwgs-1-1.2	50.5%	69%	0.6
 <details><summary>8. First trim</summary>
 <p>
 
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+```
+Review the FastQC output (fq_fp1/1st_fastp_report.html)
+
+```
+Potential issues:  
+  * % duplication - 
+    * Alb: 4.9-19.9%, Contemp: 6.6-17.4%
+  * GC content -
+    * Alb: 36.5-55.3%, Contemp: 42-49.6%
+  * passing filter - 
+    * Alb: 64.7-96.7%, Contemp: 11.6-95.7%
+  * % adapter - 
+    * Alb: 52.8-95.8%, Contemp: 49.9-85.3%
+  * number of reads - 
+    * Alb: 0-109 mil, Contemp: 0-19.6 mil
+```
+<details><summary>1st FASTP Report:</summary>
+<p>
   
+```
+
+Sample Name	            	% Duplication	% GC    % PF	% Adapter
+Zdi-ADup_001-Ex1-11B-lcwgs-1-1		14.4%	41.2%	92.2%	85.3%
+Zdi-ADup_002-Ex1-9G-lcwgs-1-1		9.4%	40.3%	94.0%	92.3%
+Zdi-ADup_003-Ex1-9H-lcwgs-1-1		8.9%	41.1%	93.3%	91.9%
+Zdi-ADup_004-Ex1-10A-lcwgs-1-1		6.4%	40.4%	64.7%	77.8%
+Zdi-ADup_005-Ex1-10B-lcwgs-1-1		6.7%	41.2%	94.0%	94.9%
+Zdi-ADup_006-Ex1-10C-lcwgs-1-1		12.1%	39.3%	87.6%	81.8%
+Zdi-ADup_007-Ex1-10D-lcwgs-1-1		8.8%	44.1%	91.4%	92.9%
+Zdi-ADup_008-Ex1-10E-lcwgs-1-1		12.4%	38.6%	92.7%	87.4%
+Zdi-ADup_009-Ex1-10F-lcwgs-1-1		7.5%	42.2%	93.7%	92.1%
+Zdi-ADup_010-Ex1-10G-lcwgs-1-1		4.9%	41.8%	90.5%	87.4%
+Zdi-ADup_011-Ex1-10H-lcwgs-1-1		10.0%	42.0%	89.9%	89.5%
+Zdi-ADup_012-Ex1-11A-lcwgs-1-1		19.9%	55.3%	76.1%	52.8%
+Zdi-ADup_013-Ex1-12F-lcwgs-1-1		13.2%	49.7%	69.3%	68.5%
+Zdi-ADup_014-Ex1-11C-lcwgs-1-1		14.4%	46.8%	73.4%	78.3%
+Zdi-ADup_015-Ex1-11D-lcwgs-1-1		8.0%	41.3%	94.0%	91.6%
+Zdi-ADup_016-Ex1-11E-lcwgs-1-1		15.6%	39.3%	92.0%	85.3%
+Zdi-ADup_017-Ex1-11F-lcwgs-1-1		9.3%	42.9%	93.1%	92.1%
+Zdi-ADup_018-Ex1-11G-lcwgs-1-1		11.2%	42.9%	92.7%	89.0%
+Zdi-ADup_019-Ex1-11H-lcwgs-1-1		9.1%	39.6%	87.7%	88.7%
+Zdi-ADup_020-Ex1-12A-lcwgs-1-1		5.9%	44.2%	88.9%	74.5%
+Zdi-ADup_021-Ex1-12B-lcwgs-1-1		5.4%	42.1%	90.9%	82.4%
+Zdi-ADup_022-Ex1-12C-lcwgs-1-1		11.8%	41.4%	91.7%	90.3%
+Zdi-ADup_023-Ex1-12D-lcwgs-1-1		9.6%	42.8%	87.0%	87.7%
+Zdi-ADup_024-Ex1-12E-lcwgs-1-1		14.7%	48.2%	79.1%	78.8%
+Zdi-ADup_025-Ex1-2A-lcwgs-1-1		5.9%	38.7%	89.7%	90.2%
+Zdi-ADup_026-Ex1-12G-lcwgs-1-1		7.8%	44.8%	92.8%	93.4%
+Zdi-ADup_027-Ex1-12H-lcwgs-1-1		11.9%	45.2%	93.7%	95.8%
+Zdi-ADup_028-Ex1-9F-lcwgs-1-1		7.5%	39.8%	89.5%	91.6%
+Zdi-ADup_029-Ex1-1A-lcwgs-1-1		6.3%	40.2%	95.4%	75.1%
+Zdi-ADup_030-Ex1-1B-lcwgs-1-1		7.2%	39.3%	96.7%	88.4%
+Zdi-ADup_031-Ex1-1C-lcwgs-1-1		6.8%	39.7%	95.1%	80.1%
+Zdi-ADup_032-Ex1-1D-lcwgs-1-1		13.2%	43.1%	92.7%	84.5%
+Zdi-ADup_033-Ex1-1E-lcwgs-1-1		6.8%	38.2%	93.5%	89.4%
+Zdi-ADup_034-Ex1-1F-lcwgs-1-1		7.2%	38.5%	94.8%	86.0%
+Zdi-ADup_035-Ex1-1G-lcwgs-1-1		6.6%	37.3%	91.7%	92.4%
+Zdi-ADup_036-Ex1-1H-lcwgs-1-1		6.4%	39.0%	85.9%	84.0%
+Zdi-ADup_037-Ex1-3D-lcwgs-1-1		6.5%	37.0%	91.3%	85.6%
+Zdi-ADup_038-Ex1-2B-lcwgs-1-1		6.5%	37.6%	94.1%	90.2%
+Zdi-ADup_039-Ex1-2C-lcwgs-1-1		6.7%	37.7%	94.0%	85.0%
+Zdi-ADup_040-Ex1-2D-lcwgs-1-1		6.3%	37.9%	89.8%	85.4%
+Zdi-ADup_041-Ex1-2E-lcwgs-1-1		6.2%	37.8%	91.8%	86.3%
+Zdi-ADup_042-Ex1-2F-lcwgs-1-1		12.9%	37.4%	92.1%	90.5%
+Zdi-ADup_043-Ex1-2G-lcwgs-1-1		8.7%	37.6%	88.0%	88.8%
+Zdi-ADup_044-Ex1-2H-lcwgs-1-1		11.3%	37.0%	89.5%	90.7%
+Zdi-ADup_045-Ex1-3A-lcwgs-1-1		6.3%	37.7%	93.4%	94.0%
+Zdi-ADup_046-Ex1-3B-lcwgs-1-1		6.5%	36.5%	88.1%	87.8%
+Zdi-ADup_047-Ex1-3C-lcwgs-1-1		8.8%	38.9%	94.0%	93.3%
+Zdi-CDup_001-Ex1-5D-lcwgs-1-1		9.5%	45.8%	51.4%	64.9%
+Zdi-CDup_002-Ex1-5E-lcwgs-1-1		8.7%	44.4%	75.0%	69.3%
+Zdi-CDup_003-Ex1-5F-lcwgs-1-1		11.2%	46.7%	83.4%	73.3%
+Zdi-CDup_004-Ex1-5G-lcwgs-1-1		9.8%	44.9%	70.4%	67.9%
+Zdi-CDup_005-Ex1-5H-lcwgs-1-1		13.9%	45.0%	93.0%	66.5%
+Zdi-CDup_006-Ex1-6A-lcwgs-1-1		14.5%	43.8%	95.5%	60.7%
+Zdi-CDup_007-Ex1-6B-lcwgs-1-1		9.7%	45.2%	86.0%	77.8%
+Zdi-CDup_008-Ex1-6C-lcwgs-1-1		11.3%	43.7%	72.8%	61.2%
+Zdi-CDup_010-Ex1-6D-lcwgs-1-1		13.4%	44.7%	66.2%	58.7%
+Zdi-CDup_011-Ex1-6E-lcwgs-1-1		13.9%	43.3%	80.5%	61.2%
+Zdi-CDup_012-Ex1-6F-lcwgs-1-1		12.0%	45.4%	49.4%	61.5%
+Zdi-CDup_013-Ex1-6G-lcwgs-1-1		10.7%	42.2%	77.5%	60.9%
+Zdi-CDup_014-Ex1-6H-lcwgs-1-1		10.0%	44.1%	81.6%	75.0%
+Zdi-CDup_015-Ex1-7A-lcwgs-1-1		9.0%	43.4%	77.9%	66.3%
+Zdi-CDup_016-Ex1-7B-lcwgs-1-1		9.9%	45.4%	89.8%	79.4%
+Zdi-CDup_017-Ex1-7C-lcwgs-1-1		9.1%	44.7%	81.9%	75.2%
+Zdi-CDup_018-Ex1-7D-lcwgs-1-1		11.7%	46.8%	58.7%	61.4%
+Zdi-CDup_019-Ex1-7E-lcwgs-1-1		11.3%	43.8%	95.7%	73.3%
+Zdi-CDup_020-Ex1-7F-lcwgs-1-1		9.6%	44.2%	58.2%	66.4%
+Zdi-CDup_021-Ex1-7G-lcwgs-1-1		11.2%	43.4%	64.0%	65.4%
+Zdi-CDup_022-Ex1-7H-lcwgs-1-1		9.7%	42.8%	92.8%	78.8%
+Zdi-CDup_023-Ex1-8A-lcwgs-1-1		10.1%	44.1%	62.2%	64.7%
+Zdi-CDup_024-Ex1-8B-lcwgs-1-1		12.7%	44.7%	61.2%	64.0%
+Zdi-CDup_025-Ex1-8C-lcwgs-1-1		10.1%	44.1%	39.3%	61.3%
+Zdi-CDup_026-Ex1-8D-lcwgs-1-1		10.1%	44.6%	48.0%	62.8%
+Zdi-CDup_027-Ex1-8E-lcwgs-1-1		10.6%	44.0%	36.6%	60.1%
+Zdi-CDup_028-Ex1-8F-lcwgs-1-1		14.1%	44.1%	85.6%	65.3%
+Zdi-CDup_029-Ex1-8G-lcwgs-1-1		13.8%	42.5%	86.6%	63.8%
+Zdi-CDup_030-Ex1-8H-lcwgs-1-1		10.4%	43.5%	71.3%	68.2%
+Zdi-CDup_031-Ex1-9A-lcwgs-1-1		11.8%	44.1%	92.3%	73.3%
+Zdi-CDup_032-Ex1-9B-lcwgs-1-1		11.0%	45.2%	61.8%	67.9%
+Zdi-CDup_033-Ex1-9C-lcwgs-1-1		9.5%	45.8%	45.9%	65.1%
+Zdi-CDup_034-Ex1-9D-lcwgs-1-1		10.9%	43.9%	34.7%	58.6%
+Zdi-CDup_035-Ex1-9E-lcwgs-1-1		11.0%	44.7%	31.5%	58.1%
+Zdi-CDup_036-Ex1-9F-lcwgs-1-1		11.8%	44.1%	55.6%	64.5%
+Zdi-CDup_037-Ex1-9G-lcwgs-1-1		11.7%	43.9%	43.4%	60.5%
+Zdi-CDup_038-Ex1-9H-lcwgs-1-1		9.9%	44.7%	32.9%	59.9%
+Zdi-CDup_039-Ex1-10A-lcwgs-1-1		9.1%	44.3%	86.3%	69.2%
+Zdi-CDup_040-Ex1-10B-lcwgs-1-1		8.3%	43.3%	79.2%	76.5%
+Zdi-CDup_041-Ex1-10C-lcwgs-1-1		7.4%	44.9%	65.3%	73.5%
+Zdi-CDup_042-Ex1-10D-lcwgs-1-1		9.6%	44.8%	83.7%	71.2%
+Zdi-CDup_043-Ex1-10E-lcwgs-1-1		12.8%	46.0%	79.3%	60.5%
+Zdi-CDup_044-Ex1-10F-lcwgs-1-1		9.5%	44.9%	40.6%	62.8%
+Zdi-CDup_045-Ex1-10G-lcwgs-1-1		8.9%	43.7%	67.6%	70.3%
+Zdi-CDup_046-Ex1-10H-lcwgs-1-1		8.7%	44.2%	60.7%	68.5%
+Zdi-CDup_047-Ex1-11A-lcwgs-1-1		8.0%	44.5%	94.0%	85.3%
+Zdi-CDup_048-Ex1-11B-lcwgs-1-1		8.9%	44.4%	64.4%	71.7%
+Zdi-CDup_049-Ex1-11C-lcwgs-1-1		8.3%	44.4%	67.0%	72.4%
+Zdi-CDup_050-Ex1-11D-lcwgs-1-1		7.7%	45.0%	50.4%	66.4%
+Zdi-CDup_051-Ex1-11E-lcwgs-1-1		8.6%	45.1%	45.1%	62.7%
+Zdi-CDup_053-Ex1-11F-lcwgs-1-1		9.2%	44.3%	70.2%	72.2%
+Zdi-CDup_054-Ex1-11G-lcwgs-1-1		6.6%	45.3%	36.5%	65.1%
+Zdi-CDup_055-Ex1-11H-lcwgs-1-1		7.9%	44.3%	77.7%	74.0%
+Zdi-CDup_056-Ex1-12A-lcwgs-1-1		17.4%	43.3%	67.4%	49.9%
+Zdi-CDup_057-Ex1-12B-lcwgs-1-1		13.5%	44.5%	35.0%	55.6%
+Zdi-CDup_058-Ex1-12C-lcwgs-1-1		8.7%	44.3%	65.5%	72.5%
+Zdi-CDup_059-Ex1-12D-lcwgs-1-1		15.1%	43.7%	11.6%	50.0%
+Zdi-CDup_060-Ex1-12E-lcwgs-1-1		8.2%	44.1%	62.4%	64.3%
+Zdi-CDup_061-Ex1-12F-lcwgs-1-1		8.6%	44.7%	49.3%	68.6%
+Zdi-CDup_062-Ex1-12G-lcwgs-1-1		8.5%	43.7%	59.6%	67.2%
+Zdi-CDup_064-Ex1-5A-lcwgs-1-1		16.2%	42.0%	93.6%	54.0%
+Zdi-CDup_065-Ex1-5B-lcwgs-1-1		12.4%	43.0%	64.3%	64.1%
+Zdi-CDup_066-Ex1-5C-lcwgs-1-1		9.9%	49.6%	42.0%	62.6%
+Zdi-CDup_071-Ex1-12H-lcwgs-1-1		12.0%	44.0%	57.5%	61.0%				
+```
+
 </p>
+</details>
+
+</p>
+</details>
+
+<details><summary>9. Remove duplicates with clumpify</summary>
+<p>
+
+ 9a. Remove duplicates
+ ```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0356 20
+```
+9c. Check duplicate removal success
+```
+salloc
+enable_lmod
+module load container_env mapdamage2 
+[hpc-0356@d4-w6420b-08 1st_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+# I did not have tidyverse
+crun R
+install.packages("tidyverse")
+```
+</p>
+ 
