@@ -735,6 +735,68 @@ indir=fq_fp1_clmp_fp2
 nodes=20
 [hpc-0356@wahab-01 1st_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
 ```
+### 11b. Check for Errors
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+
+# when complete check the $outdir/fqValidateReport.txt file
+less -S $outdir/fqValidationReport.txt file
+```
+#### Confirm files were succesfully completed:
+* ***one file was not***
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+[hpc-0356@wahab-01 1st_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+```
+Check that all 5 files were created for each fqgz file:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+111
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r2.tagged.fastq.gz | wc -l
+110
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+111
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+110
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1_screen.txt | wc -l
+111
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r2_screen.txt | wc -l
+111
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1_screen.png | wc -l
+111
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1_screen.png | wc -l
+111
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1_screen.html | wc -l
+111
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r2_screen.html | wc -l
+110
+```
+For each, you should have the same number as the number of input files (number of fq.gz files):
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
+					ls $indir/*r2.fq.gz | wc -l
+111
+111
+```
+Check for any errors in the *out files: (none)
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ grep 'error' slurm-fqscrn.*out
+					grep 'No reads in' slurm-fqscrn.*out
+					grep 'FATAL' slurm-fqscrn.*out
+```
+Looked at the outfiles to see if there are any unzipped files with the word temp, which means that the job didn't finish and needs to be rerun:
+* **One hit:** Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_r2.fq.gz_**temp**_subset.fastq
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+					ls $outdir/*temp*
+/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_r2.fq.gz_temp_subset.fastq
+```
+
+### 11d. Rerun Files That Failed
 
 
 ---
