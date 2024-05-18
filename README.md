@@ -8,6 +8,8 @@ fq_gz processing being done by Gianna Mazzei.
 ## 1. fq.gz pre-processing
 <details><summary>0. Set-up</summary>
 <p>
+
+## 0. Set-up
   
 created Zdi repo in Github and cloned to /archive/carpenterlab/pire
 
@@ -18,11 +20,15 @@ cd /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs
 mkdir 1st_sequencing_run
 ```
 </p>
+
+---
 </details>
 
 
 <details><summary>1. Get raw data</summary>
 <p>
+
+## 1. Get raw data
 
 ```
 cd pire_zenarchopterus_dispar_lcwgs
@@ -30,12 +36,15 @@ rsync -r /archive/carpenterlab/pire/downloads/zenarchopterus_dispar/1st_sequenci
 ```
 
 </p>
+
+---
 </details>
 
 <details><summary>2. Proofread the decode file</summary>
 <p>
 
-Proofread the decode file
+## 2. Proofread the decode file
+
 ```
 cat Zdi_LCWGS-test_SequenceNameDecode.txt
 ```
@@ -54,10 +63,14 @@ cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
 ```
 
 </p>
+
+---
 </details>
 
 <details><summary>5. Perform a renaming dry run</summary>
 <p>
+
+## 5. Perform a renaming dry run
 
   ```
   [hpc-0356@wahab-01 1st_sequencing_run]$ cd fq_raw/
@@ -66,22 +79,30 @@ cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
   [hpc-0356@e1-w6420b-02 fq_raw]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Zdi_LCWGS-test_SequenceNameDecode.txt
   ```
 </p>
+
+---
 </details>
 
 <details><summary>6. Rename the file</summary>
 <p>
+
+## 6. Rename the file
 
 ```
 [hpc-0356@e1-w6420b-02 fq_raw]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Zdi_LCWGS-test_SequenceNameDecode.txt rename
 ```
 
 </p>
+
+---
 </details>
 
 </p>
 
 <details><summary>7. Check the quality of raw data</summary>
 <p>
+
+## 7. Check the quality of raw data
 
 Executed Multi_FASTQC.sh 
 
@@ -90,21 +111,29 @@ directory changed to 1st_sequencing_run
 [hpc-0356@wahab-01 fq_raw]$ cd ..
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch --mail-user=gmazzei@ucsc.edu --mail-type=END /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
 ```
-Results:
+
+### Review the MultiQC output (fq_raw/fastqc_report.html):
+* GC content is high on average
+	* ~50% for Albatross; ~60% for Contemporary
+* Per Sequence GC Content peaks aroung 70% -> potential for bacterial contamination
+* % Dups is high on average (~30%)
+* Adapter Content is high
+
+```  
+‣ % duplication - 
+	• Alb: 9.3-40.4%
+ 	• Contemp: 12.9-90.3%
+‣ GC content - 
+	• Alb: 46-65%
+ 	• Contemp: 46-93%
+‣ number of reads - 
+	• Alb: 0-54.8 mil
+ 	• Contemp: 0-9.8 mil
 ```
-Potential issues:  
-  * % duplication - 
-	* Alb: 9.3-40.4%, Contemp: 12.9-90.3%
-  * GC content - 
-	* Alb: 46-65%, Contemp: 46-93%
-  * number of reads - 
-	* Alb: 0-54.8 mil, Contemp: 0-9.8 mil
-```
-<details><summary>Multi_FASTQC Report:</summary>
+<details><summary>* Multi_FASTQC Report:</summary>
 <p>
   
-  ```
-
+```
 Sample Name	                        % Dups  % GC    M Seqs
 Zdi-ADup_001-Ex1-11B-lcwgs-1-1.1	22.5%	49%	21.9
 Zdi-ADup_001-Ex1-11B-lcwgs-1-1.2	23.1%	49%	21.9
@@ -334,30 +363,43 @@ Zdi-CDup_071-Ex1-12H-lcwgs-1-1.2	50.5%	69%	0.6
 </details>
 
 </p>
+
+---
 </details>
 
 <details><summary>8. First trim</summary>
 <p>
 
+## 8. First trim
+
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
 ```
-Review the FastQC output (fq_fp1/1st_fastp_report.html)
+### Review the FastQC output (fq_fp1/1st_fastp_report.html):
+After 1st trim:
+* % Dup went considerably down
+* GC content down to more typical levels
+* % PF relatively high for Albatross samples, more variable for contemporary
+* High % adapter
 
+```  
+‣ % duplication - 
+    	• Alb: 4.9-19.9%
+	• Contemp: 6.6-17.4%
+‣ GC content -
+    	• Alb: 36.5-55.3%
+	• Contemp: 42-49.6%
+‣ passing filter - 
+    	• Alb: 64.7-96.7%
+     	• Contemp: 11.6-95.7%
+‣ % adapter - 
+    	• Alb: 52.8-95.8%
+     	• Contemp: 49.9-85.3%
+‣ number of reads - 
+    	• Alb: 0-109 mil
+     	• Contemp: 0-19.6 mil
 ```
-Potential issues:  
-  * % duplication - 
-    * Alb: 4.9-19.9%, Contemp: 6.6-17.4%
-  * GC content -
-    * Alb: 36.5-55.3%, Contemp: 42-49.6%
-  * passing filter - 
-    * Alb: 64.7-96.7%, Contemp: 11.6-95.7%
-  * % adapter - 
-    * Alb: 52.8-95.8%, Contemp: 49.9-85.3%
-  * number of reads - 
-    * Alb: 0-109 mil, Contemp: 0-19.6 mil
-```
-<details><summary>1st FASTP Report:</summary>
+<details><summary>* 1st FASTP Report:</summary>
 <p>
   
 ```
@@ -480,24 +522,220 @@ Zdi-CDup_071-Ex1-12H-lcwgs-1-1		12.0%	44.0%	57.5%	61.0%
 </details>
 
 </p>
+
+---
 </details>
 
 <details><summary>9. Remove duplicates with clumpify</summary>
 <p>
 
- 9a. Remove duplicates
+## 9. Remove duplicates with clumpify
+
+### 9a. Remove duplicates
  ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0356 20
 ```
-9c. Check duplicate removal success
+### 9c. Check duplicate removal success
+
+Clumpify Successfully worked on all samples
 ```
 salloc
 enable_lmod
-module load container_env mapdamage2 
+module load container_env R/4.3 
 [hpc-0356@d4-w6420b-08 1st_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
-# I did not have tidyverse
-crun R
-install.packages("tidyverse")
+     # I did not have tidyverse
+     [hpc-0356@d4-w6420b-01 1st_sequencing_run]$ crun R
+     > install.packages("tidyverse")
+     # ctrl + d to quit R
+[hpc-0356@d4-w6420b-08 1st_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+[hpc-0356@d4-w6420b-01 1st_sequencing_run]$ exit
+```
+### 9d. Clean the sratch drive
+```
+[hpc-0356@d6-w6420b-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0356 "*clumpify*temp*"
+```
+### 9e. Generate metadata on deduplicated FASTQ files
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+```
+
+</p>
+
+---
+</details>
+
+<details><summary>10. Second trim</summary>
+<p>
+
+## 10. Second trim
+ 
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
+```
+### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
+After 2nd trim:
+* % passing filter all above 99%
+* GC content variable between Read Position 1-10 even after filtering
+* % adapter at or below 1%
+
+```
+‣ % duplication -
+	• Alb: 0.4-2.3%
+	• Contemp: 0.5-2.5%
+‣ GC content -
+	• Alb: 36.4-55.7%
+	• Contemp: 42-49%
+‣ passing filter -
+	• Alb: 98.8-99.6%
+	• Contemp: 99-99.5%
+‣ % adapter -
+	• Alb: 0.4-1.2%
+	• Contemp: 0.4-1%
+‣ number of reads -
+	• Alb: 0.02-73.5 mil
+	• Contemp: 0.04-14.9 mil
+```
+<details><summary>* 2nd FASTP Report:</summary>
+<p>
+  
+```
+Sample Name					% Duplication	% GC 	% PF	% Adapter
+Zdi-ADup_001-Ex1-11B-lcwgs-1-1.clmp.r1r2_fastp		1.8%	41.0%	99.3%	0.6%
+Zdi-ADup_002-Ex1-9G-lcwgs-1-1.clmp.r1r2_fastp		0.9%	40.2%	99.5%	0.6%
+Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.r1r2_fastp		0.8%	41.0%	99.5%	0.6%
+Zdi-ADup_004-Ex1-10A-lcwgs-1-1.clmp.r1r2_fastp		0.5%	40.4%	99.5%	0.7%
+Zdi-ADup_005-Ex1-10B-lcwgs-1-1.clmp.r1r2_fastp		0.6%	40.8%	99.4%	0.7%
+Zdi-ADup_006-Ex1-10C-lcwgs-1-1.clmp.r1r2_fastp		1.4%	39.3%	99.4%	0.6%
+Zdi-ADup_007-Ex1-10D-lcwgs-1-1.clmp.r1r2_fastp		0.9%	43.9%	99.3%	0.7%
+Zdi-ADup_008-Ex1-10E-lcwgs-1-1.clmp.r1r2_fastp		1.4%	38.6%	99.4%	0.6%
+Zdi-ADup_009-Ex1-10F-lcwgs-1-1.clmp.r1r2_fastp		0.7%	42.1%	99.4%	0.7%
+Zdi-ADup_010-Ex1-10G-lcwgs-1-1.clmp.r1r2_fastp		0.4%	41.7%	99.2%	1.2%
+Zdi-ADup_011-Ex1-10H-lcwgs-1-1.clmp.r1r2_fastp		1.1%	41.8%	99.4%	0.6%
+Zdi-ADup_012-Ex1-11A-lcwgs-1-1.clmp.r1r2_fastp		2.3%	55.7%	99.0%	0.4%
+Zdi-ADup_013-Ex1-12F-lcwgs-1-1.clmp.r1r2_fastp		1.3%	49.7%	99.2%	0.7%
+Zdi-ADup_014-Ex1-11C-lcwgs-1-1.clmp.r1r2_fastp		1.7%	46.8%	99.3%	0.7%
+Zdi-ADup_015-Ex1-11D-lcwgs-1-1.clmp.r1r2_fastp		0.7%	41.1%	99.4%	0.7%
+Zdi-ADup_016-Ex1-11E-lcwgs-1-1.clmp.r1r2_fastp		1.9%	39.2%	99.4%	0.6%
+Zdi-ADup_017-Ex1-11F-lcwgs-1-1.clmp.r1r2_fastp		0.8%	42.7%	99.4%	0.7%
+Zdi-ADup_018-Ex1-11G-lcwgs-1-1.clmp.r1r2_fastp		1.2%	42.7%	99.4%	0.7%
+Zdi-ADup_019-Ex1-11H-lcwgs-1-1.clmp.r1r2_fastp		0.8%	39.6%	99.5%	0.7%
+Zdi-ADup_020-Ex1-12A-lcwgs-1-1.clmp.r1r2_fastp		0.4%	44.1%	99.1%	1.0%
+Zdi-ADup_021-Ex1-12B-lcwgs-1-1.clmp.r1r2_fastp		0.5%	42.0%	98.8%	1.1%
+Zdi-ADup_022-Ex1-12C-lcwgs-1-1.clmp.r1r2_fastp		1.2%	41.0%	99.4%	0.7%
+Zdi-ADup_023-Ex1-12D-lcwgs-1-1.clmp.r1r2_fastp		0.9%	42.7%	99.4%	0.7%
+Zdi-ADup_024-Ex1-12E-lcwgs-1-1.clmp.r1r2_fastp		1.6%	48.2%	99.1%	0.7%
+Zdi-ADup_025-Ex1-2A-lcwgs-1-1.clmp.r1r2_fastp		0.4%	38.5%	99.5%	0.8%
+Zdi-ADup_026-Ex1-12G-lcwgs-1-1.clmp.r1r2_fastp		0.6%	44.7%	99.3%	0.9%
+Zdi-ADup_027-Ex1-12H-lcwgs-1-1.clmp.r1r2_fastp		1.2%	45.1%	99.4%	0.7%
+Zdi-ADup_028-Ex1-9F-lcwgs-1-1.clmp.r1r2_fastp		0.6%	39.6%	99.5%	0.7%
+Zdi-ADup_029-Ex1-1A-lcwgs-1-1.clmp.r1r2_fastp		0.6%	40.1%	99.2%	1.2%
+Zdi-ADup_030-Ex1-1B-lcwgs-1-1.clmp.r1r2_fastp		0.6%	39.0%	99.4%	0.9%
+Zdi-ADup_031-Ex1-1C-lcwgs-1-1.clmp.r1r2_fastp		0.7%	39.5%	99.2%	1.0%
+Zdi-ADup_032-Ex1-1D-lcwgs-1-1.clmp.r1r2_fastp		1.5%	42.9%	99.3%	0.6%
+Zdi-ADup_033-Ex1-1E-lcwgs-1-1.clmp.r1r2_fastp		0.6%	38.1%	99.5%	0.8%
+Zdi-ADup_034-Ex1-1F-lcwgs-1-1.clmp.r1r2_fastp		0.7%	38.4%	99.4%	0.9%
+Zdi-ADup_035-Ex1-1G-lcwgs-1-1.clmp.r1r2_fastp		0.6%	37.2%	99.5%	0.7%
+Zdi-ADup_036-Ex1-1H-lcwgs-1-1.clmp.r1r2_fastp		0.5%	38.9%	99.3%	0.9%
+Zdi-ADup_037-Ex1-3D-lcwgs-1-1.clmp.r1r2_fastp		0.5%	36.9%	99.4%	0.9%
+Zdi-ADup_038-Ex1-2B-lcwgs-1-1.clmp.r1r2_fastp		0.5%	37.5%	99.5%	0.9%
+Zdi-ADup_039-Ex1-2C-lcwgs-1-1.clmp.r1r2_fastp		0.6%	37.6%	99.3%	1.0%
+Zdi-ADup_040-Ex1-2D-lcwgs-1-1.clmp.r1r2_fastp		0.6%	37.8%	99.3%	1.0%
+Zdi-ADup_041-Ex1-2E-lcwgs-1-1.clmp.r1r2_fastp		0.5%	37.8%	99.4%	0.9%
+Zdi-ADup_042-Ex1-2F-lcwgs-1-1.clmp.r1r2_fastp		1.4%	37.4%	99.5%	0.6%
+Zdi-ADup_043-Ex1-2G-lcwgs-1-1.clmp.r1r2_fastp		0.8%	37.5%	99.5%	0.7%
+Zdi-ADup_044-Ex1-2H-lcwgs-1-1.clmp.r1r2_fastp		1.2%	36.8%	99.5%	0.6%
+Zdi-ADup_045-Ex1-3A-lcwgs-1-1.clmp.r1r2_fastp		0.4%	37.7%	99.6%	0.7%
+Zdi-ADup_046-Ex1-3B-lcwgs-1-1.clmp.r1r2_fastp		0.5%	36.4%	99.5%	0.8%
+Zdi-ADup_047-Ex1-3C-lcwgs-1-1.clmp.r1r2_fastp		0.8%	38.3%	99.4%	0.7%
+Zdi-CDup_001-Ex1-5D-lcwgs-1-1.clmp.r1r2_fastp		1.0%	45.3%	99.4%	0.6%
+Zdi-CDup_002-Ex1-5E-lcwgs-1-1.clmp.r1r2_fastp		0.9%	44.3%	99.1%	1.0%
+Zdi-CDup_003-Ex1-5F-lcwgs-1-1.clmp.r1r2_fastp		1.3%	46.2%	99.4%	0.6%
+Zdi-CDup_004-Ex1-5G-lcwgs-1-1.clmp.r1r2_fastp		1.1%	44.8%	99.4%	0.7%
+Zdi-CDup_005-Ex1-5H-lcwgs-1-1.clmp.r1r2_fastp		1.8%	44.8%	99.3%	0.5%
+Zdi-CDup_006-Ex1-6A-lcwgs-1-1.clmp.r1r2_fastp		1.9%	43.5%	99.3%	0.5%
+Zdi-CDup_007-Ex1-6B-lcwgs-1-1.clmp.r1r2_fastp		1.0%	44.9%	99.4%	0.6%
+Zdi-CDup_008-Ex1-6C-lcwgs-1-1.clmp.r1r2_fastp		1.5%	43.6%	99.3%	0.7%
+Zdi-CDup_010-Ex1-6D-lcwgs-1-1.clmp.r1r2_fastp		1.8%	44.5%	99.3%	0.5%
+Zdi-CDup_011-Ex1-6E-lcwgs-1-1.clmp.r1r2_fastp		1.8%	43.2%	99.3%	0.5%
+Zdi-CDup_012-Ex1-6F-lcwgs-1-1.clmp.r1r2_fastp		1.5%	45.2%	99.3%	0.6%
+Zdi-CDup_013-Ex1-6G-lcwgs-1-1.clmp.r1r2_fastp		1.3%	42.2%	99.3%	0.7%
+Zdi-CDup_014-Ex1-6H-lcwgs-1-1.clmp.r1r2_fastp		1.1%	43.9%	99.4%	0.6%
+Zdi-CDup_015-Ex1-7A-lcwgs-1-1.clmp.r1r2_fastp		1.1%	43.3%	99.3%	0.7%
+Zdi-CDup_016-Ex1-7B-lcwgs-1-1.clmp.r1r2_fastp		1.0%	45.0%	99.4%	0.6%
+Zdi-CDup_017-Ex1-7C-lcwgs-1-1.clmp.r1r2_fastp		1.0%	44.6%	99.4%	0.6%
+Zdi-CDup_018-Ex1-7D-lcwgs-1-1.clmp.r1r2_fastp		1.4%	46.3%	99.3%	0.6%
+Zdi-CDup_019-Ex1-7E-lcwgs-1-1.clmp.r1r2_fastp		1.3%	43.6%	99.4%	0.5%
+Zdi-CDup_020-Ex1-7F-lcwgs-1-1.clmp.r1r2_fastp		1.0%	44.1%	99.4%	0.7%
+Zdi-CDup_021-Ex1-7G-lcwgs-1-1.clmp.r1r2_fastp		1.3%	43.2%	99.4%	0.5%
+Zdi-CDup_022-Ex1-7H-lcwgs-1-1.clmp.r1r2_fastp		1.0%	42.7%	99.4%	0.6%
+Zdi-CDup_023-Ex1-8A-lcwgs-1-1.clmp.r1r2_fastp		1.0%	44.1%	99.3%	0.7%
+Zdi-CDup_024-Ex1-8B-lcwgs-1-1.clmp.r1r2_fastp		1.4%	44.7%	99.4%	0.6%
+Zdi-CDup_025-Ex1-8C-lcwgs-1-1.clmp.r1r2_fastp		1.0%	44.0%	99.4%	0.6%
+Zdi-CDup_026-Ex1-8D-lcwgs-1-1.clmp.r1r2_fastp		1.1%	44.5%	99.4%	0.5%
+Zdi-CDup_027-Ex1-8E-lcwgs-1-1.clmp.r1r2_fastp		1.0%	44.0%	99.4%	0.6%
+Zdi-CDup_028-Ex1-8F-lcwgs-1-1.clmp.r1r2_fastp		1.7%	44.1%	99.4%	0.5%
+Zdi-CDup_029-Ex1-8G-lcwgs-1-1.clmp.r1r2_fastp		1.7%	42.5%	99.3%	0.5%
+Zdi-CDup_030-Ex1-8H-lcwgs-1-1.clmp.r1r2_fastp		1.2%	43.5%	99.4%	0.7%
+Zdi-CDup_031-Ex1-9A-lcwgs-1-1.clmp.r1r2_fastp		1.3%	43.8%	99.4%	0.6%
+Zdi-CDup_032-Ex1-9B-lcwgs-1-1.clmp.r1r2_fastp		1.1%	44.9%	99.4%	0.7%
+Zdi-CDup_033-Ex1-9C-lcwgs-1-1.clmp.r1r2_fastp		1.0%	45.6%	99.4%	0.6%
+Zdi-CDup_034-Ex1-9D-lcwgs-1-1.clmp.r1r2_fastp		1.2%	43.7%	99.4%	0.6%
+Zdi-CDup_035-Ex1-9E-lcwgs-1-1.clmp.r1r2_fastp		1.1%	44.6%	99.2%	0.8%
+Zdi-CDup_036-Ex1-9F-lcwgs-1-1.clmp.r1r2_fastp		1.3%	44.1%	99.4%	0.6%
+Zdi-CDup_037-Ex1-9G-lcwgs-1-1.clmp.r1r2_fastp		1.3%	43.8%	99.4%	0.6%
+Zdi-CDup_038-Ex1-9H-lcwgs-1-1.clmp.r1r2_fastp		1.0%	44.6%	99.4%	0.7%
+Zdi-CDup_039-Ex1-10A-lcwgs-1-1.clmp.r1r2_fastp		1.1%	44.2%	99.4%	0.7%
+Zdi-CDup_040-Ex1-10B-lcwgs-1-1.clmp.r1r2_fastp		0.8%	43.3%	99.4%	0.6%
+Zdi-CDup_041-Ex1-10C-lcwgs-1-1.clmp.r1r2_fastp		0.7%	44.6%	99.5%	0.6%
+Zdi-CDup_042-Ex1-10D-lcwgs-1-1.clmp.r1r2_fastp		1.1%	44.4%	99.4%	0.5%
+Zdi-CDup_043-Ex1-10E-lcwgs-1-1.clmp.r1r2_fastp		1.8%	45.6%	99.2%	0.5%
+Zdi-CDup_044-Ex1-10F-lcwgs-1-1.clmp.r1r2_fastp		0.9%	44.9%	99.4%	0.6%
+Zdi-CDup_045-Ex1-10G-lcwgs-1-1.clmp.r1r2_fastp		1.0%	43.6%	99.3%	0.7%
+Zdi-CDup_046-Ex1-10H-lcwgs-1-1.clmp.r1r2_fastp		1.0%	44.1%	99.2%	0.8%
+Zdi-CDup_047-Ex1-11A-lcwgs-1-1.clmp.r1r2_fastp		0.8%	44.0%	99.4%	0.6%
+Zdi-CDup_048-Ex1-11B-lcwgs-1-1.clmp.r1r2_fastp		0.9%	44.3%	99.4%	0.7%
+Zdi-CDup_049-Ex1-11C-lcwgs-1-1.clmp.r1r2_fastp		0.8%	44.3%	99.4%	0.7%
+Zdi-CDup_050-Ex1-11D-lcwgs-1-1.clmp.r1r2_fastp		0.8%	44.8%	99.4%	0.7%
+Zdi-CDup_051-Ex1-11E-lcwgs-1-1.clmp.r1r2_fastp		1.0%	44.9%	99.0%	1.0%
+Zdi-CDup_053-Ex1-11F-lcwgs-1-1.clmp.r1r2_fastp		0.9%	44.2%	99.0%	1.0%
+Zdi-CDup_054-Ex1-11G-lcwgs-1-1.clmp.r1r2_fastp		0.5%	45.1%	99.4%	0.7%
+Zdi-CDup_055-Ex1-11H-lcwgs-1-1.clmp.r1r2_fastp		0.8%	44.2%	99.4%	0.8%
+Zdi-CDup_056-Ex1-12A-lcwgs-1-1.clmp.r1r2_fastp		2.5%	43.3%	99.2%	0.4%
+Zdi-CDup_057-Ex1-12B-lcwgs-1-1.clmp.r1r2_fastp		1.7%	44.3%	99.1%	0.7%
+Zdi-CDup_058-Ex1-12C-lcwgs-1-1.clmp.r1r2_fastp		0.9%	44.0%	99.4%	0.6%
+Zdi-CDup_059-Ex1-12D-lcwgs-1-1.clmp.r1r2_fastp		2.1%	43.8%	99.0%	0.7%
+Zdi-CDup_060-Ex1-12E-lcwgs-1-1.clmp.r1r2_fastp		0.9%	44.0%	99.0%	1.0%
+Zdi-CDup_061-Ex1-12F-lcwgs-1-1.clmp.r1r2_fastp		0.8%	44.4%	99.4%	0.6%
+Zdi-CDup_062-Ex1-12G-lcwgs-1-1.clmp.r1r2_fastp		0.8%	43.7%	99.4%	0.7%
+Zdi-CDup_064-Ex1-5A-lcwgs-1-1.clmp.r1r2_fastp		2.1%	42.0%	99.4%	0.4%
+Zdi-CDup_065-Ex1-5B-lcwgs-1-1.clmp.r1r2_fastp		1.4%	42.9%	99.4%	0.5%
+Zdi-CDup_066-Ex1-5C-lcwgs-1-1.clmp.r1r2_fastp		1.1%	49.0%	99.3%	0.6%
+Zdi-CDup_071-Ex1-12H-lcwgs-1-1.clmp.r1r2_fastp		1.4%	43.9%	99.3%	0.6%
 ```
 </p>
- 
+</details>
+
+</p>
+
+---
+</details>
+
+<details><summary>11. Decontaminate</summary>
+<p>
+
+## 11. Decontaminate files
+
+### 11a. Run fastq_screen
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+[hpc-0356@wahab-01 1st_sequencing_run]$ fqScrnPATH=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash
+indir=fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+nodes=20
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
+```
+
+
+---
+</details>
