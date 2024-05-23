@@ -756,24 +756,24 @@ less -S $outdir/fqValidationReport.txt file
 Check that all 5 files were created for each fqgz file:
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
 111
-[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r2.tagged.fastq.gz | wc -l
 110
-[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
-111
-[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+111  
 110
-[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1_screen.txt | wc -l
 111
-[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r2_screen.txt | wc -l
 111
-[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1_screen.png | wc -l
 111
-[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1_screen.png | wc -l
 111
-[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1_screen.html | wc -l
 111
-[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r2_screen.html | wc -l
 110
 ```
 For each, you should have the same number as the number of input files (number of fq.gz files):
