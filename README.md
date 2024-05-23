@@ -735,6 +735,7 @@ indir=fq_fp1_clmp_fp2
 nodes=20
 [hpc-0356@wahab-01 1st_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
 ```
+---
 ### 11b. Check for Errors
 
 ```
@@ -795,9 +796,111 @@ Looked at the outfiles to see if there are any unzipped files with the word temp
 					ls $outdir/*temp*
 /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_r2.fq.gz_temp_subset.fastq
 ```
+---
 
 ### 11d. Rerun Files That Failed
+I had run into some issues with this portion of code.
+
+<details><summary>To see what went wrong and how it was fixed:</summary>
+<p>
+
+I started by running these lines:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+					outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+					ls $outdir/*temp* | sed 's/^nowga.*\///' | sed 's/_temp_subset\.fastq//' > fqscrn_files_to_rerun_temp.txt
+					cat fqscrn_files_to_rerun_temp.txt
+
+#output
+/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_r2.fq.gz
+```
+
+Then these:
+```
+ls $outdir/*temp*
+rm $outdir/*temp*
+
+#output
+/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_r2.fq.gz_temp_subset.fastq
+```
+
+Then these:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ cat fqscrn_files_to_rerun_noreads.txt fqscrn_files_to_rerun_fatal.txt fqscrn_files_to_rerun_temp.txt | sort | unique > fqscrn_files_to_rerun.txt
+					indir="fq_fp1_clmp_fp2"
+					outdir="/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn"
+					nodes=1
+					rerun_file=fqscrn_files_to_rerun.txt
+
+#output
+bash: unique: command not found
+cat: fqscrn_files_to_rerun_noreads.txt: No such file or directory
+cat: fqscrn_files_to_rerun_fatal.txt: No such file or directory
+```
+
+Because of these error messages, I reran the first lines to see if the file would still come up:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+					ls $outdir/*temp* | sed 's/^nowga.*\///' | sed 's/_temp_subset\.fastq//' > fqscrn_files_to_rerun_temp.txt
+
+#output
+ls: cannot access '/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/*temp*': No such file or directory
+```
+It seemed the file had been deleted.
+Thanks to Jem, she offered this solution:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ nano fqscrn_files_to_rerun.txt
+
+#within the txt file, copy and paste the name of the missing file: Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_r2.fq.gz
+#exit and save
+```
+
+</p>
+</details>
+
+Correct code (thanks to Jem):
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+[hpc-0356@wahab-01 1st_sequencing_run]$ indir="fq_fp1_clmp_fp2"
+					outdir="/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn"
+					nodes=1
+					rerun_file=fqscrn_files_to_rerun.txt
+[hpc-0356@wahab-01 1st_sequencing_run]$ while read -r fqfile; do
+  						sbatch --wrap="bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash $indir $outdir $nodes $fqfile"
+					done < $rerun_file
+```
+Check that it has been rerun:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+[hpc-0356@wahab-01 1st_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
+111
+111
+111
+111
+111
+111
+111
+111
+111
+111
+```
+
+---
+### 11e. Move output files
 
 
 ---
 </details>
+
+
