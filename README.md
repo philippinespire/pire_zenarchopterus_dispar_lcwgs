@@ -104,9 +104,9 @@ cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
 
 ## 7. Check the quality of raw data
 
-Executed Multi_FASTQC.sh 
+Executed `Multi_FASTQC.sh` 
 
-directory changed to 1st_sequencing_run
+directory changed to `1st_sequencing_run`
 ```
 [hpc-0356@wahab-01 fq_raw]$ cd ..
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch --mail-user=gmazzei@ucsc.edu --mail-type=END /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
@@ -783,14 +783,14 @@ For each, you should have the same number as the number of input files (number o
 111
 111
 ```
-Check for any errors in the *out files: (none)
+Check for any errors in the `*out` files: (none)
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ grep 'error' slurm-fqscrn.*out
 					grep 'No reads in' slurm-fqscrn.*out
 					grep 'FATAL' slurm-fqscrn.*out
 ```
 Looked at the outfiles to see if there are any unzipped files with the word temp, which means that the job didn't finish and needs to be rerun:
-* **One hit:** Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_r2.fq.gz_**temp**_subset.fastq
+* **One hit:** `Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_r2.fq.gz_temp_subset.fastq`
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
 					ls $outdir/*temp*
@@ -899,8 +899,73 @@ Check that it has been rerun:
 ---
 ### 11e. Move output files
 
+```
+outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+fqscrndir=fq_fp1_clmp_fp2_fqscrn
+mkdir $fqscrndir
+screen mv $outdir $fqscrndir
+```
+---
+
+### 11f. Run MultiQC
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+```
+#### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
+
+```
+Potential issues:
+
+one hit, one genome, no ID -
+Alb: XX%, Contemp: XX%
+no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) -
+Alb: XX%, Contemp: XX%
+```
 
 ---
+
+</details>
+
+<details><summary>12. Repair FASTQ Files Messed Up by FASTQ_SCREEN</summary>
+<p>
+
+## 12. Repair FASTQ Files Messed Up by FASTQ_SCREEN
+
+#### Execute `runREPAIR.sbatch`
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
+```
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+[hpc-0356@wahab-01 1st_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch
+					DIR=fq_fp1_clmp_fp2_fqscrn_rprd
+					fqPATTERN="*fq.gz"
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+```
+
+#### Run `Multi_FASTQC`
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+```
+
+#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fastqc_report.html):
+
+```
+Potential issues:
+
+% duplication -
+Alb: XX%, Contemp: XX%
+GC content -
+Alb: XX%, Contemp: XX%
+number of reads -
+Alb: XX mil, Contemp: XX mil
+```
+
+---
+
 </details>
 
 
