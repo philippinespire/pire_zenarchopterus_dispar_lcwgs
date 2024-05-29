@@ -957,11 +957,11 @@ Alb: XX%, Contemp: XX%
 Potential issues:
 
 % duplication -
-Alb: XX%, Contemp: XX%
+Alb: 0.4-3%, Contemp: 0.5-3%
 GC content -
-Alb: XX%, Contemp: XX%
+Alb: 36-51%, Contemp: 41-48%
 number of reads -
-Alb: XX mil, Contemp: XX mil
+Alb: 0-34.5 mil, Contemp: 0-7 mil
 ```
 
 ---
