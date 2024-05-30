@@ -913,14 +913,18 @@ screen mv $outdir $fqscrndir
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
 ```
 #### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
+FastQ Screen: Mapped Reads:
 
+* multiple genomes were the largest hit between both Albatross and Contemporary samples (around 3-5% in contemporary; 2-4% albatross)
+* there were 3 Albatross samples that did not have as high of a percentage in the "No hits" catergory. The three samples seem to have bacterial contamination:
+	* `Zdi-ADup_012-Ex1-11A`: bacteria 21.7%
+ 	* `Zdi-ADup_013-Ex1-12F`: bacteria 11.1%
+ 	* `Zdi-ADup_024-Ex1-12E`: bacteria 7.7%
+ 
 ```
-Potential issues:
-
-one hit, one genome, no ID -
-Alb: XX%, Contemp: XX%
-no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) -
-Alb: XX%, Contemp: XX%
+‣ no hits -
+	• Alb: 90.6-97%, 3 samples were much lower: 67.6%, 74.1%, and 82.3%, respectively
+	• Contemp: 93.3-96.1%
 ```
 
 ---
@@ -952,20 +956,269 @@ Alb: XX%, Contemp: XX%
 ```
 
 #### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fastqc_report.html):
+* per base sequence content: about half not passing- variation between 1-10 bp
+* per sequence GC content: about one-fifth not passing (mainly albatross samples)
+	* 1 fail was `Zdi-ADup_012-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R1`, likely bacterial contamination
+* sequence length distribution: warning for all samples
 
 ```
-Potential issues:
-
-% duplication -
-Alb: 0.4-3%, Contemp: 0.5-3%
-GC content -
-Alb: 36-51%, Contemp: 41-48%
-number of reads -
-Alb: 0-34.5 mil, Contemp: 0-7 mil
+‣ % duplication -
+	• Alb: 0.4-3%
+	• Contemp: 0.5-3%
+‣ GC content -
+	• Alb: 36-51%
+	• Contemp: 41-48%
+‣ number of reads -
+	• Alb: 0-34.5 mil
+	• Contemp: 0-7 mil
 ```
+
+<details><summary>* Multi_FASTQC Report:</summary>
+<p>
+  
+```
+
+Sample Name	                              % Dups	% GC	Length	M Seqs
+Zdi-ADup_001-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R1	2.1%	40%	94 bp	14.2
+Zdi-ADup_001-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R2	2.3%	40%	94 bp	14.2
+Zdi-ADup_002-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	40%	83 bp	13.7
+Zdi-ADup_002-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R2	1.0%	40%	83 bp	13.7
+Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	41%	82 bp	15.3
+Zdi-ADup_003-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	40%	82 bp	15.3
+Zdi-ADup_004-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R1	0.5%	39%	77 bp	0.0
+Zdi-ADup_004-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R2	0.5%	39%	77 bp	0.0
+Zdi-ADup_005-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R1	0.8%	40%	77 bp	0.7
+Zdi-ADup_005-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	40%	77 bp	0.7
+Zdi-ADup_006-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R1	1.3%	39%	93 bp	18.2
+Zdi-ADup_006-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R2	1.4%	39%	93 bp	18.2
+Zdi-ADup_007-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R1	2.1%	43%	80 bp	17.2
+Zdi-ADup_007-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R2	2.1%	43%	80 bp	17.2
+Zdi-ADup_008-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	37%	91 bp	3.0
+Zdi-ADup_008-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R2	1.3%	37%	90 bp	3.0
+Zdi-ADup_009-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	42%	80 bp	0.8
+Zdi-ADup_009-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	42%	80 bp	0.8
+Zdi-ADup_010-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	41%	86 bp	0.2
+Zdi-ADup_010-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R2	1.0%	41%	86 bp	0.2
+Zdi-ADup_011-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	41%	84 bp	13.5
+Zdi-ADup_011-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R2	1.2%	41%	84 bp	13.5
+Zdi-ADup_012-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R1	2.9%	51%	118 bp	0.2
+Zdi-ADup_012-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R2	3.0%	51%	118 bp	0.2
+Zdi-ADup_013-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	47%	96 bp	0.9
+Zdi-ADup_013-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R2	1.2%	47%	96 bp	0.9
+Zdi-ADup_014-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R1	2.0%	45%	90 bp	5.5
+Zdi-ADup_014-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R2	2.2%	45%	90 bp	5.5
+Zdi-ADup_015-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	41%	83 bp	12.1
+Zdi-ADup_015-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	41%	83 bp	12.1
+Zdi-ADup_016-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R1	1.7%	38%	93 bp	18.7
+Zdi-ADup_016-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R2	1.9%	38%	92 bp	18.7
+Zdi-ADup_017-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	42%	83 bp	11.4
+Zdi-ADup_017-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R2	1.1%	42%	83 bp	11.4
+Zdi-ADup_018-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R1	1.4%	42%	86 bp	18.1
+Zdi-ADup_018-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R2	1.5%	42%	86 bp	18.1
+Zdi-ADup_019-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	39%	86 bp	3.5
+Zdi-ADup_019-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	39%	86 bp	3.5
+Zdi-ADup_020-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R1	0.5%	43%	100 bp	0.0
+Zdi-ADup_020-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R2	0.5%	43%	100 bp	0.0
+Zdi-ADup_021-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	41%	92 bp	0.1
+Zdi-ADup_021-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	41%	92 bp	0.1
+Zdi-ADup_022-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R1	1.8%	40%	84 bp	34.5
+Zdi-ADup_022-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R2	1.9%	40%	84 bp	34.5
+Zdi-ADup_023-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	42%	85 bp	4.7
+Zdi-ADup_023-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R2	1.0%	42%	85 bp	4.7
+Zdi-ADup_024-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R1	1.6%	45%	82 bp	2.8
+Zdi-ADup_024-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R2	1.7%	45%	81 bp	2.8
+Zdi-ADup_025-Ex1-2A-lcwgs-1-1.clmp.fp2_repr.R1	0.6%	38%	75 bp	0.1
+Zdi-ADup_025-Ex1-2A-lcwgs-1-1.clmp.fp2_repr.R2	0.6%	38%	75 bp	0.1
+Zdi-ADup_026-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	44%	76 bp	1.0
+Zdi-ADup_026-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	44%	76 bp	1.0
+Zdi-ADup_027-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R1	1.9%	45%	78 bp	20.5
+Zdi-ADup_027-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R2	1.9%	45%	78 bp	20.5
+Zdi-ADup_028-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	39%	77 bp	8.3
+Zdi-ADup_028-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	39%	77 bp	8.3
+Zdi-ADup_029-Ex1-1A-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	39%	102 bp	0.0
+Zdi-ADup_029-Ex1-1A-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	39%	102 bp	0.0
+Zdi-ADup_030-Ex1-1B-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	38%	85 bp	0.1
+Zdi-ADup_030-Ex1-1B-lcwgs-1-1.clmp.fp2_repr.R2	1.1%	38%	85 bp	0.1
+Zdi-ADup_031-Ex1-1C-lcwgs-1-1.clmp.fp2_repr.R1	1.8%	39%	98 bp	0.2
+Zdi-ADup_031-Ex1-1C-lcwgs-1-1.clmp.fp2_repr.R2	1.8%	39%	98 bp	0.2
+Zdi-ADup_032-Ex1-1D-lcwgs-1-1.clmp.fp2_repr.R1	2.5%	42%	94 bp	2.0
+Zdi-ADup_032-Ex1-1D-lcwgs-1-1.clmp.fp2_repr.R2	2.6%	42%	94 bp	2.0
+Zdi-ADup_033-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	37%	83 bp	0.3
+Zdi-ADup_033-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	37%	83 bp	0.3
+Zdi-ADup_034-Ex1-1F-lcwgs-1-1.clmp.fp2_repr.R1	0.8%	38%	90 bp	0.3
+Zdi-ADup_034-Ex1-1F-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	38%	90 bp	0.3
+Zdi-ADup_035-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	37%	76 bp	1.1
+Zdi-ADup_035-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	37%	76 bp	1.1
+Zdi-ADup_036-Ex1-1H-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	38%	84 bp	0.3
+Zdi-ADup_036-Ex1-1H-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	38%	84 bp	0.3
+Zdi-ADup_037-Ex1-3D-lcwgs-1-1.clmp.fp2_repr.R1	0.6%	36%	90 bp	0.2
+Zdi-ADup_037-Ex1-3D-lcwgs-1-1.clmp.fp2_repr.R2	0.6%	36%	90 bp	0.2
+Zdi-ADup_038-Ex1-2B-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	37%	83 bp	0.1
+Zdi-ADup_038-Ex1-2B-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	37%	83 bp	0.1
+Zdi-ADup_039-Ex1-2C-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	37%	93 bp	0.2
+Zdi-ADup_039-Ex1-2C-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	37%	93 bp	0.2
+Zdi-ADup_040-Ex1-2D-lcwgs-1-1.clmp.fp2_repr.R1	0.6%	37%	90 bp	0.3
+Zdi-ADup_040-Ex1-2D-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	37%	90 bp	0.3
+Zdi-ADup_041-Ex1-2E-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	37%	90 bp	0.1
+Zdi-ADup_041-Ex1-2E-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	37%	90 bp	0.1
+Zdi-ADup_042-Ex1-2F-lcwgs-1-1.clmp.fp2_repr.R1	1.4%	37%	86 bp	15.1
+Zdi-ADup_042-Ex1-2F-lcwgs-1-1.clmp.fp2_repr.R2	1.6%	37%	86 bp	15.1
+Zdi-ADup_043-Ex1-2G-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	37%	84 bp	1.1
+Zdi-ADup_043-Ex1-2G-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	37%	84 bp	1.1
+Zdi-ADup_044-Ex1-2H-lcwgs-1-1.clmp.fp2_repr.R1	1.4%	36%	82 bp	6.6
+Zdi-ADup_044-Ex1-2H-lcwgs-1-1.clmp.fp2_repr.R2	1.5%	36%	82 bp	6.6
+Zdi-ADup_045-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.R1	0.4%	37%	73 bp	0.3
+Zdi-ADup_045-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.R2	0.4%	37%	73 bp	0.3
+Zdi-ADup_046-Ex1-3B-lcwgs-1-1.clmp.fp2_repr.R1	0.6%	36%	83 bp	0.1
+Zdi-ADup_046-Ex1-3B-lcwgs-1-1.clmp.fp2_repr.R2	0.6%	36%	83 bp	0.1
+Zdi-ADup_047-Ex1-3C-lcwgs-1-1.clmp.fp2_repr.R1	2.2%	38%	80 bp	1.5
+Zdi-ADup_047-Ex1-3C-lcwgs-1-1.clmp.fp2_repr.R2	2.3%	38%	80 bp	1.5
+Zdi-CDup_001-Ex1-5D-lcwgs-1-1.clmp.fp2_repr.R1	1.4%	45%	96 bp	1.2
+Zdi-CDup_001-Ex1-5D-lcwgs-1-1.clmp.fp2_repr.R2	1.6%	45%	96 bp	1.2
+Zdi-CDup_002-Ex1-5E-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	44%	101 bp	0.1
+Zdi-CDup_002-Ex1-5E-lcwgs-1-1.clmp.fp2_repr.R2	1.1%	44%	101 bp	0.1
+Zdi-CDup_003-Ex1-5F-lcwgs-1-1.clmp.fp2_repr.R1	1.6%	46%	99 bp	0.7
+Zdi-CDup_003-Ex1-5F-lcwgs-1-1.clmp.fp2_repr.R2	1.8%	45%	98 bp	0.7
+Zdi-CDup_004-Ex1-5G-lcwgs-1-1.clmp.fp2_repr.R1	1.4%	44%	101 bp	0.1
+Zdi-CDup_004-Ex1-5G-lcwgs-1-1.clmp.fp2_repr.R2	1.4%	44%	101 bp	0.1
+Zdi-CDup_005-Ex1-5H-lcwgs-1-1.clmp.fp2_repr.R1	2.1%	44%	112 bp	2.2
+Zdi-CDup_005-Ex1-5H-lcwgs-1-1.clmp.fp2_repr.R2	2.2%	44%	112 bp	2.2
+Zdi-CDup_006-Ex1-6A-lcwgs-1-1.clmp.fp2_repr.R1	2.3%	43%	117 bp	4.8
+Zdi-CDup_006-Ex1-6A-lcwgs-1-1.clmp.fp2_repr.R2	2.6%	43%	116 bp	4.8
+Zdi-CDup_007-Ex1-6B-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	44%	94 bp	1.2
+Zdi-CDup_007-Ex1-6B-lcwgs-1-1.clmp.fp2_repr.R2	1.1%	44%	94 bp	1.2
+Zdi-CDup_008-Ex1-6C-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	43%	109 bp	0.5
+Zdi-CDup_008-Ex1-6C-lcwgs-1-1.clmp.fp2_repr.R2	1.1%	43%	108 bp	0.5
+Zdi-CDup_010-Ex1-6D-lcwgs-1-1.clmp.fp2_repr.R1	1.7%	44%	111 bp	3.6
+Zdi-CDup_010-Ex1-6D-lcwgs-1-1.clmp.fp2_repr.R2	1.9%	44%	110 bp	3.6
+Zdi-CDup_011-Ex1-6E-lcwgs-1-1.clmp.fp2_repr.R1	1.5%	43%	111 bp	2.6
+Zdi-CDup_011-Ex1-6E-lcwgs-1-1.clmp.fp2_repr.R2	1.5%	43%	110 bp	2.6
+Zdi-CDup_012-Ex1-6F-lcwgs-1-1.clmp.fp2_repr.R1	1.9%	45%	105 bp	0.6
+Zdi-CDup_012-Ex1-6F-lcwgs-1-1.clmp.fp2_repr.R2	2.1%	44%	105 bp	0.6
+Zdi-CDup_013-Ex1-6G-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	42%	111 bp	0.3
+Zdi-CDup_013-Ex1-6G-lcwgs-1-1.clmp.fp2_repr.R2	1.1%	42%	111 bp	0.3
+Zdi-CDup_014-Ex1-6H-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	43%	95 bp	3.5
+Zdi-CDup_014-Ex1-6H-lcwgs-1-1.clmp.fp2_repr.R2	1.1%	43%	95 bp	3.5
+Zdi-CDup_015-Ex1-7A-lcwgs-1-1.clmp.fp2_repr.R1	0.8%	43%	105 bp	0.3
+Zdi-CDup_015-Ex1-7A-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	43%	105 bp	0.3
+Zdi-CDup_016-Ex1-7B-lcwgs-1-1.clmp.fp2_repr.R1	1.2%	44%	94 bp	2.6
+Zdi-CDup_016-Ex1-7B-lcwgs-1-1.clmp.fp2_repr.R2	1.3%	44%	94 bp	2.6
+Zdi-CDup_017-Ex1-7C-lcwgs-1-1.clmp.fp2_repr.R1	0.8%	44%	95 bp	0.7
+Zdi-CDup_017-Ex1-7C-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	44%	95 bp	0.7
+Zdi-CDup_018-Ex1-7D-lcwgs-1-1.clmp.fp2_repr.R1	2.1%	46%	106 bp	2.4
+Zdi-CDup_018-Ex1-7D-lcwgs-1-1.clmp.fp2_repr.R2	2.4%	46%	105 bp	2.4
+Zdi-CDup_019-Ex1-7E-lcwgs-1-1.clmp.fp2_repr.R1	1.3%	43%	102 bp	4.5
+Zdi-CDup_019-Ex1-7E-lcwgs-1-1.clmp.fp2_repr.R2	1.4%	43%	102 bp	4.5
+Zdi-CDup_020-Ex1-7F-lcwgs-1-1.clmp.fp2_repr.R1	1.3%	43%	97 bp	0.1
+Zdi-CDup_020-Ex1-7F-lcwgs-1-1.clmp.fp2_repr.R2	1.3%	43%	97 bp	0.1
+Zdi-CDup_021-Ex1-7G-lcwgs-1-1.clmp.fp2_repr.R1	1.2%	43%	101 bp	5.0
+Zdi-CDup_021-Ex1-7G-lcwgs-1-1.clmp.fp2_repr.R2	1.4%	43%	101 bp	5.0
+Zdi-CDup_022-Ex1-7H-lcwgs-1-1.clmp.fp2_repr.R1	0.8%	42%	95 bp	0.7
+Zdi-CDup_022-Ex1-7H-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	42%	95 bp	0.7
+Zdi-CDup_023-Ex1-8A-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	43%	102 bp	0.1
+Zdi-CDup_023-Ex1-8A-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	43%	102 bp	0.1
+Zdi-CDup_024-Ex1-8B-lcwgs-1-1.clmp.fp2_repr.R1	1.3%	44%	102 bp	0.0
+Zdi-CDup_024-Ex1-8B-lcwgs-1-1.clmp.fp2_repr.R2	1.3%	44%	102 bp	0.0
+Zdi-CDup_025-Ex1-8C-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	43%	95 bp	0.1
+Zdi-CDup_025-Ex1-8C-lcwgs-1-1.clmp.fp2_repr.R2	1.0%	43%	95 bp	0.1
+Zdi-CDup_026-Ex1-8D-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	44%	96 bp	0.5
+Zdi-CDup_026-Ex1-8D-lcwgs-1-1.clmp.fp2_repr.R2	1.0%	44%	96 bp	0.5
+Zdi-CDup_027-Ex1-8E-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	43%	95 bp	0.0
+Zdi-CDup_027-Ex1-8E-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	43%	95 bp	0.0
+Zdi-CDup_028-Ex1-8F-lcwgs-1-1.clmp.fp2_repr.R1	1.9%	44%	107 bp	0.1
+Zdi-CDup_028-Ex1-8F-lcwgs-1-1.clmp.fp2_repr.R2	1.9%	44%	107 bp	0.1
+Zdi-CDup_029-Ex1-8G-lcwgs-1-1.clmp.fp2_repr.R1	1.5%	42%	110 bp	0.1
+Zdi-CDup_029-Ex1-8G-lcwgs-1-1.clmp.fp2_repr.R2	1.5%	42%	110 bp	0.1
+Zdi-CDup_030-Ex1-8H-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	43%	100 bp	0.0
+Zdi-CDup_030-Ex1-8H-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	43%	99 bp	0.0
+Zdi-CDup_031-Ex1-9A-lcwgs-1-1.clmp.fp2_repr.R1	1.5%	43%	102 bp	2.7
+Zdi-CDup_031-Ex1-9A-lcwgs-1-1.clmp.fp2_repr.R2	1.7%	43%	101 bp	2.7
+Zdi-CDup_032-Ex1-9B-lcwgs-1-1.clmp.fp2_repr.R1	1.7%	44%	95 bp	0.2
+Zdi-CDup_032-Ex1-9B-lcwgs-1-1.clmp.fp2_repr.R2	1.8%	44%	95 bp	0.2
+Zdi-CDup_033-Ex1-9C-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	45%	91 bp	0.9
+Zdi-CDup_033-Ex1-9C-lcwgs-1-1.clmp.fp2_repr.R2	1.0%	45%	90 bp	0.9
+Zdi-CDup_034-Ex1-9D-lcwgs-1-1.clmp.fp2_repr.R1	1.2%	43%	98 bp	2.2
+Zdi-CDup_034-Ex1-9D-lcwgs-1-1.clmp.fp2_repr.R2	1.3%	43%	97 bp	2.2
+Zdi-CDup_035-Ex1-9E-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	44%	98 bp	0.4
+Zdi-CDup_035-Ex1-9E-lcwgs-1-1.clmp.fp2_repr.R2	1.0%	44%	98 bp	0.4
+Zdi-CDup_036-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R1	1.3%	44%	97 bp	0.1
+Zdi-CDup_036-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R2	1.3%	44%	97 bp	0.1
+Zdi-CDup_037-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R1	1.2%	43%	101 bp	0.4
+Zdi-CDup_037-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R2	1.3%	43%	101 bp	0.4
+Zdi-CDup_038-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R1	1.6%	44%	93 bp	0.2
+Zdi-CDup_038-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R2	1.7%	44%	93 bp	0.2
+Zdi-CDup_039-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	44%	104 bp	0.2
+Zdi-CDup_039-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	44%	104 bp	0.2
+Zdi-CDup_040-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R1	0.6%	43%	91 bp	0.2
+Zdi-CDup_040-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	43%	90 bp	0.2
+Zdi-CDup_041-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	44%	88 bp	0.5
+Zdi-CDup_041-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	44%	88 bp	0.5
+Zdi-CDup_042-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R1	1.3%	44%	100 bp	2.4
+Zdi-CDup_042-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R2	1.5%	44%	100 bp	2.4
+Zdi-CDup_043-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R1	2.6%	45%	112 bp	4.4
+Zdi-CDup_043-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R2	3.0%	45%	112 bp	4.4
+Zdi-CDup_044-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	44%	92 bp	0.1
+Zdi-CDup_044-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R2	1.1%	44%	92 bp	0.1
+Zdi-CDup_045-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R1	0.8%	43%	94 bp	0.8
+Zdi-CDup_045-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	43%	94 bp	0.8
+Zdi-CDup_046-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	44%	95 bp	0.4
+Zdi-CDup_046-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	44%	95 bp	0.4
+Zdi-CDup_047-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R1	1.3%	43%	89 bp	7.0
+Zdi-CDup_047-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R2	1.5%	43%	88 bp	7.0
+Zdi-CDup_048-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	44%	91 bp	0.1
+Zdi-CDup_048-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R2	1.1%	44%	90 bp	0.1
+Zdi-CDup_049-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R1	1.2%	44%	91 bp	0.2
+Zdi-CDup_049-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R2	1.3%	44%	91 bp	0.2
+Zdi-CDup_050-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R1	0.7%	44%	91 bp	0.2
+Zdi-CDup_050-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	44%	91 bp	0.2
+Zdi-CDup_051-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R1	1.4%	44%	96 bp	0.2
+Zdi-CDup_051-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R2	1.5%	44%	96 bp	0.2
+Zdi-CDup_053-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R1	0.8%	44%	93 bp	0.1
+Zdi-CDup_053-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R2	0.8%	44%	93 bp	0.1
+Zdi-CDup_054-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R1	0.5%	45%	79 bp	0.4
+Zdi-CDup_054-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R2	0.6%	45%	78 bp	0.4
+Zdi-CDup_055-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R1	0.8%	44%	95 bp	0.1
+Zdi-CDup_055-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R2	0.7%	44%	95 bp	0.1
+Zdi-CDup_056-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R1	2.0%	43%	121 bp	4.2
+Zdi-CDup_056-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R2	2.3%	43%	121 bp	4.2
+Zdi-CDup_057-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R1	1.4%	44%	105 bp	0.8
+Zdi-CDup_057-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R2	1.5%	44%	105 bp	0.8
+Zdi-CDup_058-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R1	0.9%	44%	90 bp	3.8
+Zdi-CDup_058-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	44%	90 bp	3.8
+Zdi-CDup_059-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R1	1.5%	43%	118 bp	0.6
+Zdi-CDup_059-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R2	1.6%	43%	118 bp	0.6
+Zdi-CDup_060-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R1	1.0%	43%	102 bp	0.1
+Zdi-CDup_060-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R2	1.0%	43%	102 bp	0.1
+Zdi-CDup_061-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R1	0.8%	44%	84 bp	1.5
+Zdi-CDup_061-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R2	0.9%	44%	84 bp	1.5
+Zdi-CDup_062-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R1	1.2%	43%	96 bp	0.2
+Zdi-CDup_062-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R2	1.2%	43%	96 bp	0.2
+Zdi-CDup_064-Ex1-5A-lcwgs-1-1.clmp.fp2_repr.R1	1.6%	42%	122 bp	1.4
+Zdi-CDup_064-Ex1-5A-lcwgs-1-1.clmp.fp2_repr.R2	1.8%	41%	122 bp	1.4
+Zdi-CDup_065-Ex1-5B-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	42%	104 bp	0.3
+Zdi-CDup_065-Ex1-5B-lcwgs-1-1.clmp.fp2_repr.R2	1.2%	42%	104 bp	0.3
+Zdi-CDup_066-Ex1-5C-lcwgs-1-1.clmp.fp2_repr.R1	2.2%	48%	96 bp	2.4
+Zdi-CDup_066-Ex1-5C-lcwgs-1-1.clmp.fp2_repr.R2	2.4%	48%	96 bp	2.4
+Zdi-CDup_071-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R1	1.1%	43%	104 bp	0.3
+Zdi-CDup_071-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R2	1.2%	43%	104 bp	0.3
+
+```
+
+</p>
+</details>
 
 ---
 
 </details>
 
 
+<details><summary>14. Clean Up</summary>
+<p>
+
+## 14. Clean Up
+```
+```
+
+---
+
+</details>
