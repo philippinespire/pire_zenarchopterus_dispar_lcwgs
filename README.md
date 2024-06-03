@@ -1216,7 +1216,12 @@ Zdi-CDup_071-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R2	1.2%	43%	104 bp	0.3
 <p>
 
 ## 14. Clean Up
+I had a file called "logs" that I had to rename to "logs.out" in order for the following code to work
 ```
+[hpc-0356@wahab-01 1st_sequencing_run]$ mv logs logs.out
+
+[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir logs
+[hpc-0356@wahab-01 1st_sequencing_run]$ mv *out logs/
 ```
 
 ---
