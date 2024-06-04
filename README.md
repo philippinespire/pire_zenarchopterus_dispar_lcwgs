@@ -5,7 +5,10 @@ Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar
 fq_gz processing being done by Gianna Mazzei.
 
 ---
-## 1. fq.gz pre-processing
+<details><summary>1. fq.gz Pre-processing</summary>
+	
+## 1. fq.gz Pre-processing
+→ (*) _denotes steps with MultiQC Report Analyses_
 <details><summary>0. Set-up</summary>
 <p>
 
@@ -99,10 +102,10 @@ cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
 
 </p>
 
-<details><summary>7. Check the quality of raw data</summary>
+<details><summary>7. Check the quality of raw data (*)</summary>
 <p>
 
-## 7. Check the quality of raw data
+## 7. Check the quality of raw data (*)
 
 Executed `Multi_FASTQC.sh` 
 
@@ -112,7 +115,7 @@ directory changed to `1st_sequencing_run`
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch --mail-user=gmazzei@ucsc.edu --mail-type=END /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
 ```
 
-### Review the MultiQC output (fq_raw/fastqc_report.html):
+### MultiQC output (fq_raw/fastqc_report.html):
 * GC content is high on average
 	* ~50% for Albatross; ~60% for Contemporary
 * Per Sequence GC Content peaks aroung 70% -> potential for bacterial contamination
@@ -367,14 +370,15 @@ Zdi-CDup_071-Ex1-12H-lcwgs-1-1.2	50.5%	69%	0.6
 ---
 </details>
 
-<details><summary>8. First trim</summary>
+<details><summary>8. First trim (*)</summary>
 <p>
 
-## 8. First trim
-
+## 8. First trim (*)
+	
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
 ```
+
 ### Review the FastQC output (fq_fp1/1st_fastp_report.html):
 After 1st trim:
 * % Dup went considerably down
@@ -564,10 +568,10 @@ module load container_env R/4.3
 ---
 </details>
 
-<details><summary>10. Second trim</summary>
+<details><summary>10. Second trim (*)</summary>
 <p>
 
-## 10. Second trim
+## 10. Second trim (*)
  
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
@@ -720,11 +724,13 @@ Zdi-CDup_071-Ex1-12H-lcwgs-1-1.clmp.r1r2_fastp		1.4%	43.9%	99.3%	0.6%
 ---
 </details>
 
-<details><summary>11. Decontaminate</summary>
+<details><summary>11. Decontaminate files (*)</summary>
 <p>
 
-## 11. Decontaminate files
+## 11. Decontaminate files (*)
 
+<details><summary>11a. Run fastq_screen</summary>
+	
 ### 11a. Run fastq_screen
 
 ```
@@ -736,6 +742,11 @@ nodes=20
 [hpc-0356@wahab-01 1st_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
 ```
 ---
+
+</details>
+
+<details><summary>11b. Check for Errors</summary>
+	
 ### 11b. Check for Errors
 
 ```
@@ -798,6 +809,10 @@ Looked at the outfiles to see if there are any unzipped files with the word temp
 ```
 ---
 
+</details>
+
+<details><summary>11d. Rerun Files That Failed</summary>
+	
 ### 11d. Rerun Files That Failed
 I had run into some issues with this portion of code.
 
@@ -897,6 +912,11 @@ Check that it has been rerun:
 ```
 
 ---
+
+</details>
+
+<details><summary>11e. Move output files</summary>
+	
 ### 11e. Move output files
 
 ```
@@ -906,8 +926,11 @@ mkdir $fqscrndir
 screen mv $outdir $fqscrndir
 ```
 ---
+</details>
 
-### 11f. Run MultiQC
+<details><summary>11f. Run MultiQC (*)</summary>
+	
+### 11f. Run MultiQC (*)
 
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
@@ -927,14 +950,17 @@ FastQ Screen: Mapped Reads:
 	• Contemp: 93.3-96.1%
 ```
 
+</details>
+
 ---
+
 
 </details>
 
-<details><summary>12. Repair FASTQ Files Messed Up by FASTQ_SCREEN</summary>
+<details><summary>12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)</summary>
 <p>
 
-## 12. Repair FASTQ Files Messed Up by FASTQ_SCREEN
+## 12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)
 
 #### Execute `runREPAIR.sbatch`
 
@@ -1224,6 +1250,71 @@ I had a file called "logs" that I had to rename to "logs.out" in order for the f
 [hpc-0356@wahab-01 1st_sequencing_run]$ mv *out logs/
 ```
 
+</details>
+
 ---
 
 </details>
+
+<details><summary>2. Get your reference genome</summary>
+
+## 2. Get your reference genome
+
+Make a new directory `refGenome` and `cd` into it
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir refGenome
+[hpc-0356@wahab-01 1st_sequencing_run]$ cd refGenome/
+```
+
+Download the [genome from NCBI](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/028/564/865/GCA_028564865.1_ASM2856486v1/)
+
+```
+[hpc-0356@wahab-01 refGenome]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/028/564/865/GCA_028564865.1_ASM2856486v1/GCA_028564865.1_ASM2856486v1_genomic.fna.gz
+```
+
+***Skip remainder of step 2, along with step 3: Curate the reference genome, because there aren't any scaffolds identified as mtDNA.***
+
+---
+
+</details>
+
+<details><summary>4. Map your reads to your reference genome</summary>
+
+## 4. Map your reads to your reference genome
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
+[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir mkBAM_ddocent
+[hpc-0356@wahab-01 1st_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
+```
+
+Copy reference genome to mkBAM_ddocent folder
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ cp refGenome/GCA_028564865.1_ASM2856486v1_genomic.fna.gz mkBAM_ddocent/reference.genbank.Zdi.fasta
+
+[hpc-0356@wahab-01 1st_sequencing_run]$ cd mkBAM_ddocent/
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/configs/config.6.lcwgs .
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+```
+
+---
+
+</details>
+
+<details><summary>5. Filter the binary alignment maps</summary>
+
+## 5. Filter the binary alignment maps
+
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
+```
+
+---
+
+</details>
+
+<details><summary>6. Summarize Read Mapping Performance / Merge Runs</summary>
+
+## 6. Summarize Read Mapping Performance / Merge Runs
+
