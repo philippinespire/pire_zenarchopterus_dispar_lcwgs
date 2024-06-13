@@ -1250,10 +1250,60 @@ I had a file called "logs" that I had to rename to "logs.out" in order for the f
 [hpc-0356@wahab-01 1st_sequencing_run]$ mv *out logs/
 ```
 
+---
+
+</details>
+
+<details><summary>17. Generate Number of Mapped Reads</summary>
+<p>
+	
+## 17. Generate Number of Mapped Reads
+
+This step was completed after steps 2-5 had been completed outside of 1. fq.gz pre-processing
+
+<details><summary>Issues that needed to be resolved beforehand:</summary>
+<p>
+
+My `config.6.lcwgs` file needed to be edited
+</p>
+	
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano config.6.lcwgs
+
+# within file:
+# change Cutoff1 and Cutoff2 to "genbank" and "Zdi"
+----------mkREF: Settings for de novo assembly of the reference genome----------------------------------------->
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRA>
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdh>
+genbank         Cutoff1 (integer)                                                                              >
+Zdi             Cutoff2 (integer)                                                                              >
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-base>
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-base>
+--------------------------------------------------------------------------------------------------------------->
+```
+
+And then we realized my reference genome `reference.genbank.Zdi.fasta` needed to be unzipped:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ mv reference.genbank.Zdi.fasta reference.genbank.Zdi.fasta.gz
+[hpc-0356@wahab-01 mkBAM_ddocent]$ gunzip reference.genbank.Zdi.fasta.gz
+[hpc-0356@wahab-01 mkBAM_ddocent]$ less reference.genbank.Zdi.fasta
+```
+
+Then I reran:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+```
+
+</details>
+
+```
+#this is not working:
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM mkBAM/coverageMappedReads
+```
+
 </details>
 
 ---
-
 </details>
 
 <details><summary>2. Get your reference genome</summary>
