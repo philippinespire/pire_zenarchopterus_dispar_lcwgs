@@ -1294,10 +1294,34 @@ Then I reran:
 [hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
 ```
 
+Then I tried to run this line of code, which is what step 17 calls for, but it did not work:
+```
+#did not work
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM mkBAM/coverageMappedReads
+```
+
+So I had to run this:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano dDocentHPC.sbatch
+
+# within file:
+# change where the "#" is
+
+enable_lmod
+# module load container_env ddocent/2.7.8
+module load container_env ddocent/2.9.4
+```
+
+Then I ran this again:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs 
+```
+
 </details>
 
+Once the issues were resolved, this was run:
 ```
-#this is not working:
 [hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM mkBAM/coverageMappedReads
 ```
 
