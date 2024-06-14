@@ -1289,18 +1289,7 @@ And then we realized my reference genome `reference.genbank.Zdi.fasta` needed to
 [hpc-0356@wahab-01 mkBAM_ddocent]$ less reference.genbank.Zdi.fasta
 ```
 
-Then I reran:
-```
-[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
-```
-
-Then I tried to run this line of code, which is what step 17 calls for, but it did not work:
-```
-#did not work
-[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM mkBAM/coverageMappedReads
-```
-
-So I had to run this:
+And I needed to edit the `dDocentHPC.sbatch` file for it to work later:
 ```
 [hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
 [hpc-0356@wahab-01 mkBAM_ddocent]$ nano dDocentHPC.sbatch
@@ -1313,9 +1302,11 @@ enable_lmod
 module load container_env ddocent/2.9.4
 ```
 
-Then I ran this again:
+Now I was able to rereun these:
 ```
-[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs 
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
 ```
 
 </details>
@@ -1329,6 +1320,7 @@ Once the issues were resolved, this was run:
 
 ---
 </details>
+
 
 <details><summary>2. Get your reference genome</summary>
 
