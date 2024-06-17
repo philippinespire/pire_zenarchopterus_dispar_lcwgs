@@ -1,6 +1,8 @@
-# _Zenarchopterus dispar_ lcWGS 1st sequencing run (test lane)
+# _Zenarchopterus dispar_ lcWGS 
+
+## 1st sequencing run (test lane)
 ---
-Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar_ 
+Analysis of low-coverage whole genome sequencing data for Zdi 1st_sequencing_run.
 
 fq_gz processing being done by Gianna Mazzei.
 
