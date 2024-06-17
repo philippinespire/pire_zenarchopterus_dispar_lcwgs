@@ -1309,11 +1309,23 @@ Now I was able to rereun these:
 [hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
 ```
 
+But now this wasn't working because `mkBAM` should have been `mkBAM_ddocent`:
+```
+# not working
+# [hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM mkBAM/coverageMappedReads
+```
+
+And this incorrect command made an mkBAM folder with empty files, so I had to edit the code and remove the useless directory.
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cd ..
+[hpc-0356@wahab-01 1st_sequencing_run]$ rm -r mkBAM
+```
+
 </details>
 
 Once the issues were resolved, this was run:
 ```
-[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM mkBAM/coverageMappedReads
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
 ```
 
 </details>
