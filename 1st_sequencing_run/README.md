@@ -1469,14 +1469,23 @@ Copy the runMitoZ bash and sbatch scripts to your sequencing project directory a
 
 [hpc-0356@wahab-01 1st_sequencing_run]$ bash runMitoZ_array.bash /home/hpc-0356/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2 32
 ```
-<details><summary>Minor issue that needed to be fixed:</summary>
+<details><summary>Minor issues that needed to be fixed:</summary>
 <p>
 	
 Within the `runMitoZ_array.bash` and `runMitoZ_array.sbatch` files, all instances of `_clmp.fp2_r1.fq.gz` needed to be changed (using `nano`) to `.clmp.fp2_r1.fq.gz` for the previous command to run
 
+Additionally, all of my `MitoZ*.out` files needed to be moved from my `1st_sequencing_run` directory to `fq_fp1_clmp_fp2`
+```
+mv MitoZ*.out fq_fp1_clmp_fp2/
+```
+
 </p>
 </details>
 
+Then run the `process_MitoZ_outputs.sh` script
+```
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ sh process_MitoZ_outputs.sh
+```
 </p>
 </details>
 
