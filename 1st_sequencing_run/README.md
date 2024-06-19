@@ -1467,12 +1467,12 @@ Copy the runMitoZ bash and sbatch scripts to your sequencing project directory a
 ```
 [hpc-0356@wahab-01 ~/pire_zenarchopterus_dispar_lcwgs]$ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMitoZ* 1st_sequencing_run
 
-bash runMitoZ_array.bash /home/hpc-0356/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2 32
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash runMitoZ_array.bash /home/hpc-0356/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2 32
 ```
 <details><summary>Minor issue that needed to be fixed:</summary>
 <p>
 	
-Within the runMitoZ_array.bash file `FQPATTERN=*_clmp.fp2_r1.fq.gz` needed to be changed (using `nano`) to `FQPATTERN=*.clmp.fp2_r1.fq.gz` for the previous command to run
+Within the `runMitoZ_array.bash` and `runMitoZ_array.sbatch` files, all instances of `_clmp.fp2_r1.fq.gz` needed to be changed (using `nano`) to `.clmp.fp2_r1.fq.gz` for the previous command to run
 
 </p>
 </details>
