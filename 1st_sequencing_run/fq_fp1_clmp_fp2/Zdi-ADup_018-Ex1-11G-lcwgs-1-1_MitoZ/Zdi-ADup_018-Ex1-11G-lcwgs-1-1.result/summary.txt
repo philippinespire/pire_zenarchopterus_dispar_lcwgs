@@ -1,0 +1,59 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C175565        3828           no             Etroplus suratensis 
+C175571        5098           no             Cololabis saira     
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C175565        <1     892    892        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C175565        877    952    76         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C175565        952    2639   1688       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C175565        2640   2712   73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C175565        2711   3658   948        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C175565        3658   3727   70         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C175571        5      1119   1115       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C175571        1119   1188   70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C175571        1188   1256   69         +          tRNA   trnS(gcu)  tRNA-Ser                          1              
+C175571        1263   1336   74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C175571        1336   3172   1837       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C175571        3168   3690   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C175571        3690   3759   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C175571        3763   4927   1165       +          CDS    CYTB       cytochrome b                      1              
+C175571        4904   4976   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C175571        4976   5045   70         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+
+
+Protein coding genes totally found:  5
+tRNA genes totally found:            9
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                16
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP6                                 1
+ATP8                                 1
+COX1                                 1
+COX2                                 1
+COX3                                 1
+ND2                                  1
+ND3                                  1
+ND4L                                 1
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Gly                             1
+tRNA-Ile                             1
+tRNA-Lys                             1
+tRNA-Met                             1
+tRNA-Ser                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

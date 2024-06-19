@@ -1,0 +1,58 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C138882        6423           no             Strongylura anastomella
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C138882        12     798    787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C138882        797    867    71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C138882        867    1218   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C138882        1216   1285   70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C138882        1285   1582   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C138882        1575   2956   1382       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C138882        2956   3025   70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C138882        3025   3093   69         +          tRNA   trnS(gcu)  tRNA-Ser                          1              
+C138882        3100   3173   74         +          tRNA   trnL(uag)  tRNA-Leu                          1              
+C138882        3173   5009   1837       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C138882        5005   5527   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C138882        5527   5596   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C138882        5600   >6422  823        +          CDS    CYTB       cytochrome b                      1              
+
+
+Protein coding genes totally found:  7
+tRNA genes totally found:            6
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                13
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP6                                 1
+ATP8                                 1
+COX1                                 1
+COX2                                 1
+ND1                                  1
+ND2                                  1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Ala                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Ile                             1
+tRNA-Leu                             1
+tRNA-Lys                             1
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             1
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

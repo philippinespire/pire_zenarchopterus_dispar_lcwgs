@@ -1,0 +1,58 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C387311        15147          no             Lasiurus borealis   
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C387311        182    954    773        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C387311        952    1018   67         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C387311        965    2281   1317       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C387311        2258   2323   66         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C387311        2353   3262   910        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C387311        3335   3406   72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C387311        3446   4545   1100       -          CDS    CYTB       cytochrome b                      1              
+C387311        4548   4878   331        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C387311        5054   5119   66         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C387311        5119   5181   63         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C387311        5217   5454   238        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C387311        5596   6838   1243       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C387311        6858   6922   65         +          tRNA   trnH(gug)  tRNA-His                          1              
+C387311        7039   8312   1274       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C387311        8636   8702   67         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C387311        8704   8772   69         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C387311        8771   8840   70         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C387311        8839   8905   67         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C387311        8908   8971   64         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C387311        9012   9075   64         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C387311        9077   9425   349        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C387311        9425   9487   63         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C387311        9496   10282  787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C387311        10294  10900  607        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C387311        11133  11196  64         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C387311        11196  11264  69         -          tRNA   trnK(cuu)  tRNA-Lys                          1              
+C387311        11273  11928  656        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C387311        11946  12012  67         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C387311        12007  13546  1540       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C387311        13543  13606  64         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C387311        13606  13669  64         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C387311        13667  13735  69         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C387311        13862  14743  882        -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C387311        14749  14819  71         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C387311        14854  14923  70         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C387311        14927  14993  67         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+
+
+Protein coding genes totally found: 12
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                36
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP8                                 1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

@@ -1,0 +1,57 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C673           3406           no             Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C673           1      350    350        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C673           349    421    73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C673           422    2105   1684       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C673           2107   2182   76         +          tRNA   trnL(uaa)  tRNA-Leu                          1              
+C673           2206   3157   952        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C673           3161   3231   71         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C673           3230   3301   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C673           3300   3369   70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+
+
+Protein coding genes totally found:  1
+tRNA genes totally found:            5
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                 8
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP6                                 1
+ATP8                                 1
+COX1                                 1
+COX2                                 1
+COX3                                 1
+CYTB                                 1
+ND2                                  1
+ND3                                  1
+ND4                                  1
+ND4L                                 1
+ND5                                  1
+ND6                                  1
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Glu                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Leu                             1
+tRNA-Lys                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             2
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

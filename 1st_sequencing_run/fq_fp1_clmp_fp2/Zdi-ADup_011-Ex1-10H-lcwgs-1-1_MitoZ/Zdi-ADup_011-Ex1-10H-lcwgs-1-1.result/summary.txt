@@ -1,0 +1,58 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C68871         1408           no             Alepocephalus longiceps
+C69021         3698           no             Astatotilapia calliptera
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C68871         <3     141    139        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C68871         139    208    70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C68871         208    505    298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C68871         498    >1407  910        +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C69021         112    181    70         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C69021         181    1128   948        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C69021         1127   1199   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C69021         1200   2887   1688       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C69021         2887   2962   76         +          tRNA   trnL(uaa)  tRNA-Leu                          1              
+C69021         2962   >3697  736        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+
+
+Protein coding genes totally found:  4
+tRNA genes totally found:            4
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                10
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP6                                 1
+ATP8                                 1
+COX1                                 1
+COX2                                 1
+COX3                                 1
+CYTB                                 1
+ND2                                  1
+ND5                                  1
+ND6                                  1
+tRNA-Ala                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Glu                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             1
+tRNA-Lys                             1
+tRNA-Met                             1
+tRNA-Pro                             1
+tRNA-Ser                             2
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

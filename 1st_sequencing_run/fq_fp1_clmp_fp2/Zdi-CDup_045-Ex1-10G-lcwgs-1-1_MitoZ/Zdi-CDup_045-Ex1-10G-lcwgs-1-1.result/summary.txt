@@ -1,0 +1,58 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C1437          11120          no             Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C1437          <3     936    934        -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C1437          929    1226   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C1437          1226   1294   69         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C1437          1292   1643   352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C1437          1643   1713   71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C1437          1712   2498   787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C1437          2497   3181   685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C1437          3171   3339   169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C1437          3340   3415   76         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C1437          3408   4107   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C1437          4111   4182   72         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C1437          4185   4256   72         +          tRNA   trnS(uga)  tRNA-Ser                          1              
+C1437          4261   5815   1555       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C1437          5816   5883   68         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C1437          5883   5950   68         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C1437          5984   6057   74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C1437          6058   6127   70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C1437          6129   6199   71         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C1437          6198   7245   1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C1437          7245   7314   70         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C1437          7313   7384   72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C1437          7383   7453   71         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C1437          7457   8408   952        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C1437          8432   8507   76         -          tRNA   trnL(uaa)  tRNA-Leu                          1              
+C1437          8509   10192  1684       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C1437          10193  10265  73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C1437          10264  11121  858        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+
+
+Protein coding genes totally found: 10
+tRNA genes totally found:           15
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                27
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+CYTB                                 1
+ND5                                  1
+ND6                                  1
+tRNA-Glu                             1
+tRNA-His                             1
+tRNA-Leu                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             1
+tRNA-Thr                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

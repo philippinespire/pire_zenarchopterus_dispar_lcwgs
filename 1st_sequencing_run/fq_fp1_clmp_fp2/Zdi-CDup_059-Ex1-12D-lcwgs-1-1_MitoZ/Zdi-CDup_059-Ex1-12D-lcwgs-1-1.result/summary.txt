@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C2089          16444          yes            Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C2089          2      48     47         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C2089          54     1890   1837       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C2089          1886   2408   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C2089          2408   2477   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C2089          2479   3643   1165       +          CDS    CYTB       cytochrome b                      1              
+C2089          3620   3692   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C2089          3692   3761   70         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C2089          4557   4626   70         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C2089          4626   5572   947        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C2089          5571   5643   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C2089          5644   7327   1684       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C2089          7329   7404   76         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C2089          7428   8379   952        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C2089          8383   8453   71         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C2089          8452   8523   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C2089          8522   8591   70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C2089          8591   9638   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C2089          9637   9707   71         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C2089          9709   9778   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C2089          9779   9852   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C2089          9886   9953   68         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C2089          9953   10020  68         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C2089          10021  11575  1555       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C2089          11580  11651  72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C2089          11654  11725  72         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C2089          11729  12428  700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C2089          12421  12496  76         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C2089          12497  12665  169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C2089          12655  13339  685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C2089          13338  14124  787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C2089          14123  14193  71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C2089          14193  14544  352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C2089          14542  14610  69         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C2089          14610  14907  298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C2089          14900  16281  1382       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C2089          16281  16350  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C2089          16350  16418  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

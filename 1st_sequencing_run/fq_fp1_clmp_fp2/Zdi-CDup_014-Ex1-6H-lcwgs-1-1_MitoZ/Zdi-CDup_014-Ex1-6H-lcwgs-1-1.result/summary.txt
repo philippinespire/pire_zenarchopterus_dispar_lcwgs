@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C22011         16443          yes            Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C22011         2      966    965        -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C22011         959    1256   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C22011         1256   1324   69         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C22011         1322   1673   352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C22011         1673   1743   71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C22011         1742   2528   787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C22011         2527   3211   685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C22011         3201   3369   169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C22011         3370   3445   76         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C22011         3438   4137   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C22011         4141   4212   72         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C22011         4215   4286   72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+C22011         4291   5845   1555       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C22011         5846   5913   68         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C22011         5913   5980   68         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C22011         6014   6087   74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C22011         6088   6157   70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C22011         6159   6229   71         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C22011         6228   7275   1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C22011         7275   7344   70         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C22011         7343   7414   72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C22011         7413   7483   71         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C22011         7487   8438   952        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C22011         8462   8537   76         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C22011         8539   10222  1684       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C22011         10223  10295  73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C22011         10294  11240  947        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C22011         11240  11309  70         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C22011         12104  12173  70         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C22011         12173  12245  73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C22011         12222  13386  1165       -          CDS    CYTB       cytochrome b                      1              
+C22011         13388  13457  70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C22011         13457  13979  523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C22011         13975  15811  1837       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C22011         15811  15884  74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+C22011         15891  15959  69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C22011         15959  16028  70         -          tRNA   trnH(gug)  tRNA-His                          1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

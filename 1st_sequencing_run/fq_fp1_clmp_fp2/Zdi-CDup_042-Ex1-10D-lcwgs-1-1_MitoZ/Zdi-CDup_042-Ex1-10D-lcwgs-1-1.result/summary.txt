@@ -1,0 +1,51 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C14103         16443          yes            Cololabis saira     
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C14103         <3     396    394        +          CDS    COX3       cytochrome c oxidase subunit III  2              
+C14103         395    465    71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C14103         465    816    352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C14103         814    882    69         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C14103         882    1179   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C14103         1172   2553   1382       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C14103         2553   2622   70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C14103         2622   2690   69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C14103         2697   2770   74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C14103         2770   4606   1837       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C14103         4602   5124   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C14103         5124   5193   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C14103         5195   6359   1165       +          CDS    CYTB       cytochrome b                      1              
+C14103         6336   6408   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C14103         6408   6477   70         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C14103         7272   7341   70         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C14103         7341   8287   947        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C14103         8286   8358   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C14103         8359   10042  1684       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C14103         10044  10119  76         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C14103         10143  11094  952        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C14103         11098  11168  71         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C14103         11167  11238  72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C14103         11237  11306  70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C14103         11306  12353  1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C14103         12352  12422  71         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C14103         12424  12493  70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C14103         12494  12567  74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C14103         12601  12668  68         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C14103         12668  12735  68         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C14103         12736  14290  1555       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C14103         14295  14366  72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C14103         14369  14440  72         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C14103         14444  15143  700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C14103         15136  15211  76         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C14103         15212  15380  169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C14103         15370  16054  685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C14103         16053  >16443 391        +          CDS    COX3       cytochrome c oxidase subunit III  2              
+
+
+Protein coding genes totally found: 14
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                38

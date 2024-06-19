@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C25628         16448          yes            Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C25628         3      1833   1831       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C25628         1829   2351   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C25628         2351   2420   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C25628         2422   3586   1165       +          CDS    CYTB       cytochrome b                      1              
+C25628         3563   3635   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C25628         3635   3704   70         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C25628         4504   4573   70         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C25628         4573   5519   947        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C25628         5518   5590   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C25628         5591   7274   1684       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C25628         7276   7351   76         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C25628         7375   8326   952        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C25628         8330   8400   71         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C25628         8399   8470   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C25628         8469   8538   70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C25628         8538   9585   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C25628         9584   9654   71         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C25628         9656   9725   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C25628         9726   9799   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C25628         9833   9900   68         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C25628         9900   9967   68         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C25628         9968   11522  1555       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C25628         11527  11598  72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C25628         11601  11672  72         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C25628         11676  12375  700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C25628         12368  12443  76         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C25628         12444  12612  169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C25628         12602  13286  685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C25628         13285  14071  787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C25628         14070  14140  71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C25628         14140  14491  352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C25628         14489  14557  69         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C25628         14557  14854  298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C25628         14847  16228  1382       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C25628         16228  16297  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C25628         16297  16365  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C25628         16372  16445  74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C1740          16443          yes            Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C1740          4      1258   1255       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C1740          1254   1776   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C1740          1776   1845   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C1740          1847   3011   1165       +          CDS    CYTB       cytochrome b                      1              
+C1740          2988   3060   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C1740          3060   3129   70         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C1740          3924   3993   70         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C1740          3993   4939   947        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C1740          4938   5010   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C1740          5011   6694   1684       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C1740          6696   6771   76         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C1740          6795   7746   952        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C1740          7750   7820   71         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C1740          7819   7890   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C1740          7889   7958   70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C1740          7958   9005   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C1740          9004   9074   71         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C1740          9076   9145   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C1740          9146   9219   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C1740          9253   9320   68         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C1740          9320   9387   68         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C1740          9388   10942  1555       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C1740          10947  11018  72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C1740          11021  11092  72         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C1740          11096  11795  700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C1740          11788  11863  76         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C1740          11864  12032  169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C1740          12022  12706  685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C1740          12705  13491  787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C1740          13490  13560  71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C1740          13560  13911  352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C1740          13909  13977  69         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C1740          13977  14274  298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C1740          14267  15648  1382       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C1740          15648  15717  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C1740          15717  15785  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C1740          15792  15865  74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37
