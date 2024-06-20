@@ -1486,6 +1486,164 @@ Then run the `process_MitoZ_outputs.sh` script
 ```
 [hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ sh process_MitoZ_outputs.sh
 ```
+### Results:
+
+<details><summary>Individuals that succeeded:</summary>
+
+```
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_success.txt
+Zdi-ADup_006-Ex1-10C-lcwgs-1-1
+Zdi-ADup_007-Ex1-10D-lcwgs-1-1
+Zdi-ADup_011-Ex1-10H-lcwgs-1-1
+Zdi-ADup_016-Ex1-11E-lcwgs-1-1
+Zdi-ADup_017-Ex1-11F-lcwgs-1-1
+Zdi-ADup_018-Ex1-11G-lcwgs-1-1
+Zdi-ADup_022-Ex1-12C-lcwgs-1-1
+Zdi-ADup_027-Ex1-12H-lcwgs-1-1
+Zdi-ADup_042-Ex1-2F-lcwgs-1-1
+Zdi-CDup_001-Ex1-5D-lcwgs-1-1
+Zdi-CDup_003-Ex1-5F-lcwgs-1-1
+Zdi-CDup_006-Ex1-6A-lcwgs-1-1
+Zdi-CDup_007-Ex1-6B-lcwgs-1-1
+Zdi-CDup_008-Ex1-6C-lcwgs-1-1
+Zdi-CDup_011-Ex1-6E-lcwgs-1-1
+Zdi-CDup_012-Ex1-6F-lcwgs-1-1
+Zdi-CDup_014-Ex1-6H-lcwgs-1-1
+Zdi-CDup_015-Ex1-7A-lcwgs-1-1
+Zdi-CDup_017-Ex1-7C-lcwgs-1-1
+Zdi-CDup_018-Ex1-7D-lcwgs-1-1
+Zdi-CDup_022-Ex1-7H-lcwgs-1-1
+Zdi-CDup_031-Ex1-9A-lcwgs-1-1
+Zdi-CDup_033-Ex1-9C-lcwgs-1-1
+Zdi-CDup_034-Ex1-9D-lcwgs-1-1
+Zdi-CDup_037-Ex1-9G-lcwgs-1-1
+Zdi-CDup_042-Ex1-10D-lcwgs-1-1
+Zdi-CDup_045-Ex1-10G-lcwgs-1-1
+Zdi-CDup_057-Ex1-12B-lcwgs-1-1
+Zdi-CDup_058-Ex1-12C-lcwgs-1-1
+Zdi-CDup_059-Ex1-12D-lcwgs-1-1
+Zdi-CDup_061-Ex1-12F-lcwgs-1-1
+Zdi-CDup_064-Ex1-5A-lcwgs-1-1
+Zdi-CDup_065-Ex1-5B-lcwgs-1-1
+```
+
+</details>
+
+<details><summary>Individuals that failed:</summary>
+
+```
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_failure_lowdepth.txt
+Zdi-ADup_001-Ex1-11B-lcwgs-1-1
+Zdi-ADup_002-Ex1-9G-lcwgs-1-1
+Zdi-ADup_003-Ex1-9H-lcwgs-1-1
+Zdi-ADup_004-Ex1-10A-lcwgs-1-1
+Zdi-ADup_005-Ex1-10B-lcwgs-1-1
+Zdi-ADup_008-Ex1-10E-lcwgs-1-1
+Zdi-ADup_009-Ex1-10F-lcwgs-1-1
+Zdi-ADup_010-Ex1-10G-lcwgs-1-1
+Zdi-ADup_012-Ex1-11A-lcwgs-1-1
+Zdi-ADup_013-Ex1-12F-lcwgs-1-1
+Zdi-ADup_014-Ex1-11C-lcwgs-1-1
+Zdi-ADup_015-Ex1-11D-lcwgs-1-1
+Zdi-ADup_019-Ex1-11H-lcwgs-1-1
+Zdi-ADup_020-Ex1-12A-lcwgs-1-1
+Zdi-ADup_021-Ex1-12B-lcwgs-1-1
+Zdi-ADup_023-Ex1-12D-lcwgs-1-1
+Zdi-ADup_024-Ex1-12E-lcwgs-1-1
+Zdi-ADup_025-Ex1-2A-lcwgs-1-1
+Zdi-ADup_026-Ex1-12G-lcwgs-1-1
+Zdi-ADup_028-Ex1-9F-lcwgs-1-1
+Zdi-ADup_029-Ex1-1A-lcwgs-1-1
+Zdi-ADup_030-Ex1-1B-lcwgs-1-1
+Zdi-ADup_031-Ex1-1C-lcwgs-1-1
+Zdi-ADup_032-Ex1-1D-lcwgs-1-1
+Zdi-ADup_033-Ex1-1E-lcwgs-1-1
+Zdi-ADup_034-Ex1-1F-lcwgs-1-1
+Zdi-ADup_035-Ex1-1G-lcwgs-1-1
+Zdi-ADup_036-Ex1-1H-lcwgs-1-1
+Zdi-ADup_037-Ex1-3D-lcwgs-1-1
+Zdi-ADup_038-Ex1-2B-lcwgs-1-1
+Zdi-ADup_039-Ex1-2C-lcwgs-1-1
+Zdi-ADup_040-Ex1-2D-lcwgs-1-1
+Zdi-ADup_041-Ex1-2E-lcwgs-1-1
+Zdi-ADup_043-Ex1-2G-lcwgs-1-1
+Zdi-ADup_044-Ex1-2H-lcwgs-1-1
+Zdi-ADup_045-Ex1-3A-lcwgs-1-1
+Zdi-ADup_046-Ex1-3B-lcwgs-1-1
+Zdi-ADup_047-Ex1-3C-lcwgs-1-1
+Zdi-CDup_002-Ex1-5E-lcwgs-1-1
+Zdi-CDup_004-Ex1-5G-lcwgs-1-1
+Zdi-CDup_010-Ex1-6D-lcwgs-1-1
+Zdi-CDup_013-Ex1-6G-lcwgs-1-1
+Zdi-CDup_016-Ex1-7B-lcwgs-1-1
+Zdi-CDup_019-Ex1-7E-lcwgs-1-1
+Zdi-CDup_020-Ex1-7F-lcwgs-1-1
+Zdi-CDup_021-Ex1-7G-lcwgs-1-1
+Zdi-CDup_023-Ex1-8A-lcwgs-1-1
+Zdi-CDup_024-Ex1-8B-lcwgs-1-1
+Zdi-CDup_025-Ex1-8C-lcwgs-1-1
+Zdi-CDup_026-Ex1-8D-lcwgs-1-1
+Zdi-CDup_027-Ex1-8E-lcwgs-1-1
+Zdi-CDup_028-Ex1-8F-lcwgs-1-1
+Zdi-CDup_029-Ex1-8G-lcwgs-1-1
+Zdi-CDup_030-Ex1-8H-lcwgs-1-1
+Zdi-CDup_032-Ex1-9B-lcwgs-1-1
+Zdi-CDup_035-Ex1-9E-lcwgs-1-1
+Zdi-CDup_036-Ex1-9F-lcwgs-1-1
+Zdi-CDup_038-Ex1-9H-lcwgs-1-1
+Zdi-CDup_039-Ex1-10A-lcwgs-1-1
+Zdi-CDup_040-Ex1-10B-lcwgs-1-1
+Zdi-CDup_041-Ex1-10C-lcwgs-1-1
+Zdi-CDup_044-Ex1-10F-lcwgs-1-1
+Zdi-CDup_046-Ex1-10H-lcwgs-1-1
+Zdi-CDup_047-Ex1-11A-lcwgs-1-1
+Zdi-CDup_048-Ex1-11B-lcwgs-1-1
+Zdi-CDup_049-Ex1-11C-lcwgs-1-1
+Zdi-CDup_050-Ex1-11D-lcwgs-1-1
+Zdi-CDup_051-Ex1-11E-lcwgs-1-1
+Zdi-CDup_053-Ex1-11F-lcwgs-1-1
+Zdi-CDup_054-Ex1-11G-lcwgs-1-1
+Zdi-CDup_055-Ex1-11H-lcwgs-1-1
+Zdi-CDup_056-Ex1-12A-lcwgs-1-1
+Zdi-CDup_060-Ex1-12E-lcwgs-1-1
+Zdi-CDup_062-Ex1-12G-lcwgs-1-1
+Zdi-CDup_071-Ex1-12H-lcwgs-1-1
+```
+
+</details>
+
+Next, we uploaded the FASTA formatted sequences to [BOLD](https://www.boldsystems.org/index.php) to identify species matches.
+
+We were able to recover some COI sequences for Zdi - all look like they are most similar to Zdi sequences in the BOLD database, which is good because there has been some speculation around species identity in our samples.
+We only recovered sequences from 3 Albatross individuals though, and they were more similar to the BOLD Zdi sequence than the contemporaries, so possibly some evidence for cryptic diversity.
+
+```
+Query ID    			Best ID 		Search DB   		Top %   Low %
+Zdi-ADup_007-Ex1-10D-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    99.85   85.05
+Zdi-ADup_022-Ex1-12C-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    99.85   85.06
+Zdi-ADup_027-Ex1-12H-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    99.85   85.06
+Zdi-CDup_001-Ex1-5D-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.33   84.26
+Zdi-CDup_003-Ex1-5F-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.04   83.96
+Zdi-CDup_006-Ex1-6A-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.33   84.26
+Zdi-CDup_007-Ex1-6B-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.04   83.96
+Zdi-CDup_011-Ex1-6E-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.04   83.96
+Zdi-CDup_012-Ex1-6F-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_014-Ex1-6H-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_018-Ex1-7D-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_022-Ex1-7H-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_031-Ex1-9A-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.04   83.96
+Zdi-CDup_033-Ex1-9C-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_034-Ex1-9D-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_037-Ex1-9G-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_042-Ex1-10D-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_045-Ex1-10G-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    97.33   84.26
+Zdi-CDup_057-Ex1-12B-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_058-Ex1-12C-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    97.33   84.26
+Zdi-CDup_059-Ex1-12D-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    97.33   84.26
+Zdi-CDup_061-Ex1-12F-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+Zdi-CDup_064-Ex1-5A-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
+```
+
 </p>
 </details>
 
