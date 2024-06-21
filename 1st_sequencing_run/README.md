@@ -66,6 +66,7 @@ Are there duplicates?
 ```
 cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
 ```
+***Skip steps 3 and 4***
 
 </p>
 
@@ -89,7 +90,6 @@ cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
 </details>
 
 <details><summary>6. Rename the file</summary>
-<p>
 
 ## 6. Rename the file
 
@@ -97,12 +97,8 @@ cat Zdi_LCWGS-test_SequenceNameDecode.txt| sort | uniq | wc -l
 [hpc-0356@e1-w6420b-02 fq_raw]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Zdi_LCWGS-test_SequenceNameDecode.txt rename
 ```
 
-</p>
-
 ---
 </details>
-
-</p>
 
 <details><summary>7. Check the quality of raw data (*)</summary>
 <p>
@@ -114,7 +110,7 @@ Executed `Multi_FASTQC.sh`
 directory changed to `1st_sequencing_run`
 ```
 [hpc-0356@wahab-01 fq_raw]$ cd ..
-[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch --mail-user=gmazzei@ucsc.edu --mail-type=END /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
 ```
 
 ### MultiQC output (fq_raw/fastqc_report.html):
