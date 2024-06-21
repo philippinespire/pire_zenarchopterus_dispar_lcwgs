@@ -1608,10 +1608,11 @@ Zdi-CDup_071-Ex1-12H-lcwgs-1-1
 
 </details>
 
-Next, we uploaded the FASTA formatted sequences to [BOLD](https://www.boldsystems.org/index.php) to identify species matches.
+We uploaded the FASTA formatted sequences to [BOLD](https://www.boldsystems.org/index.php) to identify species matches.
 
-We were able to recover some COI sequences for Zdi - all look like they are most similar to Zdi sequences in the BOLD database, which is good because there has been some speculation around species identity in our samples.
-We only recovered sequences from 3 Albatross individuals though, and they were more similar to the BOLD Zdi sequence than the contemporaries, so possibly some evidence for cryptic diversity.
+We were able to recover COI sequences for some of our samples that passed MitoZ - all look like they are most similar to Zdi sequences in the BOLD database, which is good.
+
+While we only recovered sequences from 3 Albatross individuals, they were more similar to the BOLD Zdi sequence than the contemporaries so there is possibly some evidence for cryptic diversity.
 
 ```
 Query ID    			Best ID 		Search DB   		Top %   Low %
@@ -1639,6 +1640,27 @@ Zdi-CDup_059-Ex1-12D-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    
 Zdi-CDup_061-Ex1-12F-lcwgs-1-1  Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
 Zdi-CDup_064-Ex1-5A-lcwgs-1-1   Zenarchopterus dispar   COI SPECIES DATABASE    97.19   84.11
 ```
+
+For the 7 other Albatross samples that passed MitoZ, but did not produce a COI sequence, I assessed the ND4 sequence (or ND6, in the case of Zdi-ADup_017-Ex1-11F-lcwgs-1-1).
+* Zdi-ADup_006-Ex1-10C-lcwgs-1-1
+* Zdi-ADup_011-Ex1-10H-lcwgs-1-1
+* Zdi-ADup_016-Ex1-11E-lcwgs-1-1
+* Zdi-ADup_017-Ex1-11F-lcwgs-1-1 (ND6)
+* Zdi-ADup_018-Ex1-11G-lcwgs-1-1
+* Zdi-ADup_042-Ex1-2F-lcwgs-1-1
+
+This sequence can be found within the individual's cds file.
+
+```
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ cd Zdi-ADup_006-Ex1-10C-lcwgs-1-1_MitoZ/Zdi-ADup_006-Ex1-10C-lcwgs-1-1.result
+[hpc-0356@wahab-01 Zdi-ADup_006-Ex1-10C-lcwgs-1-1.result]$ cat Zdi-ADup_006-Ex1-10C-lcwgs-1-1.cds
+```
+
+Once that was retrieved, I uploaded each sequence to [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome) identify similarity to the sequence in their database. 
+
+**Results**: all were ~99% match to Zdi, except for `Zdi-ADup_006-Ex1-10C-lcwgs-1-1`, whose closest match was an insect, suggesting potential contamination.
+
+
 
 </p>
 </details>
