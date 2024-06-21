@@ -2,7 +2,7 @@
 ---
 Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar_.
 
-fq_gz processing being done by Gianna Mazzei.
+fq_gz processing of 1st sequencing run done by Gianna Mazzei (completed 6/17/24).
 
 ---
 
