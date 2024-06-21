@@ -116,7 +116,7 @@ directory changed to `1st_sequencing_run`
 ### MultiQC output (fq_raw/fastqc_report.html):
 * GC content is high on average
 	* ~50% for Albatross; ~60% for Contemporary
-* Per Sequence GC Content peaks aroung 70% -> potential for bacterial contamination
+* Per Sequence GC Content peaks around 70% -> potential for bacterial contamination
 * % Dups is high on average (~30%)
 * Adapter Content is high
 
