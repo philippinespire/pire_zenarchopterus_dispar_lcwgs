@@ -552,7 +552,7 @@ module load container_env R/4.3
 [hpc-0356@d4-w6420b-08 1st_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
 [hpc-0356@d4-w6420b-01 1st_sequencing_run]$ exit
 ```
-### 9d. Clean the sratch drive
+### 9d. Clean the scratch drive
 ```
 [hpc-0356@d6-w6420b-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0356 "*clumpify*temp*"
 ```
