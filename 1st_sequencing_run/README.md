@@ -1311,6 +1311,9 @@ But now this wasn't working because `mkBAM` should have been `mkBAM_ddocent`:
 ```
 # not working
 # [hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM mkBAM/coverageMappedReads
+
+# correct code:
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
 ```
 
 And this incorrect command made an mkBAM folder with empty files, so I had to edit the code and remove the useless directory.
