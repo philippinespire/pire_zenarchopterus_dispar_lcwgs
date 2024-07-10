@@ -1731,13 +1731,15 @@ Copy reference genome to mkBAM_ddocent folder
 </details>
 
 
-<details><summary>6. Process Sequencing Metadata / Merge Runs</summary>
+<details><summary>6. Process Sequencing Metadata</summary>
 
 ## 6. Process Sequencing Metadata
+<p>
 
 This portion follows the instructions on [this repo](https://github.com/philippinespire/process_sequencing_metadata).
-I was walked through how to do this by Kevin Labrador on 6/25/24.
 
+I was walked through how to do this by Kevin Labrador on 6/25/24.
+</p>
 <details><summary>1. Clone Repos</summary>
 
 ## 1. Clone Repos
