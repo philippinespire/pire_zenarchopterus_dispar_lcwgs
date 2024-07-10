@@ -1731,3 +1731,40 @@ Copy reference genome to mkBAM_ddocent folder
 </details>
 
 
+<details><summary>6. Process Sequencing Metadata / Merge Runs</summary>
+
+## 6. Process Sequencing Metadata
+
+This portion follows the instructions on [this repo](https://github.com/philippinespire/process_sequencing_metadata).
+I was walked through how to do this by Kevin Labrador on 6/25/24.
+
+<details><summary>1. Clone Repos</summary>
+
+## 1. Clone Repos
+
+```
+[hpc-0356@wahab-01 ~]$ cd pire_lcwgs_data/
+[hpc-0356@wahab-01 ~/pire_lcwgs_data]$ git clone https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs
+
+[hpc-0356@wahab-01 ~/pire_lcwgs_data]$ cd ..
+[hpc-0356@wahab-01 ~]$ git clone https://github.com/philippinespire/process_sequencing_metadata.git
+[hpc-0356@wahab-01 ~]$ git clone https://github.com/cbirdlab/read_multiqc.git
+```
+</details>
+
+<details><summary>2. Access R</summary>
+
+## 2. Access R
+
+Go to ODU's [OnDemand](https://ondemand.wahab.hpc.odu.edu/pun/sys/dashboard)
+
+Go to Interactive Apps > RStudio Server.
+* Number of Cores: 4
+* Partition: main
+* Number of Hours: 4
+* R Version: 4.3.2 (newest)
+
+Once ready, `Connect to RStudio Server` #(14:32)
+
+
+
