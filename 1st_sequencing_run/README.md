@@ -1252,6 +1252,62 @@ I had a file called "logs" that I had to rename to "logs.out" in order for the f
 
 </details>
 
+<details><summary>15. Map Repaired `fq.gz` to Reference Genome</summary>
+<p>
+
+## 15. Map Repaired `fq.gz` to Reference Genome
+
+The following steps 15 & 16 are from the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+
+### Get your reference genome
+Make a new directory `refGenome` and `cd` into it
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir refGenome
+[hpc-0356@wahab-01 1st_sequencing_run]$ cd refGenome/
+```
+
+Download the [genome from NCBI](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/028/564/865/GCA_028564865.1_ASM2856486v1/)
+
+```
+[hpc-0356@wahab-01 refGenome]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/028/564/865/GCA_028564865.1_ASM2856486v1/GCA_028564865.1_ASM2856486v1_genomic.fna.gz
+```
+There aren't any scaffolds identified as mtDNA, so I moved to next section.
+
+
+### Map your reads to your reference genome
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
+[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir mkBAM_ddocent
+[hpc-0356@wahab-01 1st_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
+```
+
+Copy reference genome to mkBAM_ddocent folder
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ cp refGenome/GCA_028564865.1_ASM2856486v1_genomic.fna.gz mkBAM_ddocent/reference.genbank.Zdi.fasta
+
+[hpc-0356@wahab-01 1st_sequencing_run]$ cd mkBAM_ddocent/
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/configs/config.6.lcwgs .
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+```
+
+---
+
+</details>
+
+<details><summary>16. Filter BAM Files</summary>
+
+## 16. Filter BAM Files
+
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
+```
+
+---
+
+</details>
+
 <details><summary>17. Generate Number of Mapped Reads</summary>
 <p>
 	
@@ -1672,68 +1728,9 @@ Once that was retrieved, I uploaded each sequence to [BLAST](https://blast.ncbi.
 </details>
 
 
-<details><summary>2. Get your reference genome</summary>
+<details><summary>2. Process Sequencing Metadata</summary>
 
-## 2. Get your reference genome
-
-Make a new directory `refGenome` and `cd` into it
-```
-[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir refGenome
-[hpc-0356@wahab-01 1st_sequencing_run]$ cd refGenome/
-```
-
-Download the [genome from NCBI](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/028/564/865/GCA_028564865.1_ASM2856486v1/)
-
-```
-[hpc-0356@wahab-01 refGenome]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/028/564/865/GCA_028564865.1_ASM2856486v1/GCA_028564865.1_ASM2856486v1_genomic.fna.gz
-```
-
-***Skip remainder of step 2, along with step 3: Curate the reference genome, because there aren't any scaffolds identified as mtDNA.***
-
----
-
-</details>
-
-<details><summary>4. Map your reads to your reference genome</summary>
-
-## 4. Map your reads to your reference genome
-
-```
-[hpc-0356@wahab-01 1st_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
-[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir mkBAM_ddocent
-[hpc-0356@wahab-01 1st_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
-```
-
-Copy reference genome to mkBAM_ddocent folder
-```
-[hpc-0356@wahab-01 1st_sequencing_run]$ cp refGenome/GCA_028564865.1_ASM2856486v1_genomic.fna.gz mkBAM_ddocent/reference.genbank.Zdi.fasta
-
-[hpc-0356@wahab-01 1st_sequencing_run]$ cd mkBAM_ddocent/
-[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/configs/config.6.lcwgs .
-[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
-[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
-```
-
----
-
-</details>
-
-<details><summary>5. Filter the binary alignment maps</summary>
-
-## 5. Filter the binary alignment maps
-
-```
-[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
-```
-
----
-
-</details>
-
-
-<details><summary>6. Process Sequencing Metadata</summary>
-
-## 6. Process Sequencing Metadata
+## 2. Process Sequencing Metadata
 <p>
 
 This portion follows the instructions on [this repo](https://github.com/philippinespire/process_sequencing_metadata).
