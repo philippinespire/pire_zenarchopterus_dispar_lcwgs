@@ -1,3 +1,5 @@
+<img src="https://lifg.australian.museum/Image/9uTxr6do.jpeg?version=full" alt="Zdi" width="300"/>
+
 # _Zenarchopterus dispar_ lcWGS
 
 Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar_ (Zdi).
