@@ -4,7 +4,7 @@
 ---
 Analysis of low-coverage whole genome sequencing data for Zdi 1st_sequencing_run.
 
-fq_gz processing done by Gianna Mazzei (completed 6/17/24).
+fq.gz processing done by Gianna Mazzei (completed 6/17/24).
 
 ---
 <details><summary>1. fq.gz Pre-processing</summary>
