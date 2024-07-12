@@ -1755,6 +1755,8 @@ I was walked through how to do this by Kevin Labrador on 6/25/24.
 [hpc-0356@wahab-01 ~]$ git clone https://github.com/philippinespire/process_sequencing_metadata.git
 [hpc-0356@wahab-01 ~]$ git clone https://github.com/cbirdlab/read_multiqc.git
 ```
+---
+
 </details>
 
 <details><summary>2. Access R</summary>
@@ -1771,5 +1773,27 @@ Go to Interactive Apps > RStudio Server.
 
 Once ready, `Connect to RStudio Server` #(14:32)
 
+---
+</details>
 
+<details><summary>Run wrangleSslCsslLcwgsMetadata.R</summary>
+	
+## 4. Run `wrangleSslCsslLcwgsMetadata.R`
 
+In R, within files on the right, click on the `process_sequencing_metadata` folder and open `wrangleSslCsslLcwgsMETADATA.R`.
+
+Run this script line by line to catch any errors.
+
+**Errors & Resolutions:**
+
+**a.** Package "janitor" did not install from line 12; manually download:
+```
+> install.packages("janitor")
+```
+**b.** Error in `mutate()`. 
+
+To fix, edit inDir output in line 47 from `inDir = "../pire_lcwgs_data_processing"` to `inDir = "../pire_zenarchopterus_dispar_lcwgs"`
+
+**c.** Note: in `data_fastp1`, species is being listed as "1st_sequencing_run" and seq_type is "zenarchopterus_dispar_lcwgs," which is different than Kevin and Jem's data structure, but we continued reagrdless
+
+**d.** Error messages regarding N/A
