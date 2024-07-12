@@ -1509,6 +1509,8 @@ Once the issues were resolved, this was run to generate the number of mapped rea
 
 </details>
 
+---
+
 </details>
 
 <details><summary>18. Extract mitochondrial genomes from read data</summary>
@@ -1725,6 +1727,8 @@ Once that was retrieved, I uploaded each sequence to [BLAST](https://blast.ncbi.
 </details>
 
 ---
+---
+
 </details>
 
 
