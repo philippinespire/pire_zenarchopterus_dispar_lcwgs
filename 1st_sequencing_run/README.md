@@ -1776,9 +1776,9 @@ Once ready, `Connect to RStudio Server` #(14:32)
 ---
 </details>
 
-<details><summary>Run wrangleSslCsslLcwgsMetadata.R</summary>
+<details><summary>4. Run wrangleSslCsslLcwgsMetadata.R</summary>
 	
-## 4. Run `wrangleSslCsslLcwgsMetadata.R`
+## 4. Run wrangleSslCsslLcwgsMetadata.R
 
 In R, within the files on the right, click on the `process_sequencing_metadata` folder and open `wrangleSslCsslLcwgsMETADATA.R`.
 
@@ -1809,9 +1809,11 @@ overall_pct_survivng_rprd = 100 * fqc_total_sequences_rprd / fqc_total_sequences
 ```
 I was able to run lines 150-226 after this was done.
 
+---
+
 </details>
 
-<details><summary>5. Run `visualizeTestLaneLcwgsMETADATA.R`</summary>
+<details><summary>5. Run visualizeTestLaneLcwgsMETADATA.R</summary>
 	
 ## 5. Run visualizeTestLaneLcwgsMETADATA.R
 
@@ -1871,6 +1873,10 @@ overall_pct_survivng_rprd = 100 * fqc_total_sequences_rprd / fqc_total_sequences
 
 <p>
 
+---
+
+</details>
+
 <details><summary>6. Script Output</summary>
 
 ## 6. Script Output
@@ -1880,11 +1886,26 @@ To see if everythign worked, check the out files within the process_sequencing_m
 cd pire_sequencing_metadata/out/
 ```
 * Four files have been made:
+	* [sequencing_metadata_test_lane_0024_Zdi_lcwgs_readcounts.tsv](https://github.com/philippinespire/process_sequencing_metadata/blob/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_readcounts.tsv)
 	* `sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png`
-	* `sequencing_metadata_test_lane_0024_Zdi_lcwgs_readcounts.tsv`
 	* `sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png`
-	* `sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_hisogram.png`
+	* `sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png`
 
+### Proportion of Reads Removed by Step:
+`sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png`
 
+<img src="https://raw.githubusercontent.com/philippinespire/process_sequencing_metadata/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png?token=GHSAT0AAAAAACSJRPBM6QAHVOL5WSINXJP2ZUUYSAQ" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png" width="800"/>
+
+### Read length:
+`sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png`:
+
+<img src="https://raw.githubusercontent.com/philippinespire/process_sequencing_metadata/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png?token=GHSAT0AAAAAACSJRPBMJPDW5WUUPLA6QAOUZUUYWHA" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png" width="500"/>
+
+### Totals Seqs:
+`sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png`:
+
+<img src="https://raw.githubusercontent.com/philippinespire/process_sequencing_metadata/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png?token=GHSAT0AAAAAACSJRPBN4RVUREQQNR7HPMHAZUUYWKQ" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png" width="500"/>
+
+---
 
 
