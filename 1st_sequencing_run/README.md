@@ -1809,7 +1809,82 @@ overall_pct_survivng_rprd = 100 * fqc_total_sequences_rprd / fqc_total_sequences
 ```
 I was able to run lines 150-226 after this was done.
 
-**h.** 
+</details>
+
+<details><summary>5. Run `visualizeTestLaneLcwgsMETADATA.R`</summary>
+	
+## 5. Run visualizeTestLaneLcwgsMETADATA.R
+
+Go to the [process_sequencing_metadata/out](https://github.com/philippinespire/process_sequencing_metadata/tree/main/out) directory on github to see the naming convention. 
+
+The "sp_code_pattern" and "test_lane_id" for Zdi will be 0024_Zdi. Confirm 0024 is the next number in the out files in the github directory. 
+
+In R, within the files on the right, click on the `process_sequencing_metadata` folder and open `visualizeTestLaneLcwgsMETADATA.R`.
+
+Run this script line by line to catch any errors.
+
+**Errors & Resolutions:**
+
+**a.** At line 100, change the INPUT to match our species.
+```
+line 101: sp_code_pattern = "(Zdi)"
+
+line 103: test_lane_id = "0024"
+```
+
+**b.** Lines 140 and 141 involve bam files. Comment them to move forward and add a closed parenthesis in line 142 and remove the comma at the end of line 139
+
+**c.** Line 147 included `bam_numreads`- remove that from the string
+
+**d.** The data_all file generated was empty. Now to troubleshoot
+* Check directory structure:
+```
+[hpc-0356@d1-w6420a-18 process_sequencing_metadata]$ pwd
+/home/hpc-0356/process_sequencing_metadata
+
+[hpc-0356@d1-w6420a-18 process_sequencing_metadata]$ cd ..
+[hpc-0356@d1-w6420a-18 ~]$ mkdir pire_lcwgs_data
+[hpc-0356@d1-w6420a-18 ~]$ cd pire_lcwgs_data
+[hpc-0356@d1-w6420a-18 pire_lcwgs_data]$ git clone https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs.git
+```
+* Go back to `wrangleSslCsslLcwgsMetadata.R` and in line 9, update packages by adding "furrr" and "moments"
+* Run everything up to line 60
+* Check we have the necessary files so far:
+```
+> list.files(inDir)
+[1] "pire_zenarchopterus_dispar_lcwgs"
+```
+* Go to line 223, add "%>%" and remove the comment and comma, so it looks like this:
+```
+overall_pct_survivng_rprd = 100 * fqc_total_sequences_rprd / fqc_total_sequences_raw)%>%
+```
+* From line 1, click Source to see what breaks
+* Line 49, change inDir to "../pire_lcwgs_data"
+* Then, I needed to clone Sne within pire_lcwgs_data to make my structure similar to Kevin's
+```
+[hpc-0356@wahab-01 pire_lcwgs_data]$ git clone https://github.com/philippinespire/pire_sphaeramia_nematoptera_lcwgs.git
+```
+* Go back to `wrangleSslCsslLcwgsMetadata.R` and click Source
+* Now, Go back to `visualizeTestLaneLcwgsMETADATA.R` and click Source from line 1
+
+**e.** Error with script: remove comments from line 140 and 141 and bring parenthesis up to line 141. Add a comma to the end of 139 and click Source
+
+<p>
+
+<details><summary>6. Script Output</summary>
+
+## 6. Script Output
+
+To see if everythign worked, check the out files within the process_sequencing_metadata directory
+```
+cd pire_sequencing_metadata/out/
+```
+* Four files have been made:
+	* `sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png`
+	* `sequencing_metadata_test_lane_0024_Zdi_lcwgs_readcounts.tsv`
+	* `sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png`
+	* `sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_hisogram.png`
 
 
-  
+
+
