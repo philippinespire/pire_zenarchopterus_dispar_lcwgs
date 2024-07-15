@@ -1780,7 +1780,7 @@ Once ready, `Connect to RStudio Server` #(14:32)
 	
 ## 4. Run `wrangleSslCsslLcwgsMetadata.R`
 
-In R, within files on the right, click on the `process_sequencing_metadata` folder and open `wrangleSslCsslLcwgsMETADATA.R`.
+In R, within the files on the right, click on the `process_sequencing_metadata` folder and open `wrangleSslCsslLcwgsMETADATA.R`.
 
 Run this script line by line to catch any errors.
 
@@ -1794,6 +1794,22 @@ Run this script line by line to catch any errors.
 
 To fix, edit inDir output in line 47 from `inDir = "../pire_lcwgs_data_processing"` to `inDir = "../pire_zenarchopterus_dispar_lcwgs"`
 
-**c.** Note: in `data_fastp1`, species is being listed as "1st_sequencing_run" and seq_type is "zenarchopterus_dispar_lcwgs," which is different than Kevin and Jem's data structure, but we continued reagrdless
+**c.** Note: in `data_fastp1`, species is being listed as "1st_sequencing_run" and seq_type is "zenarchopterus_dispar_lcwgs," which is different than Kevin and Jem's data structure, but we continued regardless
 
-**d.** Error messages regarding N/A
+**d.** Warning messages regarding N/A under 'fqc_sequence_length"
+* Kevin also had N/A listed for this column with his own dataset, so we continued
+
+**e.** Note: for `data_dpcvgbam` all the necessary data were there, but species is still being listed as "1st_sequencing_run" and seq_type is still "zenarchopterus_dispar_lcwgs"
+
+**f.** Error in line 161 regarding "snippy_variant_total". Kevin said different errors occur with every species, so we did not alter anything but instead highlighted blocks of code (150-226) and ran it all at once
+
+**g.** In line 221, there was an extra comma. I put a # in front of it and added a closed parenthesis:
+```
+overall_pct_survivng_rprd = 100 * fqc_total_sequences_rprd / fqc_total_sequences_raw)#,
+```
+I was able to run lines 150-226 after this was done.
+
+**h.** 
+
+
+  
