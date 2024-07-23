@@ -1774,7 +1774,7 @@ Go to Interactive Apps > RStudio Server.
 * Number of Hours: 4
 * R Version: 4.3.2 (newest)
 
-Once ready, `Connect to RStudio Server` #(14:32)
+Once ready, `Connect to RStudio Server` 
 
 ---
 </details>
