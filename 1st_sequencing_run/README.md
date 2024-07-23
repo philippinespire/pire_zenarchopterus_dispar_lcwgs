@@ -1897,17 +1897,17 @@ cd pire_sequencing_metadata/out/
 ### Proportion of Reads Removed by Step:
 `sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png`
 
-<img src="https://raw.githubusercontent.com/philippinespire/process_sequencing_metadata/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png?token=GHSAT0AAAAAACSJRPBM6QAHVOL5WSINXJP2ZUUYSAQ" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png" width="800"/>
+<img src="https://github.com/philippinespire/process_sequencing_metadata/blob/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_colplot_prop_reads_removed_by_step.png" width="800"/>
 
 ### Read length:
 `sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png`:
 
-<img src="https://raw.githubusercontent.com/philippinespire/process_sequencing_metadata/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png?token=GHSAT0AAAAAACSJRPBMJPDW5WUUPLA6QAOUZUUYWHA" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png" width="500"/>
+<img src="https://github.com/philippinespire/process_sequencing_metadata/blob/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_readlength_histogram.png" width="500"/>
 
 ### Totals Seqs:
 `sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png`:
 
-<img src="https://raw.githubusercontent.com/philippinespire/process_sequencing_metadata/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png?token=GHSAT0AAAAAACSJRPBN4RVUREQQNR7HPMHAZUUYWKQ" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png" width="500"/>
+<img src="https://github.com/philippinespire/process_sequencing_metadata/blob/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png" width="500"/>
 
 ---
 
