@@ -565,6 +565,25 @@ module load container_env R/4.3
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
+**Results** (fq_fp1_clmp/fqc_clmp_report.html): 
+* Per Base Sequence Content: 6 Contemporary samples (3 individuals) failing; about half of all samples have warnings- even split Albatross and Contemporary
+* Per Sequence GC Content: Mostly all passing
+	* 32 samples have a warning- all Albatross
+ 	* 4 Albatross samples (2 individuals) failing (Zdi-ADup_008 & Zdi-ADup_012). Both have later peaks, ~67% GC 
+```
+‣ % duplication - 
+    • Alb: 0.3 - 2.7%
+    • Contemp: 0.8 - 4.4%
+‣ GC content - 
+    • Alb: 36 - 49%, 55% : [Zdi-ADup_012-Ex1-11A-lcwgs-1-1.clmp.r1 & r2]
+    • Contemp: 42 - 46%
+‣ length - 
+    • Alb: 73 - 103 bp
+    • Contemp: 79 - 122 bp
+‣ number of reads -
+    • Alb: 0.0 - 36.7 mil
+    • Contemp: 0.0 - 7.5 mil
+```
 
 </p>
 
@@ -1237,6 +1256,106 @@ Zdi-CDup_071-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R2	1.2%	43%	104 bp	0.3
 </details>
 
 ---
+
+</details>
+
+<details><summary> → Overview: Compare MultiQC Report Results (*)</summary>
+
+### Compare MultiQC Report Results:
+
+<table>
+	
+<tr>
+<td> Raw Data - Step 7 </td> <td> 1st Trim - Step 8 (combined reads) </td> <td> Deduplication/Clumpify - Step 9 </td>  <td> 2nd Trim - Step 10 (combined reads) </td> <td> Re-pairing - Step 12 </td>  
+</tr>
+<tr>
+<td>
+
+```
+‣ % duplication - 
+    • Alb: 9.3 - 40.4%
+    • Contemp: 12.9 - 90.3%
+‣ GC content - 
+    • Alb: 46 - 65%
+    • Contemp: 46 - 93%
+‣ number of reads - 
+    • Alb: 0 - 54.8 mil
+    • Contemp: 0 - 9.8 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication - 
+    • Alb: 4.9 - 19.9%
+    • Contemp: 6.6 - 17.4%
+‣ GC content -
+    • Alb: 36.5 - 55.3%
+    • Contemp: 42 - 49.6%
+‣ passing filter - 
+    • Alb: 64.7 - 96.7%
+    • Contemp: 11.6 - 95.7%
+‣ % adapter - 
+    • Alb: 52.8 - 95.8%
+    • Contemp: 49.9 - 85.3%
+‣ number of reads - 
+    • Alb: 0 - 109 mil
+    • Contemp: 0 - 19.6 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication - 
+    • Alb: 0.3 - 2.7%
+    • Contemp: 0.8 - 4.4%
+‣ GC content - 
+    • Alb: 36 - 55%
+    • Contemp: 42 - 46%
+‣ length - 
+    • Alb: 73 - 103 bp
+    • Contemp: 79 - 122 bp
+‣ number of reads -
+    • Alb: 0.0 - 36.7 mil
+    • Contemp: 0.0 - 7.5 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication -
+    • Alb: 0.4 - 2.3%
+    • Contemp: 0.5 - 2.5%
+‣ GC content -
+    • Alb: 36.4 - 55.7%
+    • Contemp: 42 - 49%
+‣ passing filter -
+    • Alb: 98.8 - 99.6%
+    • Contemp: 99 - 99.5%
+‣ % adapter -
+    • Alb: 0.4 - 1.2%
+    • Contemp: 0.4 - 1%
+‣ number of reads -
+    • Alb: 0.02 - 73.5 mil
+    • Contemp: 0.04 - 14.9 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication -
+    • Alb: 0.4 - 3%
+    • Contemp: 0.5 - 3%
+‣ GC content -
+    • Alb: 36 - 51%
+    • Contemp: 41 - 48%
+‣ number of reads -
+    • Alb: 0 - 34.5 mil
+    • Contemp: 0 - 7 mil
+```
+</td>
+</tr>
+</table>
 
 </details>
 
