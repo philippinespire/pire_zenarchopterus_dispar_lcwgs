@@ -536,7 +536,7 @@ Zdi-CDup_071-Ex1-12H-lcwgs-1-1		12.0%	44.0%	57.5%	61.0%
 <details><summary>9. Remove duplicates with clumpify</summary>
 <p>
 
-## 9. Remove duplicates with clumpify
+## 9. Remove duplicates with clumpify (*)
 
 ### 9a. Remove duplicates
  ```
@@ -561,7 +561,7 @@ module load container_env R/4.3
 ```
 [hpc-0356@d6-w6420b-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0356 "*clumpify*temp*"
 ```
-### 9e. Generate metadata on deduplicated FASTQ files
+### 9e. Generate metadata on deduplicated FASTQ files (*)
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
