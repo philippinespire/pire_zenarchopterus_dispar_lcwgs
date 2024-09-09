@@ -122,3 +122,49 @@ Submitted batch job 3471540
     • Alb: 0.0 - 70.4 mil; 634.1 mil [Zdi-ADup_021-Ex1-12B-lcwgs-1-2.1 & 2]
     • Contemp: 2.3 - 66.4 mil
 ```
+---
+</details>
+
+<details><summary>8. First trim (*)</summary>
+
+## 8. First trim (*)
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+Submitted batch job 3472406
+```
+### Review the FastQC output (fq_fp1/1st_fastp_report.html):
+After 1st trim:
+* Insert Size Distribution: spike around insert size 0
+* Sequence Quality: both reads 1 and 2 tightened up after filtering; both dip in quality between read positions 125 to 150
+* GC Content: looks much better after filtering; `Zdi-ADup_012` sitting close to 10% higher than all other reads after filtering
+* `Zdi-ADup_021` (not to be confused with Zdi-ADup_012) still has a very high number of reads
+```  
+‣ % duplication - 
+    • Alb: 0.4 - 32.1%
+    • Contemp: 0.7 - 6.5%
+‣ GC content -
+    • Alb: 36.7 - 48.0%; 55.8%: [Zdi-ADup_012-Ex1-11A-lcwgs-1-2]
+    • Contemp: 42.1 - 48.0%
+‣ passing filter - 
+    • Alb: 88.7 - 98.2%
+    • Contemp: 16.2 - 95.2%
+‣ % adapter - 
+    • Alb: 83.5 - 98.9%
+    • Contemp: 40.5 - 74.6%
+‣ number of reads - 
+    • Alb: 0.009 - 140.7 mil; 1.2 bil: [Zdi-ADup_021-Ex1-12B-lcwgs-1-2]
+    • Contemp: 4.5 - 132.7 mil
+```
+
+---
+</details>
+
+<details><summary>9. Remove duplicates with clumpify (*)</summary>
+
+## 9. Remove duplicates with clumpify (*)
+
+### 9a. Remove duplicates
+ ```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0356 20
+Submitted batch job 3472487
+```
