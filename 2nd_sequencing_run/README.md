@@ -168,3 +168,50 @@ After 1st trim:
 [hpc-0356@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0356 20
 Submitted batch job 3472487
 ```
+### 9c. Check duplicate removal success
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ salloc
+[hpc-0356@d6-w6420b-05 2nd_sequencing_run]$ enable_lmod
+[hpc-0356@d6-w6420b-05 2nd_sequencing_run]$ module load container_env R/4.3 
+[hpc-0356@d4-w6420b-05 2nd_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+
+Clumpify Successfully worked on all samples
+
+[hpc-0356@d6-w6420b-05 2nd_sequencing_run]$ exit
+```
+
+### 9d. Clean the scratch drive
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0356 "*clumpify*temp*"
+Submitted batch job 3472649
+```
+
+### 9e. Generate metadata on deduplicated FASTQ files (*)
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+Submitted batch job 3472650
+```
+
+**Results** (fq_fp1_clmp/fqc_clmp_report.html): 
+*
+
+```
+‣ % duplication - 
+    • Alb:
+    • Contemp: 
+‣ GC content - 
+    • Alb:
+    • Contemp:
+‣ length - 
+    • Alb:
+    • Contemp:
+‣ number of reads -
+    • Alb:
+    • Contemp:
+```
+---
+
+</details>
