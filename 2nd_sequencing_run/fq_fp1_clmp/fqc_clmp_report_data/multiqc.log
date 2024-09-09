@@ -1,0 +1,692 @@
+[2024-09-09 03:07:25,317] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2024-09-09 03:07:25,320] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/hpc-0356/.multiqc_config.yaml
+[2024-09-09 03:07:25,321] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2024-09-09 03:07:25,322] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2024-09-09 03:07:25,323] multiqc                                            [DEBUG  ]  New config 'max_table_rows': 3000
+[2024-09-09 03:07:25,323] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename fqc_clmp_report --outdir fq_fp1_clmp fq_fp1_clmp
+[2024-09-09 03:07:25,474] multiqc                                            [DEBUG  ]  Could not connect to multiqc.info for version check: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1076)>
+[2024-09-09 03:07:25,476] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2024-09-09 03:07:25,477] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename fqc_clmp_report --outdir fq_fp1_clmp fq_fp1_clmp
+[2024-09-09 03:07:25,478] multiqc                                            [DEBUG  ]  Working dir : /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run
+[2024-09-09 03:07:25,478] multiqc                                            [INFO   ]  Template    : default
+[2024-09-09 03:07:25,479] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2024-09-09 03:07:25,480] multiqc                                            [INFO   ]  Searching   : /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_fp1_clmp
+[2024-09-09 03:07:25,481] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2024-09-09 03:07:25,482] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmp5x6gm1xh
+[2024-09-09 03:07:25,714] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_025-Ex1-2A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:25,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_009-Ex1-10F-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:25,727] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_037-Ex1-3D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:25,778] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_042-Ex1-10D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:25,794] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_042-Ex1-10D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:25,902] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_006-Ex1-6A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:25,916] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_006-Ex1-6A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:26,046] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_023-Ex1-12D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:26,063] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_023-Ex1-12D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:26,214] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_015-Ex1-7A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:26,230] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_015-Ex1-7A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:26,365] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_034-Ex1-1F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:26,380] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_034-Ex1-1F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:26,506] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_026-Ex1-8D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:26,519] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_026-Ex1-8D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:26,633] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_033-Ex1-1E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:26,646] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_033-Ex1-1E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:26,731] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_032-Ex1-1D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:26,731] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_003-Ex1-9H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:26,762] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_016-Ex1-11E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:26,775] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_016-Ex1-11E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:26,886] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_012-Ex1-6F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:26,899] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_012-Ex1-6F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:27,034] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_059-Ex1-12D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:27,049] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_059-Ex1-12D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:27,148] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_006-Ex1-10C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:27,179] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_036-Ex1-1H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:27,194] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_036-Ex1-1H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:27,279] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_011-Ex1-10H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:27,307] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_057-Ex1-12B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:27,320] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_057-Ex1-12B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:27,402] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_051-Ex1-11E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:27,404] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_008-Ex1-10E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:27,405] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_030-Ex1-1B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:27,408] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_065-Ex1-5B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:27,435] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_004-Ex1-5G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:27,448] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_004-Ex1-5G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:27,555] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_047-Ex1-3C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:27,567] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_047-Ex1-3C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:27,650] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_019-Ex1-7E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:27,650] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_039-Ex1-10A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:27,651] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_034-Ex1-1F-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:27,678] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_020-Ex1-12A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:27,691] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_020-Ex1-12A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:27,772] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_040-Ex1-10B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:27,774] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_064-Ex1-5A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:27,778] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_007-Ex1-10D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:27,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_066-Ex1-5C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:27,806] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_022-Ex1-7H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:27,819] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_022-Ex1-7H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:27,923] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_047-Ex1-11A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:27,936] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_047-Ex1-11A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:28,048] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_007-Ex1-6B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:28,063] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_007-Ex1-6B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:28,198] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_006-Ex1-10C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:28,212] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_006-Ex1-10C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:28,338] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_039-Ex1-2C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:28,351] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_039-Ex1-2C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:28,458] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_008-Ex1-10E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:28,471] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_008-Ex1-10E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:28,574] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_040-Ex1-2D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:28,586] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_040-Ex1-2D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:28,683] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_039-Ex1-10A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:28,696] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_039-Ex1-10A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:28,769] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_056-Ex1-12A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:28,769] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_002-Ex1-9G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:28,813] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_012-Ex1-11A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:28,825] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_012-Ex1-11A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:28,924] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_034-Ex1-9D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:28,935] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_034-Ex1-9D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,031] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_062-Ex1-12G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:29,044] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_062-Ex1-12G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:29,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_029-Ex1-1A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:29,141] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_030-Ex1-1B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,153] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_030-Ex1-1B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,223] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_047-Ex1-11A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,224] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_038-Ex1-2B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:29,249] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_010-Ex1-6D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,260] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_010-Ex1-6D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,329] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_010-Ex1-10G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,331] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_015-Ex1-11D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,331] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_041-Ex1-2E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,357] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_029-Ex1-1A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,369] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_029-Ex1-1A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,441] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_045-Ex1-3A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,442] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_026-Ex1-8D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,468] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_050-Ex1-11D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,480] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_050-Ex1-11D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,574] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_019-Ex1-7E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:29,588] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_019-Ex1-7E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:29,683] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_017-Ex1-7C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:29,696] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_017-Ex1-7C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:29,766] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_043-Ex1-10E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:29,767] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_014-Ex1-11C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:29,812] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_017-Ex1-11F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,824] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_017-Ex1-11F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,895] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_043-Ex1-2G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,896] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_021-Ex1-12B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,897] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_047-Ex1-3C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,898] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_059-Ex1-12D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:29,899] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_035-Ex1-9E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:29,924] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_056-Ex1-12A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:29,937] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_056-Ex1-12A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:30,034] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_042-Ex1-2F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:30,046] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_042-Ex1-2F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:30,114] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_057-Ex1-12B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:30,140] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_014-Ex1-11C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:30,152] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_014-Ex1-11C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:30,221] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_037-Ex1-9G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:30,222] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_028-Ex1-9F-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:30,247] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_024-Ex1-12E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:30,259] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_024-Ex1-12E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:30,330] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_071-Ex1-12H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:30,355] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_021-Ex1-12B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:30,368] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_021-Ex1-12B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:30,437] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_013-Ex1-6G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:30,438] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_017-Ex1-7C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:30,439] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_022-Ex1-7H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:30,463] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_005-Ex1-5H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:30,475] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_005-Ex1-5H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:30,590] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_040-Ex1-10B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:30,605] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_040-Ex1-10B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:30,702] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_033-Ex1-9C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:30,731] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_025-Ex1-2A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:30,744] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_025-Ex1-2A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:30,833] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_020-Ex1-12A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:30,862] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_037-Ex1-3D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:30,876] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_037-Ex1-3D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:30,962] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_058-Ex1-12C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:30,991] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_045-Ex1-3A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,004] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_045-Ex1-3A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,090] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_062-Ex1-12G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:31,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_031-Ex1-9A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:31,091] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_011-Ex1-6E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:31,092] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_036-Ex1-1H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:31,093] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_015-Ex1-7A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:31,093] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_024-Ex1-12E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:31,120] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_013-Ex1-12F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,133] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_013-Ex1-12F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,261] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_009-Ex1-10F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,277] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_009-Ex1-10F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,385] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_015-Ex1-11D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:31,387] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_010-Ex1-10G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:31,417] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_066-Ex1-5C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:31,431] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_066-Ex1-5C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:31,526] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_047-Ex1-11A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:31,577] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_002-Ex1-9G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,591] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_002-Ex1-9G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,686] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_038-Ex1-2B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:31,716] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_016-Ex1-7B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,730] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_016-Ex1-7B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,847] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_018-Ex1-7D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,860] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_018-Ex1-7D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_029-Ex1-1A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:31,969] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_045-Ex1-10G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:31,982] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_045-Ex1-10G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:32,064] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_056-Ex1-12A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:32,065] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_002-Ex1-9G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:32,093] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_022-Ex1-12C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:32,106] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_022-Ex1-12C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:32,221] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_047-Ex1-3C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:32,222] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_021-Ex1-12B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:32,226] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_043-Ex1-2G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:32,227] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_014-Ex1-11C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:32,260] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_033-Ex1-9C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:32,275] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_033-Ex1-9C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:32,411] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_011-Ex1-6E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:32,425] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_011-Ex1-6E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:32,544] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_031-Ex1-1C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:32,558] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_031-Ex1-1C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:32,678] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_001-Ex1-11B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:32,692] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_001-Ex1-11B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:32,777] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_043-Ex1-10E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:32,805] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_001-Ex1-5D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:32,817] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_001-Ex1-5D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:32,927] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_035-Ex1-9E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:32,940] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_035-Ex1-9E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,022] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_045-Ex1-3A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:33,050] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_004-Ex1-10A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,063] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_004-Ex1-10A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,144] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_026-Ex1-8D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:33,146] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_041-Ex1-2E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:33,173] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_014-Ex1-6H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:33,185] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_014-Ex1-6H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:33,262] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_037-Ex1-9G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:33,263] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_028-Ex1-9F-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:33,264] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_057-Ex1-12B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:33,293] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_043-Ex1-10E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,307] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_043-Ex1-10E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,423] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_061-Ex1-12F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:33,436] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_061-Ex1-12F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:33,549] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_007-Ex1-10D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:33,563] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_007-Ex1-10D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:33,676] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_038-Ex1-9H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,689] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_038-Ex1-9H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,773] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_059-Ex1-12D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:33,774] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_035-Ex1-9E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:33,774] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_015-Ex1-7A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:33,776] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_024-Ex1-12E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:33,778] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_036-Ex1-1H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:33,779] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_011-Ex1-6E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:33,780] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_062-Ex1-12G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:33,781] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_031-Ex1-9A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:33,809] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_043-Ex1-2G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,823] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_043-Ex1-2G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,935] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_058-Ex1-12C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:33,948] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_058-Ex1-12C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,028] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_020-Ex1-12A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:34,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_033-Ex1-9C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:34,029] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_058-Ex1-12C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:34,030] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_017-Ex1-7C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:34,057] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_054-Ex1-11G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:34,070] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_054-Ex1-11G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:34,150] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_022-Ex1-7H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:34,151] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_071-Ex1-12H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:34,152] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_013-Ex1-6G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:34,178] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_013-Ex1-6G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:34,190] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_013-Ex1-6G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:34,295] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_031-Ex1-9A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,308] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_031-Ex1-9A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,410] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_018-Ex1-11G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:34,422] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_018-Ex1-11G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:34,521] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_032-Ex1-1D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,533] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_032-Ex1-1D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,629] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_003-Ex1-5F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,641] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_003-Ex1-5F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,712] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_037-Ex1-3D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:34,736] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_026-Ex1-12G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,748] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_026-Ex1-12G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,840] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_037-Ex1-9G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:34,852] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_037-Ex1-9G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:34,921] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_009-Ex1-10F-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:34,922] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_025-Ex1-2A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:34,946] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_035-Ex1-1G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:34,957] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_035-Ex1-1G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:35,048] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_011-Ex1-10H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,060] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_011-Ex1-10H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,153] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_041-Ex1-10C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:35,164] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_041-Ex1-10C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:35,258] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_064-Ex1-5A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,270] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_064-Ex1-5A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,365] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_021-Ex1-7G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,377] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_021-Ex1-7G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,447] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_032-Ex1-1D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:35,472] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_044-Ex1-2H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:35,484] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_044-Ex1-2H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:35,556] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_003-Ex1-9H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:35,583] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_003-Ex1-9H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:35,595] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_003-Ex1-9H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:35,689] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_005-Ex1-10B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,701] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_005-Ex1-10B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,795] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_008-Ex1-6C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,807] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_008-Ex1-6C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,901] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_041-Ex1-2E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,913] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_041-Ex1-2E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:35,992] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_038-Ex1-2B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,002] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_038-Ex1-2B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,060] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_019-Ex1-7E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:36,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_065-Ex1-5B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:36,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_030-Ex1-1B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:36,083] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_060-Ex1-12E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,092] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_060-Ex1-12E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_008-Ex1-10E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:36,168] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_065-Ex1-5B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,178] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_065-Ex1-5B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,258] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_027-Ex1-12H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:36,269] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_027-Ex1-12H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:36,337] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_011-Ex1-10H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:36,338] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_051-Ex1-11E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:36,362] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_019-Ex1-11H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,373] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_019-Ex1-11H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,442] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_006-Ex1-10C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:36,465] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_046-Ex1-10H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,476] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_046-Ex1-10H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,567] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_046-Ex1-3B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,583] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_046-Ex1-3B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,728] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_051-Ex1-11E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,740] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_051-Ex1-11E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,838] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_071-Ex1-12H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,849] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_071-Ex1-12H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,938] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_028-Ex1-9F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:36,950] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_028-Ex1-9F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:37,037] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_002-Ex1-5E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,046] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_002-Ex1-5E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,126] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_010-Ex1-10G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:37,137] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_010-Ex1-10G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:37,206] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_066-Ex1-5C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:37,207] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_007-Ex1-10D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:37,207] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_064-Ex1-5A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:37,230] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_015-Ex1-11D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,242] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_015-Ex1-11D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_040-Ex1-10B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:37,310] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_039-Ex1-10A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:37,310] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_034-Ex1-1F-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:37,311] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_007-Ex1-6B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:37,334] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_065-Ex1-5B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,346] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_065-Ex1-5B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,411] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_004-Ex1-5G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:37,435] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_027-Ex1-12H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:37,446] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_027-Ex1-12H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:37,513] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_019-Ex1-11H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:37,513] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_046-Ex1-3B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:37,538] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_019-Ex1-11H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,549] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_019-Ex1-11H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,636] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_046-Ex1-10H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,645] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_046-Ex1-10H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_042-Ex1-2F-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:37,727] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_041-Ex1-2E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:37,739] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_041-Ex1-2E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:37,824] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_038-Ex1-2B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,834] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_038-Ex1-2B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,892] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_040-Ex1-2D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:37,913] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_060-Ex1-12E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,923] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_060-Ex1-12E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:37,984] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_039-Ex1-2C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:38,008] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_015-Ex1-11D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:38,019] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_015-Ex1-11D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:38,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_038-Ex1-9H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:38,088] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_006-Ex1-6A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:38,089] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_001-Ex1-11B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:38,108] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_051-Ex1-11E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,117] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_051-Ex1-11E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,198] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_046-Ex1-3B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,209] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_046-Ex1-3B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,276] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_004-Ex1-10A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:38,296] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_071-Ex1-12H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,305] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_071-Ex1-12H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,386] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_028-Ex1-9F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,396] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_028-Ex1-9F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,484] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_010-Ex1-10G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,493] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_010-Ex1-10G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,570] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_002-Ex1-5E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:38,579] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_002-Ex1-5E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:38,654] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_018-Ex1-11G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:38,663] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_018-Ex1-11G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:38,740] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_032-Ex1-1D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,749] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_032-Ex1-1D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,826] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_003-Ex1-5F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,835] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_003-Ex1-5F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,911] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_026-Ex1-12G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,920] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_026-Ex1-12G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:38,997] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_037-Ex1-9G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,006] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_037-Ex1-9G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,063] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_010-Ex1-6D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:39,086] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_035-Ex1-1G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:39,098] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_035-Ex1-1G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:39,167] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_027-Ex1-12H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:39,186] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_013-Ex1-6G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,195] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_013-Ex1-6G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,254] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_016-Ex1-7B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:39,255] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_002-Ex1-5E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:39,278] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_031-Ex1-9A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:39,290] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_031-Ex1-9A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:39,356] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_012-Ex1-6F-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:39,381] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_003-Ex1-9H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:39,393] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_003-Ex1-9H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:39,460] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_003-Ex1-5F-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:39,461] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_042-Ex1-10D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:39,502] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_005-Ex1-10B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,513] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_005-Ex1-10B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,588] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_005-Ex1-10B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:39,610] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_008-Ex1-6C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,621] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_008-Ex1-6C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,709] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_011-Ex1-10H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,719] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_011-Ex1-10H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,818] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_041-Ex1-10C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:39,830] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_041-Ex1-10C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:39,922] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_064-Ex1-5A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,933] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_064-Ex1-5A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:39,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_034-Ex1-9D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:40,023] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_021-Ex1-7G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:40,034] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_021-Ex1-7G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:40,137] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_001-Ex1-5D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:40,171] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_044-Ex1-2H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:40,187] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_044-Ex1-2H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:40,297] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_026-Ex1-12G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:40,300] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_033-Ex1-1E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:40,301] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_014-Ex1-6H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:40,335] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_007-Ex1-10D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:40,351] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_007-Ex1-10D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:40,497] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_038-Ex1-9H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:40,512] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_038-Ex1-9H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:40,618] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_046-Ex1-10H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:40,619] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_060-Ex1-12E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:40,651] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_014-Ex1-6H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:40,666] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_014-Ex1-6H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:40,763] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_022-Ex1-12C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:40,765] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_050-Ex1-11D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:40,797] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_061-Ex1-12F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:40,811] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_061-Ex1-12F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:40,924] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_043-Ex1-10E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:40,938] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_043-Ex1-10E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:41,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_045-Ex1-10G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:41,024] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_012-Ex1-11A-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:41,053] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_054-Ex1-11G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,066] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_054-Ex1-11G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,152] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_041-Ex1-10C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:41,153] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_005-Ex1-5H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:41,153] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_016-Ex1-11E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:41,181] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_043-Ex1-2G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:41,193] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_043-Ex1-2G-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:41,300] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_058-Ex1-12C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:41,312] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_058-Ex1-12C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:41,386] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_023-Ex1-12D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:41,413] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_018-Ex1-7D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,426] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_018-Ex1-7D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,524] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_045-Ex1-10G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,537] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_045-Ex1-10G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,609] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_021-Ex1-7G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:41,612] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_054-Ex1-11G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:41,613] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_035-Ex1-1G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:41,614] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_018-Ex1-11G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:41,615] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_013-Ex1-12F-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:41,615] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_061-Ex1-12F-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:41,642] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_066-Ex1-5C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:41,654] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_066-Ex1-5C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:41,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_044-Ex1-2H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:41,755] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_016-Ex1-7B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,767] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_016-Ex1-7B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,889] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_002-Ex1-9G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,903] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_002-Ex1-9G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:41,985] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_031-Ex1-1C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:41,988] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_017-Ex1-11F-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:42,016] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_001-Ex1-5D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,029] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_001-Ex1-5D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,122] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_035-Ex1-9E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,133] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_035-Ex1-9E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,221] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_004-Ex1-10A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,232] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_004-Ex1-10A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,300] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_018-Ex1-7D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:42,322] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_022-Ex1-12C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,332] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_022-Ex1-12C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,400] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_008-Ex1-6C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:42,428] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_033-Ex1-9C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,439] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_033-Ex1-9C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,530] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_011-Ex1-6E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,540] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_011-Ex1-6E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,620] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_031-Ex1-1C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,629] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_031-Ex1-1C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,711] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_001-Ex1-11B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,721] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_001-Ex1-11B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,800] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_042-Ex1-2F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,811] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_042-Ex1-2F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:42,896] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_014-Ex1-11C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,908] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_014-Ex1-11C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:42,999] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_024-Ex1-12E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,008] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_024-Ex1-12E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,069] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_022-Ex1-12C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:43,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_050-Ex1-11D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:43,070] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_046-Ex1-10H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:43,094] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_056-Ex1-12A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:43,106] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_056-Ex1-12A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:43,174] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_060-Ex1-12E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:43,175] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_014-Ex1-6H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:43,175] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_033-Ex1-1E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:43,177] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_026-Ex1-12G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:43,223] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_045-Ex1-3A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,235] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_045-Ex1-3A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_023-Ex1-12D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:43,310] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_005-Ex1-5H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:43,311] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_016-Ex1-11E-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:43,337] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_009-Ex1-10F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,349] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_009-Ex1-10F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,471] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_013-Ex1-12F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,483] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_013-Ex1-12F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,554] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_041-Ex1-10C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:43,575] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_021-Ex1-12B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,585] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_021-Ex1-12B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,673] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_005-Ex1-5H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:43,685] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_005-Ex1-5H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:43,756] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_012-Ex1-11A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:43,780] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_040-Ex1-10B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:43,789] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_040-Ex1-10B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:43,872] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_025-Ex1-2A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,882] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_025-Ex1-2A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:43,943] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_045-Ex1-10G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:43,964] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_037-Ex1-3D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:43,974] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_037-Ex1-3D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,036] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_044-Ex1-2H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:44,061] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_030-Ex1-1B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,072] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_030-Ex1-1B-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,166] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_010-Ex1-6D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,175] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_010-Ex1-6D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,234] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_018-Ex1-11G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:44,234] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_061-Ex1-12F-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:44,235] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_013-Ex1-12F-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:44,235] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_035-Ex1-1G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:44,236] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_054-Ex1-11G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:44,259] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_012-Ex1-11A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,270] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_012-Ex1-11A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,339] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_021-Ex1-7G-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:44,366] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_034-Ex1-9D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,378] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_034-Ex1-9D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,474] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_062-Ex1-12G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:44,486] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_062-Ex1-12G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:44,580] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_017-Ex1-7C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:44,592] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_017-Ex1-7C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:44,686] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_017-Ex1-11F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,697] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_017-Ex1-11F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,767] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_008-Ex1-6C-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:44,815] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_029-Ex1-1A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,828] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_029-Ex1-1A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,917] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_018-Ex1-7D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:44,919] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_017-Ex1-11F-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:44,947] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_050-Ex1-11D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:44,959] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_050-Ex1-11D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:45,038] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_031-Ex1-1C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:45,064] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_019-Ex1-7E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,076] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_019-Ex1-7E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,154] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_040-Ex1-2D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:45,181] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_047-Ex1-3C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:45,194] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_047-Ex1-3C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:45,301] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_004-Ex1-5G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,313] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_004-Ex1-5G-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,416] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_059-Ex1-12D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:45,429] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_059-Ex1-12D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:45,506] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_042-Ex1-2F-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:45,546] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_036-Ex1-1H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,558] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_036-Ex1-1H-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,636] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_019-Ex1-11H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:45,662] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_057-Ex1-12B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,675] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_057-Ex1-12B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,751] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_046-Ex1-3B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:45,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_004-Ex1-5G-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:45,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_007-Ex1-6B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:45,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_004-Ex1-10A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:45,780] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_047-Ex1-11A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,793] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_047-Ex1-11A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:45,896] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_022-Ex1-7H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:45,909] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_022-Ex1-7H-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,042] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_007-Ex1-6B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:46,056] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_007-Ex1-6B-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:46,165] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_006-Ex1-10C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:46,178] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_006-Ex1-10C-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:46,257] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_006-Ex1-6A-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:46,285] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_039-Ex1-2C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,297] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_039-Ex1-2C-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,398] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_008-Ex1-10E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,410] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_008-Ex1-10E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,480] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_001-Ex1-11B-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:46,505] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_039-Ex1-10A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:46,517] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_039-Ex1-10A-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:46,612] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_040-Ex1-2D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:46,625] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_040-Ex1-2D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:46,724] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_020-Ex1-12A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,736] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_020-Ex1-12A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,804] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_038-Ex1-9H-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:46,807] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_039-Ex1-2C-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:46,810] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_002-Ex1-5E-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:46,811] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_012-Ex1-6F-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:46,812] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_027-Ex1-12H-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:46,836] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_015-Ex1-7A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,848] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_015-Ex1-7A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,917] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_016-Ex1-7B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:46,920] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_010-Ex1-6D-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:46,946] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_042-Ex1-10D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:46,959] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_042-Ex1-10D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:47,058] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_006-Ex1-6A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:47,071] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_006-Ex1-6A-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:47,165] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_023-Ex1-12D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:47,177] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_023-Ex1-12D-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:47,265] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_001-Ex1-5D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:47,302] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_016-Ex1-11E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:47,319] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_016-Ex1-11E-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:47,433] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_034-Ex1-9D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:47,463] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_012-Ex1-6F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:47,477] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_012-Ex1-6F-lcwgs-1-2.clmp.r1_fastqc.html
+[2024-09-09 03:07:47,601] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_034-Ex1-1F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:47,614] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_034-Ex1-1F-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:47,703] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-ADup_005-Ex1-10B-lcwgs-1-2.clmp.r2.fq.gz
+[2024-09-09 03:07:47,705] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_003-Ex1-5F-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:47,707] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Zdi-CDup_042-Ex1-10D-lcwgs-1-2.clmp.r1.fq.gz
+[2024-09-09 03:07:47,735] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-CDup_026-Ex1-8D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:47,748] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-CDup_026-Ex1-8D-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:47,862] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Zdi-ADup_033-Ex1-1E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:47,875] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Zdi-ADup_033-Ex1-1E-lcwgs-1-2.clmp.r2_fastqc.html
+[2024-09-09 03:07:48,981] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2024-09-09 03:07:48,985] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2024-09-09 03:07:48,988] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2024-09-09 03:07:49,002] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2024-09-09 03:07:49,017] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2024-09-09 03:07:49,051] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2024-09-09 03:07:49,065] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2024-09-09 03:07:49,094] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2024-09-09 03:07:49,108] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2024-09-09 03:07:49,116] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2024-09-09 03:07:49,129] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2024-09-09 03:07:49,144] multiqc                                            [DEBUG  ]  No samples found: quast
+[2024-09-09 03:07:49,158] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2024-09-09 03:07:49,173] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2024-09-09 03:07:49,185] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2024-09-09 03:07:49,197] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2024-09-09 03:07:49,227] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2024-09-09 03:07:49,243] multiqc                                            [DEBUG  ]  No samples found: busco
+[2024-09-09 03:07:49,258] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2024-09-09 03:07:49,273] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2024-09-09 03:07:49,290] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2024-09-09 03:07:49,324] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2024-09-09 03:07:49,341] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2024-09-09 03:07:49,359] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2024-09-09 03:07:49,376] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2024-09-09 03:07:49,394] multiqc                                            [DEBUG  ]  No samples found: happy
+[2024-09-09 03:07:49,411] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2024-09-09 03:07:49,429] multiqc                                            [DEBUG  ]  No samples found: homer
+[2024-09-09 03:07:49,444] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2024-09-09 03:07:49,461] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2024-09-09 03:07:49,478] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2024-09-09 03:07:49,497] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2024-09-09 03:07:49,514] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2024-09-09 03:07:49,530] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2024-09-09 03:07:49,558] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2024-09-09 03:07:49,578] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2024-09-09 03:07:49,604] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2024-09-09 03:07:49,615] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2024-09-09 03:07:49,629] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2024-09-09 03:07:49,692] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2024-09-09 03:07:49,707] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2024-09-09 03:07:49,714] multiqc                                            [DEBUG  ]  No samples found: picard
+[2024-09-09 03:07:49,726] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2024-09-09 03:07:49,739] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2024-09-09 03:07:49,760] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2024-09-09 03:07:49,771] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2024-09-09 03:07:49,789] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2024-09-09 03:07:49,803] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2024-09-09 03:07:49,825] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2024-09-09 03:07:49,841] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2024-09-09 03:07:49,853] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2024-09-09 03:07:49,866] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2024-09-09 03:07:49,905] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2024-09-09 03:07:49,921] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2024-09-09 03:07:49,938] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2024-09-09 03:07:49,954] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2024-09-09 03:07:49,969] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2024-09-09 03:07:49,984] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2024-09-09 03:07:49,999] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2024-09-09 03:07:50,014] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2024-09-09 03:07:50,026] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2024-09-09 03:07:50,041] multiqc                                            [DEBUG  ]  No samples found: star
+[2024-09-09 03:07:50,056] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2024-09-09 03:07:50,070] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2024-09-09 03:07:50,082] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2024-09-09 03:07:50,092] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2024-09-09 03:07:50,104] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2024-09-09 03:07:50,114] multiqc                                            [DEBUG  ]  No samples found: kat
+[2024-09-09 03:07:50,128] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2024-09-09 03:07:50,143] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2024-09-09 03:07:50,158] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2024-09-09 03:07:50,175] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2024-09-09 03:07:50,190] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2024-09-09 03:07:50,205] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2024-09-09 03:07:50,220] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2024-09-09 03:07:50,237] multiqc                                            [DEBUG  ]  No samples found: malt
+[2024-09-09 03:07:50,253] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2024-09-09 03:07:50,268] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2024-09-09 03:07:50,283] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2024-09-09 03:07:50,298] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2024-09-09 03:07:50,312] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2024-09-09 03:07:50,328] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2024-09-09 03:07:50,343] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2024-09-09 03:07:50,359] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2024-09-09 03:08:15,926] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 192 reports
+[2024-09-09 03:08:55,322] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2024-09-09 03:08:55,330] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2024-09-09 03:08:55,340] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2024-09-09 03:08:55,352] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2024-09-09 03:08:55,361] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2024-09-09 03:08:55,371] multiqc                                            [DEBUG  ]  No samples found: interop
+[2024-09-09 03:08:55,379] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2024-09-09 03:08:55,388] multiqc                                            [DEBUG  ]  No samples found: flash
+[2024-09-09 03:08:55,397] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2024-09-09 03:08:55,673] multiqc                                            [INFO   ]  Compressing plot data
+[2024-09-09 03:08:58,771] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp/fqc_clmp_report.html
+[2024-09-09 03:08:58,772] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp/fqc_clmp_report_data
+[2024-09-09 03:08:58,773] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmp5x6gm1xh/multiqc_data' to 'fq_fp1_clmp/fqc_clmp_report_data'
+[2024-09-09 03:08:59,378] multiqc                                            [INFO   ]  Plots       : fq_fp1_clmp/fqc_clmp_report_plots
+[2024-09-09 03:08:59,378] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmp5x6gm1xh/multiqc_plots' to 'fq_fp1_clmp/fqc_clmp_report_plots'
+[2024-09-09 03:09:00,188] multiqc                                            [INFO   ]  MultiQC complete
