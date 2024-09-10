@@ -196,22 +196,70 @@ Submitted batch job 3472650
 ```
 
 **Results** (fq_fp1_clmp/fqc_clmp_report.html): 
-*
+* %GC lower on average for Albatross samples -> `Zdi-ADup_012` still higher than the rest
+* Length:
+	* Albatross: `Zdi-ADup_012` 25 bp longer than the next longest
+	* Contemporary: `Zdi-CDup_054` 20 bp shorter than the next shortest
+* `Zdi-ADup_021` still very high number of reads: 273.2 mil
+* Per Base Sequence Content: 104/192 passing; 84/192 warning; 4/192 failed
+* Per Sequence GC Content: 120/192 passing; 67/192 warning; 5/192 failed
+	* All peak between 35-50% except for `Zdi-ADup_012` -> peak ~67%
+* No samples found with any adapter contamination > 0.1%
 
 ```
 ‣ % duplication - 
-    • Alb:
-    • Contemp: 
+    • Alb: 0.0 - 7.0%
+    • Contemp: 0.8 - 5.0%
 ‣ GC content - 
-    • Alb:
-    • Contemp:
+    • Alb: 36 - 47%; 56%: [Zdi-ADup_012-Ex1-11A-lcwgs-1-2.clmp.r1 & r2]
+    • Contemp: 41 - 47%
 ‣ length - 
-    • Alb:
-    • Contemp:
+    • Alb: 64 - 98 bp; 123 bp: [Zdi-ADup_012-Ex1-11A-lcwgs-1-2.clmp.r1 & r2]
+    • Contemp: 82 bp: [Zdi-CDup_054-Ex1-11G-lcwgs-1-2.clmp.r1 & r2]; 102 - 136 bp
 ‣ number of reads -
-    • Alb:
-    • Contemp:
+    • Alb: 0.0 - 49.2 mil; 273.2 mil: [Zdi-ADup_021-Ex1-12B-lcwgs-1-2.clmp.r1 & r2]
+    • Contemp: 1.0 - 25.8 mil
 ```
 ---
 
 </details>
+
+<details><summary>10. Second trim (*)</summary>
+<p>
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
+Submitted batch job 3481739
+```
+
+### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
+After 2nd trim:
+*
+
+```
+‣ % duplication -
+    • Alb: 
+    • Contemp: 
+‣ GC content -
+    • Alb: 
+    • Contemp: 
+‣ passing filter -
+    • Alb: 
+    • Contemp: 
+‣ % adapter -
+    • Alb: 
+    • Contemp: 
+‣ number of reads -
+    • Alb: 
+    • Contemp: 
+```
+
+</p>
+
+---
+</details>
+
+<details><summary>11. Decontaminate files (*)</summary>
+<p>
+
+## 11. Decontaminate files (*)
