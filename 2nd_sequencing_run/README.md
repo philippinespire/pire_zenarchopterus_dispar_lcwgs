@@ -263,3 +263,19 @@ After 2nd trim:
 <p>
 
 ## 11. Decontaminate files (*)
+
+<details><summary>11a. Run fastq_screen</summary>
+
+### 11a. Run fastq_screen
+
+JOBID: 3487705
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0356@wahab-01 2nd_sequencing_run]$ fqScrnPATH=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash
+indir=fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+nodes=20
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
+```
+---
+</details>
