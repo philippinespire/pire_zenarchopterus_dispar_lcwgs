@@ -234,24 +234,29 @@ Submitted batch job 3481739
 
 ### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
 After 2nd trim:
-*
-
+* All samples above 98% PF
+* Adapter content way down from 1st trim
+* shorter reads for historical samples, longer reads for contemporary: evidenced by seaprate peaks in Insert Size Distribution graph
+* Sequence Quality: samples tighten up after filtering, but both read 1 and read 2 both dip a little in sequence quality towards the end of the reads
+* GC Content graph does dont change much after filtering
+	* `Zdi-ADup_012` still has higher GC content than the other samples; ~56%
+* N Content variability was corrected after filtering
 ```
 ‣ % duplication -
-    • Alb: 
-    • Contemp: 
+    • Alb: 0.0 - 7.0%
+    • Contemp: 0.2 - 2.3%
 ‣ GC content -
-    • Alb: 
-    • Contemp: 
+    • Alb: 36.4 - 46.9%; 56.1%: [Zdi-ADup_012-Ex1-11A-lcwgs-1-2.clmp.r1r2_fastp]
+    • Contemp: 41.8 - 47.1%
 ‣ passing filter -
-    • Alb: 
-    • Contemp: 
+    • Alb: 98.1 - 99.3%
+    • Contemp: 98.5 - 99.0%
 ‣ % adapter -
-    • Alb: 
-    • Contemp: 
+    • Alb: 0.5 - 1.4%
+    • Contemp: 0.4 - 1.1%
 ‣ number of reads -
-    • Alb: 
-    • Contemp: 
+    • Alb: 0.008 - 546.4 mil
+    • Contemp: 1.9 - 51.7 mil
 ```
 
 </p>
