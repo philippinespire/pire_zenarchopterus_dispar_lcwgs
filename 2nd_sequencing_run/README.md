@@ -284,3 +284,98 @@ nodes=20
 ```
 ---
 </details>
+
+<details><summary>11b. Check for Errors</summary>
+
+### 11b. Check for Errors
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+Submitted batch job 3489334
+
+# when complete check the $outdir/fqValidateReport.txt file
+less -S $outdir/fqValidationReport.txt file
+```
+How many files we should have, based on the indir:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 2nd_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
+                                        ls $indir/*r2.fq.gz | wc -l
+96
+96
+```
+
+Now, let's check that all 5 files were created for each fqgz file:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 2nd_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
+104
+104
+103
+104
+111
+111
+101
+103
+101
+103
+```
+Hmm. This shouldn't be above 96.
+
+After checking my scratch it seems there were some old Pbb files that didn't get removed.
+```
+cd /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ rm Pbb*
+```
+Now recheck that all 5 files were created for each fqgz file:
+```
+cd /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run
+[hpc-0356@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 2nd_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
+96
+96
+96
+96
+96
+96
+96
+96
+96
+96
+```
+Yay they are all there!
+
+I'm gonna rerun `validateFQ.sbatch` since the previous one included those Pbb files.
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cd /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ rm fqValidationReport.txt
+
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2_fqscrn]$ cd /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+Submitted batch job 3489794
+
+# when complete check the $outdir/fqValidateReport.txt file
+less -S $outdir/fqValidationReport.txt file
+```
+
+**Since fqscreen worked properly, there are no files that need to be rerun!**
