@@ -379,3 +379,62 @@ less -S $outdir/fqValidationReport.txt file
 ```
 
 **Since fqscreen worked properly, there are no files that need to be rerun!**
+
+---
+
+</details>
+
+<details><summary>11e. Move output files</summary>
+	
+### 11e. Move output files
+
+The recommended instructions using `screen mv` have not been working for me so I did this:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mkdir fq_fp1_clmp_fp2_fqscrn
+
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mv /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Zdi* /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mv /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/fqValidationReport.txt /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+```
+---
+</details>
+
+<details><summary>11f. Run MultiQC (*)</summary>
+	
+### 11f. Run MultiQC (*)
+
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+Submitted batch job 3495843
+```
+
+Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
+*
+
+```
+‣ multiple genomes -
+    • Alb:
+    • Contemp: 
+‣ no hits -
+    • Alb:
+    • Contemp: 
+```
+
+</details>
+
+---
+
+</details>
+
+<details><summary>12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)</summary>
+<p>
+
+## 12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)
+
+#### Execute `runREPAIR.sbatch`
+
+Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) and reverse (r2) reads so that the `*1.fq.gz` and `*2.fq.gz` files have reads in the same order
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
+Submitted batch job 3495856
+```
