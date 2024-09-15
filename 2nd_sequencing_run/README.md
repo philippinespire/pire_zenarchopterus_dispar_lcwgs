@@ -408,16 +408,25 @@ The recommended instructions using `screen mv` have not been working for me so I
 Submitted batch job 3495843
 ```
 
-Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
-*
+#### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
+* `Zdi-ADup_012`has high bacterial content: 22.6%
+  * This is the sample that has consistently had high GC content
+* Contemporary samples all pretty consistent
+* Albatross shows more variation; varying levels of bacterial and human contamination, albeit human is less notable
 
 ```
 ‣ multiple genomes -
-    • Alb:
-    • Contemp: 
+    • Alb: 1.4 - 9.2%
+    • Contemp: 2.5 - 5.3%
 ‣ no hits -
-    • Alb:
-    • Contemp: 
+    • Alb: 66.2 - 97.5%
+    • Contemp: 93.4 - 96.5%
+‣ bacteria -
+    • Alb: 0.2 - 22.6%
+    • Contemp: 0.1 - 0.6%
+‣ human -
+    • Alb: 0.1 - 2.9%
+    • Contemp: 0.1 - 0.2%
 ```
 
 </details>
@@ -438,3 +447,47 @@ Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) an
 [hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
 Submitted batch job 3495856
 ```
+#### Confirm that the paired end fq.gz files are complete and formatted correctly:
+
+Start by running the script:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0356@wahab-01 2nd_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch 
+                                        DIR=fq_fp1_clmp_fp2_fqscrn_rprd
+                                        fqPATTERN="*fq.gz"
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+Submitted batch job 3495915
+```
+Check the SLURM `out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cat valiate_FQ_-3495915.out
+
+```
+#### Run `Multi_FASTQC`
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+Submitted batch job 
+```
+
+#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
+*
+
+```
+‣ % duplication -
+    • Alb: 
+    • Contemp: 
+‣ GC content -
+    • Alb: 
+    • Contemp: 
+‣ length -
+    • Alb: 
+    • Contemp: 
+‣ number of reads -
+    • Alb: 
+    • Contemp: 
+```
+
+---
+
+</details>
+
