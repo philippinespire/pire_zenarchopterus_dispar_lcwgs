@@ -686,9 +686,70 @@ Submitted batch job 3496436
 Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
 ```
 [hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
-Submitted batch job 
+Submitted batch job 3497233
 ```
 ---
 
 </details>
 
+
+<details><summary>17. Generate Number of Mapped Reads</summary>
+
+## 17. Generate Number of Mapped Reads
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$  sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
+Submitted batch job 
+```
+
+#### Review Output (coverageMappedReads/out__ReadStats.tsv):
+*
+
+```
+‣ numreads:
+    • Alb: 
+    • Contemp: 
+
+‣ meanreadlength:
+    • Alb: 
+    • Contemp: 
+
+‣ meandepth_wcvg:
+    • Alb: 
+    • Contemp: 
+
+‣ numpos:
+    • 
+
+‣ numpos_wcvg:
+    • Alb: 
+    • Contemp: 
+
+‣ meandepth:
+    • Alb: 
+    • Contemp: 
+
+‣ pctpos_wcvg:
+    • Alb: 
+    • Contemp: 
+```
+---
+
+</details>
+
+<details><summary>18. Extract mitochondrial genomes from read data</summary>
+
+## 18. Extract mitochondrial genomes from read data
+
+If there are potential cryptic species in the data, we should try to extract mitochondrial genes from the read data to get an idea of species IDs. You use MitoZ to do so.
+
+For this next step, typically you'd copy over the runMitoZ bash and sbatch scripts from `/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/` to your sequencing project directory, but these files are outdated and need to be edited every time. This has caused some errors in the past, so I'm just going to copy the edited versions of these files over from a species I previously successfully ran.
+
+```
+[hpc-0356@wahab-01 pire_zenarchopterus_dispar_lcwgs]$ cp /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/runMitoZ* 2nd_sequencing_run
+```
+
+Now, execute the runMitoZ script:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2 32
+Submitted batch job 3497258
+```
