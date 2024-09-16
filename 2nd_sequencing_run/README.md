@@ -498,3 +498,133 @@ Submitted batch job 3496068
 
 </details>
 
+<details><summary> → Overview: Compare MultiQC Report Results (*)</summary>
+
+### Compare MultiQC Report Results:
+
+<table>
+	
+<tr>
+<td> Raw Data - Step 7 </td> <td> 1st Trim - Step 8 (combined reads) </td> <td> Deduplication/Clumpify - Step 9 </td>  <td> 2nd Trim - Step 10 (combined reads) </td> <td> Re-pairing - Step 12 </td>  
+</tr>
+<tr>
+<td>
+
+```
+‣ % duplication - 
+    • Alb: 3.6 - 37.8%
+    • Contemp: 10.7 - 84.5%
+‣ GC content - 
+    • Alb: 43 - 57%
+    • Contemp: 44 - 88%
+‣ number of reads - 
+    • Alb: 0.0 - 634.1 mil
+    • Contemp: 2.3 - 66.4 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication - 
+    • Alb: 0.4 - 32.1%
+    • Contemp: 0.7 - 6.5%
+‣ GC content -
+    • Alb: 36.7 - 55.8%
+    • Contemp: 42.1 - 48.0%
+‣ passing filter - 
+    • Alb: 88.7 - 98.2%
+    • Contemp: 16.2 - 95.2%
+‣ % adapter - 
+    • Alb: 83.5 - 98.9%
+    • Contemp: 40.5 - 74.6%
+‣ number of reads - 
+    • Alb: 0.009 - 1.2 bil
+    • Contemp: 4.5 - 132.7 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication - 
+    • Alb: 0.0 - 7.0%
+    • Contemp: 0.8 - 5.0%
+‣ GC content - 
+    • Alb: 36 - 56%
+    • Contemp: 41 - 47%
+‣ length - 
+    • Alb: 64 - 123 bp
+    • Contemp: 82 - 136 bp
+‣ number of reads -
+    • Alb: 0.0 - 273.2 mil
+    • Contemp: 1.0 - 25.8 mil
+```
+</td>
+<td>
+
+```
+‣ % duplication -
+    • Alb: 0.0 - 7.0%
+    • Contemp: 0.2 - 2.3%
+‣ GC content -
+    • Alb: 36.4 - 56.1%
+    • Contemp: 41.8 - 47.1%
+‣ passing filter -
+    • Alb: 98.1 - 99.3%
+    • Contemp: 98.5 - 99.0%
+‣ % adapter -
+    • Alb: 0.5 - 1.4%
+    • Contemp: 0.4 - 1.1%
+‣ number of reads -
+    • Alb: 0.008 - 546.4 mil
+    • Contemp: 1.9 - 51.7 mil
+```
+</td>
+<td>
+
+```
+repair
+```
+</td>
+</tr>
+</table>
+
+</details>
+
+
+---
+
+</details>
+
+<details><summary>14. Clean Up</summary>
+<p>
+
+## 14. Clean Up
+
+Move any .out files into the logs dir
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mkdir logs
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mv *out logs/
+```
+
+---
+
+</details>
+
+<details><summary>15. Map Repaired `fq.gz` to Reference Genome</summary>
+<p>
+
+## 15. Map Repaired `fq.gz` to Reference Genome
+
+The following steps 15 & 16 are from the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+
+### Get your reference genome
+
+Make a new directory `refGenome`:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mkdir refGenome
+```
+I already downloaded the reference genome from NCBI for the 1st sequencing run, so I will copy it from there:
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cp ../1st_sequencing_run/mkBAM_ddocent/reference.genbank.Zdi.fasta refGenome
+```
+
