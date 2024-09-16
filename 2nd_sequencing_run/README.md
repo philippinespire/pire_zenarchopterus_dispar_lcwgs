@@ -588,12 +588,10 @@ repair
 </tr>
 </table>
 
-</details>
-
-
 ---
 
 </details>
+
 
 <details><summary>14. Clean Up</summary>
 <p>
