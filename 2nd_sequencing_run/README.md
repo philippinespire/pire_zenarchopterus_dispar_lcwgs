@@ -626,3 +626,69 @@ I already downloaded the reference genome from NCBI for the 1st sequencing run, 
 [hpc-0356@wahab-01 2nd_sequencing_run]$ cp ../1st_sequencing_run/mkBAM_ddocent/reference.genbank.Zdi.fasta refGenome
 ```
 
+### Map your reads to your reference genome
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
+[hpc-0356@wahab-01 2nd_sequencing_run]$ mkdir mkBAM_ddocent
+[hpc-0356@wahab-01 2nd_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
+```
+
+Copy reference genome to mkBAM_ddocent folder
+```
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cp refGenome/reference.genbank.Zdi.fasta mkBAM_ddocent
+
+[hpc-0356@wahab-01 2nd_sequencing_run]$ cd mkBAM_ddocent/
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/configs/config.6.lcwgs .
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
+```
+Before moving forward, I needed to edit the `config.6.lcwgs` file to suit this species:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano config.6.lcwgs
+
+# within file:
+# change Cutoff1 and Cutoff2 to "genbank" and "Zdi"
+
+----------mkREF: Settings for de novo assembly of the reference genome----------------------------------------->
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRA>
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdh>
+genbank      	Cutoff1 (integer)                                                                              >
+Zdi             Cutoff2 (integer)                                                                              >
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-base>
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-base>
+--------------------------------------------------------------------------------------------------------------->
+```
+Then, I needed to alter the `dDocentHPC.sbatch` file to load the newer version:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano dDocentHPC.sbatch
+
+# within file:
+# change where the "#" is
+
+enable_lmod
+# module load container_env ddocent/2.7.8
+module load container_env ddocent/2.9.4
+```
+Now, I am able to map reads.
+
+Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns reads (in FASTQ format) to a reference genome and creates BAM files (Binary Alignment Map files) which store the resulting alignments in a compressed, binary format.
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+Submitted batch job 3496436
+```
+---
+
+</details>
+
+<details><summary>16. Filter BAM Files</summary>
+	
+## 16. Filter BAM Files
+
+Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
+Submitted batch job 
+```
+---
+
+</details>
+
