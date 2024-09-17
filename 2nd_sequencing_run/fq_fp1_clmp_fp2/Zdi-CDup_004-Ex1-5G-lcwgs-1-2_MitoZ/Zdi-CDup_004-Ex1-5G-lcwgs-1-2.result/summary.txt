@@ -1,0 +1,58 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+scaffold19     15319          no             Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold19     <3     600    598        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+scaffold19     590    758    169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+scaffold19     759    834    76         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+scaffold19     827    1526   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+scaffold19     1530   1601   72         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+scaffold19     1604   1675   72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+scaffold19     1680   3234   1555       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+scaffold19     3235   3302   68         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+scaffold19     3302   3369   68         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+scaffold19     3403   3476   74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+scaffold19     3477   3546   70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+scaffold19     3548   3618   71         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+scaffold19     3617   4664   1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+scaffold19     4664   4733   70         -          tRNA   trnM(cau)  tRNA-Met                          1              
+scaffold19     4732   4803   72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+scaffold19     4802   4872   71         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+scaffold19     4876   5827   952        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+scaffold19     5851   5926   76         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+scaffold19     5928   7611   1684       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+scaffold19     7612   7684   73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+scaffold19     7683   8629   947        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+scaffold19     8629   8698   70         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+scaffold19     9494   9563   70         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+scaffold19     9563   9635   73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+scaffold19     9612   10776  1165       -          CDS    CYTB       cytochrome b                      1              
+scaffold19     10778  10847  70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+scaffold19     10847  11369  523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+scaffold19     11365  13201  1837       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+scaffold19     13201  13274  74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+scaffold19     13281  13349  69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+scaffold19     13349  13418  70         -          tRNA   trnH(gug)  tRNA-His                          1              
+scaffold19     13418  14799  1382       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+scaffold19     14792  15089  298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+scaffold19     15089  15157  69         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+scaffold19     15155  15317  163        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+
+
+Protein coding genes totally found: 12
+tRNA genes totally found:           21
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                35
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+COX3                                 1
+tRNA-Gly                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

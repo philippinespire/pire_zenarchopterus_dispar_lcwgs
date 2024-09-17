@@ -1,0 +1,3 @@
+scaffold11	Platygyra carnosa
+C88704	Rhinogobio typus
+C239268	Plakina

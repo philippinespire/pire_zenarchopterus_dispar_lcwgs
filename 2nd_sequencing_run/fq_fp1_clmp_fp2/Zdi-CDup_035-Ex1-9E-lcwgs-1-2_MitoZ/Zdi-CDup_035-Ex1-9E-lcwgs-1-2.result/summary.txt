@@ -1,0 +1,58 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C388178        15570          no             Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C388178        36     720    685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C388178        710    878    169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C388178        879    954    76         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C388178        947    1646   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C388178        1650   1721   72         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C388178        1724   1795   72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+C388178        1800   3354   1555       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+C388178        3355   3422   68         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C388178        3422   3489   68         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+C388178        3523   3596   74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+C388178        3597   3666   70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C388178        3668   3738   71         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+C388178        3737   4784   1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C388178        4784   4853   70         -          tRNA   trnM(cau)  tRNA-Met                          1              
+C388178        4852   4923   72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C388178        4922   4992   71         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+C388178        4996   5947   952        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C388178        5971   6046   76         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C388178        6048   7731   1684       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C388178        7732   7804   73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+C388178        7803   8749   947        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C388178        8749   8818   70         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C388178        9613   9682   70         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C388178        9682   9754   73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C388178        9731   10895  1165       -          CDS    CYTB       cytochrome b                      1              
+C388178        10897  10966  70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C388178        10966  11488  523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C388178        11484  13320  1837       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C388178        13320  13393  74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+C388178        13400  13468  69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C388178        13468  13537  70         -          tRNA   trnH(gug)  tRNA-His                          1              
+C388178        13537  14918  1382       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C388178        14911  15208  298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C388178        15208  15276  69         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C388178        15274  15565  292        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+
+
+Protein coding genes totally found: 12
+tRNA genes totally found:           21
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                35
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+COX3                                 1
+tRNA-Gly                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

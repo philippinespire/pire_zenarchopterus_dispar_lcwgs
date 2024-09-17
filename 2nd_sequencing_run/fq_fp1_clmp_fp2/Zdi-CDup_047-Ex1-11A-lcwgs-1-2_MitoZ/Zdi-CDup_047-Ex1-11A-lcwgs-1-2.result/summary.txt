@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C93670         16443          yes            Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C93670         699    770    72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C93670         773    844    72         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C93670         848    1547   700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C93670         1540   1615   76         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C93670         1616   1784   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C93670         1774   2458   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C93670         2457   3243   787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C93670         3242   3312   71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C93670         3312   3663   352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C93670         3661   3729   69         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C93670         3729   4026   298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C93670         4019   5400   1382       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C93670         5400   5469   70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C93670         5469   5537   69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C93670         5544   5617   74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C93670         5617   7453   1837       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C93670         7449   7971   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C93670         7971   8040   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C93670         8042   9206   1165       +          CDS    CYTB       cytochrome b                      1              
+C93670         9183   9255   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C93670         9255   9324   70         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C93670         10119  10188  70         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C93670         10188  11134  947        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C93670         11133  11205  73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C93670         11206  12889  1684       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C93670         12891  12966  76         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C93670         12990  13941  952        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C93670         13945  14015  71         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C93670         14014  14085  72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C93670         14084  14153  70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C93670         14153  15200  1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C93670         15199  15269  71         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C93670         15271  15340  70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C93670         15341  15414  74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C93670         15448  15515  68         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C93670         15515  15582  68         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C93670         15544  >16444 901        +          CDS    COX1       cytochrome c oxidase subunit I    1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

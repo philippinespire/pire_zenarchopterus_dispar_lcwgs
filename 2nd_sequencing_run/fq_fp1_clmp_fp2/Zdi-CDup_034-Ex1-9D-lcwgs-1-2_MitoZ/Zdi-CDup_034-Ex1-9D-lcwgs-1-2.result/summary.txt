@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+scaffold271    16373          no             Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold271    534    607    74         -          tRNA   trnL(uag)  tRNA-Leu                          2              
+scaffold271    614    682    69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+scaffold271    682    751    70         -          tRNA   trnH(gug)  tRNA-His                          1              
+scaffold271    751    2132   1382       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+scaffold271    2125   2422   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+scaffold271    2422   2490   69         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+scaffold271    2488   2839   352        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+scaffold271    2839   2909   71         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+scaffold271    2908   3694   787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+scaffold271    3693   4377   685        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+scaffold271    4367   4535   169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+scaffold271    4536   4611   76         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+scaffold271    4604   5303   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+scaffold271    5307   5378   72         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+scaffold271    5381   5452   72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+scaffold271    5457   7011   1555       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+scaffold271    7012   7079   68         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+scaffold271    7079   7146   68         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+scaffold271    7180   7253   74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+scaffold271    7254   7323   70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+scaffold271    7325   7395   71         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+scaffold271    7394   8441   1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+scaffold271    8441   8510   70         -          tRNA   trnM(cau)  tRNA-Met                          1              
+scaffold271    8509   8580   72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+scaffold271    8579   8649   71         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+scaffold271    8653   9604   952        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+scaffold271    9628   9703   76         -          tRNA   trnL(uaa)  tRNA-Leu                          2              
+scaffold271    9705   11388  1684       -          rRNA   l-rRNA     16S ribosomal RNA                 1              
+scaffold271    11389  11461  73         -          tRNA   trnV(uac)  tRNA-Val                          1              
+scaffold271    11460  12406  947        -          rRNA   s-rRNA     12S ribosomal RNA                 1              
+scaffold271    12406  12475  70         -          tRNA   trnF(gaa)  tRNA-Phe                          1              
+scaffold271    13270  13339  70         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+scaffold271    13339  13411  73         -          tRNA   trnT(ugu)  tRNA-Thr                          1              
+scaffold271    13388  14552  1165       -          CDS    CYTB       cytochrome b                      1              
+scaffold271    14554  14623  70         +          tRNA   trnE(uuc)  tRNA-Glu                          1              
+scaffold271    14623  15145  523        +          CDS    ND6        NADH dehydrogenase subunit 6      1              
+scaffold271    15141  16374  1234       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

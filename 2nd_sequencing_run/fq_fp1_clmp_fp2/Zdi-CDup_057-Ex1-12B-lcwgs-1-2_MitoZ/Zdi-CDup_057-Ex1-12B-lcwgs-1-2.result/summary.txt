@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C1438121       16443          yes            Ablennes hians      
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C1438121       50     119    70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C1438121       119    187    69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C1438121       194    267    74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C1438121       267    2103   1837       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C1438121       2099   2621   523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C1438121       2621   2690   70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C1438121       2692   3856   1165       +          CDS    CYTB       cytochrome b                      1              
+C1438121       3833   3905   73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C1438121       3905   3974   70         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C1438121       4769   4838   70         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C1438121       4838   5784   947        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C1438121       5783   5855   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C1438121       5856   7539   1684       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C1438121       7541   7616   76         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C1438121       7640   8591   952        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C1438121       8595   8665   71         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C1438121       8664   8735   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C1438121       8734   8803   70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C1438121       8803   9850   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C1438121       9849   9919   71         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C1438121       9921   9990   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C1438121       9991   10064  74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C1438121       10098  10165  68         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C1438121       10165  10232  68         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C1438121       10233  11787  1555       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C1438121       11792  11863  72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C1438121       11866  11937  72         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C1438121       11941  12640  700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C1438121       12633  12708  76         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C1438121       12709  12877  169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C1438121       12867  13551  685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C1438121       13550  14336  787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C1438121       14335  14405  71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C1438121       14405  14756  352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C1438121       14754  14822  69         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C1438121       14822  15119  298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C1438121       15112  >16444 1333       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

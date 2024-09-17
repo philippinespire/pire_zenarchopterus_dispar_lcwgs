@@ -1,0 +1,51 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C685922        16444          yes            Strongylura anastomella
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C685922        4      619    616        +          CDS    CYTB       cytochrome b                      2              
+C685922        596    668    73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+C685922        668    737    70         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+C685922        1533   1602   70         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+C685922        1602   2548   947        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+C685922        2547   2619   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+C685922        2620   4303   1684       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+C685922        4305   4380   76         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+C685922        4404   5355   952        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C685922        5359   5429   71         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+C685922        5428   5499   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+C685922        5498   5567   70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+C685922        5567   6614   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C685922        6613   6683   71         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+C685922        6685   6754   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+C685922        6755   6828   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+C685922        6862   6929   68         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+C685922        6929   6996   68         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+C685922        6997   8551   1555       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+C685922        8556   8627   72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+C685922        8630   8701   72         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+C685922        8705   9404   700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+C685922        9397   9472   76         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C685922        9473   9641   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C685922        9631   10315  685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+C685922        10314  11100  787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+C685922        11099  11169  71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C685922        11169  11520  352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C685922        11518  11586  69         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C685922        11586  11883  298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C685922        11876  13257  1382       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C685922        13257  13326  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+C685922        13326  13394  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C685922        13401  13474  74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+C685922        13474  15310  1837       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C685922        15306  15828  523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+C685922        15828  15897  70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+C685922        15899  >16445 547        +          CDS    CYTB       cytochrome b                      2              
+
+
+Protein coding genes totally found: 14
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                38

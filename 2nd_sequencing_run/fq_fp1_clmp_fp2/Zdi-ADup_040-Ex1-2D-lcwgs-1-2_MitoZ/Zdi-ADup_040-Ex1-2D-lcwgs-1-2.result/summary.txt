@@ -1,0 +1,50 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+scaffold179    16468          no             Strongylura anastomella
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold179    113    182    70         +          tRNA   trnF(gaa)  tRNA-Phe                          1              
+scaffold179    182    1129   948        +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+scaffold179    1128   1200   73         +          tRNA   trnV(uac)  tRNA-Val                          1              
+scaffold179    1201   2888   1688       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+scaffold179    2888   2963   76         +          tRNA   trnL(uaa)  tRNA-Leu                          2              
+scaffold179    2948   3938   991        +          CDS    ND1        NADH dehydrogenase subunit 1      1              
+scaffold179    3942   4012   71         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+scaffold179    4011   4082   72         -          tRNA   trnQ(uug)  tRNA-Gln                          1              
+scaffold179    4081   4150   70         +          tRNA   trnM(cau)  tRNA-Met                          1              
+scaffold179    4150   5197   1048       +          CDS    ND2        NADH dehydrogenase subunit 2      1              
+scaffold179    5196   5266   71         +          tRNA   trnW(uca)  tRNA-Trp                          1              
+scaffold179    5268   5337   70         -          tRNA   trnA(ugc)  tRNA-Ala                          1              
+scaffold179    5338   5411   74         -          tRNA   trnN(guu)  tRNA-Asn                          1              
+scaffold179    5447   5514   68         -          tRNA   trnC(gca)  tRNA-Cys                          1              
+scaffold179    5514   5581   68         -          tRNA   trnY(gua)  tRNA-Tyr                          1              
+scaffold179    5582   7136   1555       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+scaffold179    7142   7213   72         -          tRNA   trnS(uga)  tRNA-Ser                          2              
+scaffold179    7216   7287   72         +          tRNA   trnD(guc)  tRNA-Asp                          1              
+scaffold179    7292   7991   700        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+scaffold179    7984   8059   76         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+scaffold179    8060   8228   169        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+scaffold179    8218   8902   685        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+scaffold179    8901   9687   787        +          CDS    COX3       cytochrome c oxidase subunit III  1              
+scaffold179    9686   9756   71         +          tRNA   trnG(ucc)  tRNA-Gly                          1              
+scaffold179    9756   10107  352        +          CDS    ND3        NADH dehydrogenase subunit 3      1              
+scaffold179    10105  10174  70         +          tRNA   trnR(ucg)  tRNA-Arg                          1              
+scaffold179    10174  10471  298        +          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+scaffold179    10464  11845  1382       +          CDS    ND4        NADH dehydrogenase subunit 4      1              
+scaffold179    11845  11914  70         +          tRNA   trnH(gug)  tRNA-His                          1              
+scaffold179    11914  11982  69         +          tRNA   trnS(gcu)  tRNA-Ser                          2              
+scaffold179    11989  12062  74         +          tRNA   trnL(uag)  tRNA-Leu                          2              
+scaffold179    12062  13898  1837       +          CDS    ND5        NADH dehydrogenase subunit 5      1              
+scaffold179    13894  14416  523        -          CDS    ND6        NADH dehydrogenase subunit 6      1              
+scaffold179    14416  14485  70         -          tRNA   trnE(uuc)  tRNA-Glu                          1              
+scaffold179    14489  15653  1165       +          CDS    CYTB       cytochrome b                      1              
+scaffold179    15630  15702  73         +          tRNA   trnT(ugu)  tRNA-Thr                          1              
+scaffold179    15702  15771  70         -          tRNA   trnP(ugg)  tRNA-Pro                          1              
+
+
+Protein coding genes totally found: 13
+tRNA genes totally found:           22
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                37

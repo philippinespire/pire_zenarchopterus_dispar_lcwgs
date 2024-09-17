@@ -1,0 +1,89 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C175580_FivePCGs16579          no             Apogon semilineatus 
+C175578        16443          yes            Cololabis saira     
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C175578        <3     798    796        -          CDS    ND1        NADH dehydrogenase subunit 1      2              
+C175578        822    897    76         -          tRNA   trnL(uaa)  tRNA-Leu                          4              
+C175578        899    2582   1684       -          rRNA   l-rRNA     16S ribosomal RNA                 2              
+C175578        2583   2655   73         -          tRNA   trnV(uac)  tRNA-Val                          2              
+C175578        2654   3600   947        -          rRNA   s-rRNA     12S ribosomal RNA                 3              
+C175578        3600   3669   70         -          tRNA   trnF(gaa)  tRNA-Phe                          2              
+C175578        4464   4533   70         +          tRNA   trnP(ugg)  tRNA-Pro                          2              
+C175578        4533   4605   73         -          tRNA   trnT(ugu)  tRNA-Thr                          2              
+C175578        4582   5746   1165       -          CDS    CYTB       cytochrome b                      2              
+C175578        5748   5817   70         +          tRNA   trnE(uuc)  tRNA-Glu                          2              
+C175578        5817   6339   523        +          CDS    ND6        NADH dehydrogenase subunit 6      2              
+C175578        6335   8171   1837       -          CDS    ND5        NADH dehydrogenase subunit 5      2              
+C175578        8171   8244   74         -          tRNA   trnL(uag)  tRNA-Leu                          4              
+C175578        8251   8319   69         -          tRNA   trnS(gcu)  tRNA-Ser                          4              
+C175578        8319   8388   70         -          tRNA   trnH(gug)  tRNA-His                          2              
+C175578        8388   9769   1382       -          CDS    ND4        NADH dehydrogenase subunit 4      2              
+C175578        9762   10059  298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     2              
+C175578        10059  10127  69         -          tRNA   trnR(ucg)  tRNA-Arg                          2              
+C175578        10125  10476  352        -          CDS    ND3        NADH dehydrogenase subunit 3      2              
+C175578        10476  10546  71         -          tRNA   trnG(ucc)  tRNA-Gly                          2              
+C175578        10545  11331  787        -          CDS    COX3       cytochrome c oxidase subunit III  2              
+C175578        11330  12014  685        -          CDS    ATP6       ATP synthase F0 subunit 6         2              
+C175578        12004  12172  169        -          CDS    ATP8       ATP synthase F0 subunit 8         2              
+C175578        12173  12248  76         -          tRNA   trnK(uuu)  tRNA-Lys                          2              
+C175578        12241  12940  700        -          CDS    COX2       cytochrome c oxidase subunit II   2              
+C175578        12944  13015  72         -          tRNA   trnD(guc)  tRNA-Asp                          2              
+C175578        13018  13089  72         +          tRNA   trnS(uga)  tRNA-Ser                          4              
+C175578        13094  14648  1555       -          CDS    COX1       cytochrome c oxidase subunit I    2              
+C175578        14649  14716  68         +          tRNA   trnY(gua)  tRNA-Tyr                          2              
+C175578        14716  14783  68         +          tRNA   trnC(gca)  tRNA-Cys                          2              
+C175578        14817  14890  74         +          tRNA   trnN(guu)  tRNA-Asn                          2              
+C175578        14891  14960  70         +          tRNA   trnA(ugc)  tRNA-Ala                          2              
+C175578        14962  15032  71         -          tRNA   trnW(uca)  tRNA-Trp                          2              
+C175578        15031  16078  1048       -          CDS    ND2        NADH dehydrogenase subunit 2      2              
+C175578        16078  16147  70         -          tRNA   trnM(cau)  tRNA-Met                          2              
+C175578        16146  16217  72         +          tRNA   trnQ(uug)  tRNA-Gln                          2              
+C175578        16216  16286  71         -          tRNA   trnI(gau)  tRNA-Ile                          2              
+C175580_FivePCGs1      616    616        -          rRNA   s-rRNA     12S ribosomal RNA                 3              
+C175580_FivePCGs616    684    69         -          tRNA   trnF(gaa)  tRNA-Phe                          2              
+C175580_FivePCGs1569   1640   72         +          tRNA   trnP(ugg)  tRNA-Pro                          2              
+C175580_FivePCGs1640   1712   73         -          tRNA   trnT(ugu)  tRNA-Thr                          2              
+C175580_FivePCGs1712   2853   1142       -          CDS    CYTB       cytochrome b                      2              
+C175580_FivePCGs2859   2928   70         +          tRNA   trnE(uuc)  tRNA-Glu                          2              
+C175580_FivePCGs2928   3450   523        +          CDS    ND6        NADH dehydrogenase subunit 6      2              
+C175580_FivePCGs3445   5284   1840       -          CDS    ND5        NADH dehydrogenase subunit 5      2              
+C175580_FivePCGs5284   5357   74         -          tRNA   trnL(uag)  tRNA-Leu                          4              
+C175580_FivePCGs5363   5431   69         -          tRNA   trnS(gcu)  tRNA-Ser                          4              
+C175580_FivePCGs5431   5500   70         -          tRNA   trnH(gug)  tRNA-His                          2              
+C175580_FivePCGs5495   6881   1387       -          CDS    ND4        NADH dehydrogenase subunit 4      2              
+C175580_FivePCGs6874   7171   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     2              
+C175580_FivePCGs7171   7240   70         -          tRNA   trnR(ucg)  tRNA-Arg                          2              
+C175580_FivePCGs7238   7589   352        -          CDS    ND3        NADH dehydrogenase subunit 3      2              
+C175580_FivePCGs7589   7659   71         -          tRNA   trnG(ucc)  tRNA-Gly                          2              
+C175580_FivePCGs7658   8444   787        -          CDS    COX3       cytochrome c oxidase subunit III  2              
+C175580_FivePCGs8443   9127   685        -          CDS    ATP6       ATP synthase F0 subunit 6         2              
+C175580_FivePCGs9117   9285   169        -          CDS    ATP8       ATP synthase F0 subunit 8         2              
+C175580_FivePCGs9286   9360   75         -          tRNA   trnK(uuu)  tRNA-Lys                          2              
+C175580_FivePCGs9352   10051  700        -          CDS    COX2       cytochrome c oxidase subunit II   2              
+C175580_FivePCGs10057  10130  74         -          tRNA   trnD(guc)  tRNA-Asp                          2              
+C175580_FivePCGs10132  10203  72         +          tRNA   trnS(uga)  tRNA-Ser                          4              
+C175580_FivePCGs10203  11763  1561       -          CDS    COX1       cytochrome c oxidase subunit I    2              
+C175580_FivePCGs11755  11825  71         +          tRNA   trnY(gua)  tRNA-Tyr                          2              
+C175580_FivePCGs11825  11891  67         +          tRNA   trnC(gca)  tRNA-Cys                          2              
+C175580_FivePCGs11927  12000  74         +          tRNA   trnN(guu)  tRNA-Asn                          2              
+C175580_FivePCGs12003  12072  70         +          tRNA   trnA(ugc)  tRNA-Ala                          2              
+C175580_FivePCGs12076  12148  73         -          tRNA   trnW(uca)  tRNA-Trp                          2              
+C175580_FivePCGs12150  13197  1048       -          CDS    ND2        NADH dehydrogenase subunit 2      2              
+C175580_FivePCGs13197  13267  71         -          tRNA   trnM(cau)  tRNA-Met                          2              
+C175580_FivePCGs13266  13337  72         +          tRNA   trnQ(uug)  tRNA-Gln                          2              
+C175580_FivePCGs13336  13407  72         -          tRNA   trnI(gau)  tRNA-Ile                          2              
+C175580_FivePCGs13409  14384  976        -          CDS    ND1        NADH dehydrogenase subunit 1      2              
+C175580_FivePCGs14384  14458  75         -          tRNA   trnL(uaa)  tRNA-Leu                          4              
+C175580_FivePCGs14457  16143  1687       -          rRNA   l-rRNA     16S ribosomal RNA                 2              
+C175580_FivePCGs16144  16216  73         -          tRNA   trnV(uac)  tRNA-Val                          2              
+C175580_FivePCGs16218  16580  363        -          rRNA   s-rRNA     12S ribosomal RNA                 3              
+
+
+Protein coding genes totally found: 26
+tRNA genes totally found:           44
+rRNA genes totally found:            5
+--------------------------------------
+Genes totally found:                75

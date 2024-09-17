@@ -1,0 +1,60 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C88704         248            no             Amphiprion ephippium
+C239268        289192         no             Indostomus paradoxus
+scaffold11     1341325        no             Acomys cahirinus    
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold11     23357  23431  75         -          tRNA   trnM(cau)  tRNA-Met                          1              
+scaffold11     136783 137020 238        +          CDS    COX2       cytochrome c oxidase subunit II   1              
+scaffold11     182273 >1838541582       +          CDS    COX1       cytochrome c oxidase subunit I    1              
+scaffold11     185081 185498 418        +          CDS    COX3       cytochrome c oxidase subunit III  2              
+scaffold11     185809 186256 448        +          CDS    COX3       cytochrome c oxidase subunit III  2              
+scaffold11     218480 218551 72         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+scaffold11     286493 286565 73         +          tRNA   trnR(ccg)  tRNA-Arg                          1              
+scaffold11     378945 >379401457        +          CDS    ATP6       ATP synthase F0 subunit 6         1              
+scaffold11     749031 749105 75         +          tRNA   trnP(ugg)  tRNA-Pro                          1              
+scaffold11     819532 820768 1237       +          rRNA   s-rRNA     12S ribosomal RNA                 1              
+scaffold11     820877 820951 75         +          tRNA   trnI(gau)  tRNA-Ile                          1              
+scaffold11     821070 821144 75         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+scaffold11     822382 824023 1642       +          rRNA   l-rRNA     16S ribosomal RNA                 1              
+scaffold11     1266274126635986         -          tRNA   trnS(uga)  tRNA-Ser                          1              
+C88704         <2     >248   247        -          CDS    CYTB       cytochrome b                      1              
+C239268        71805  72470  666        -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+C239268        73123  74175  1053       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C239268        74993  76308  1316       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C239268        <77958 78846  889        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C239268        85034  85373  340        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+
+
+Protein coding genes totally found: 11
+tRNA genes totally found:            7
+rRNA genes totally found:            2
+--------------------------------------
+Genes totally found:                20
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP8                                 1
+ND4L                                 1
+ND6                                  1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Gln                             1
+tRNA-Glu                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Leu                             2
+tRNA-Lys                             1
+tRNA-Phe                             1
+tRNA-Ser                             1
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!
