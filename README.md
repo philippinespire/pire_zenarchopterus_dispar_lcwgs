@@ -12,4 +12,10 @@ fq.gz processing of 1st sequencing run done by Gianna Mazzei (completed June 202
 ---
 
 ## [2nd Sequencing Run](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/2nd_sequencing_run)
-fq.gz processing of 2nd sequencing run done by Gianna Mazzei (started September 2024).
+fq.gz processing of 2nd sequencing run done by Gianna Mazzei (completed September 2024).
+
+---
+
+## [GenErode](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/GenErode_Zdi)
+
+GenErode processing being done by Gianna Mazzei (started September 2024).
