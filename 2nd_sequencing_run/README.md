@@ -720,6 +720,10 @@ Submitted batch job 3498437
 	* 8/47 have above 10 million reads
 	* 23/47 have above 1 million reads
 * For Contemporary samples, 30/49 are above 10 million reads
+* Mean depth with coverage all above 1
+* Wide range of percent positions with coverage, specifically for Albatross
+	* Alb range 0-95%, but median is 5%
+ 	* Contemp range 11-85%, and median is 60%
 
 ```
 ‣ numreads:
@@ -727,7 +731,7 @@ Submitted batch job 3498437
     • Contemp: 1,443,772 - 36,741,308
 
 ‣ meanreadlength:
-    • Alb: 63.46 - 96.16 bp
+    • Alb: 63.46 - 96.16 
     • Contemp: 81.69 - 133.41
 
 ‣ meandepth_wcvg:
@@ -735,19 +739,19 @@ Submitted batch job 3498437
     • Contemp: 1.11 - 5.19
 
 ‣ numpos:
-    • 689,690,477
+    • 689,690,477 bp
 
 ‣ numpos_wcvg:
-    • Alb: 245,510 - 656,187,444
-    • Contemp: 75,465,844 - 582,878,204
+    • Alb: 245,510 - 656,187,444 bp
+    • Contemp: 75,465,844 - 582,878,204 bp
 
 ‣ meandepth:
     • Alb: 0.00036 - 34.21
     • Contemp: 0.12 - 4.38
 
 ‣ pctpos_wcvg:
-    • Alb: 0.036 - 95.14
-    • Contemp: 10.94 - 84.51
+    • Alb: 0.036 - 95.14%
+    • Contemp: 10.94 - 84.51%
 ```
 ---
 
