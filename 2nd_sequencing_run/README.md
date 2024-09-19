@@ -6,7 +6,7 @@
 
 Analysis of low-coverage whole genome sequencing data for Zdi 2nd_sequencing_run.
 
-fq.gz processing done by Gianna Mazzei (started September 7 2024).
+fq.gz processing done by Gianna Mazzei (completed September 2024).
 
 ---
 	
