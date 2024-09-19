@@ -477,21 +477,24 @@ Submitted batch job 3496068
 ```
 
 #### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
-*
+* GC Content: `Zdi-ADup_012` still failing Per Sequence GC Content; higher % than all other samples
+* Additionally, `Zdi-ADup_012` is significantly longer than all other Albatross samples
+* Per Base Sequence Content: 89/192 still have a warning; 4 failing (both contemporary individuals)
+* Everything else looks good
 
 ```
 ‣ % duplication -
-    • Alb: 
-    • Contemp: 
+    • Alb: 0.1 - 6.9%
+    • Contemp: 0.3 - 4.2%
 ‣ GC content -
-    • Alb: 
-    • Contemp: 
+    • Alb: 36 - 46%; 51%: [Zdi-ADup_012]
+    • Contemp: 41 - 46%
 ‣ length -
-    • Alb: 
-    • Contemp: 
+    • Alb: 64 - 97 bp; 122 bp: [Zdi-ADup_012]
+    • Contemp: 81 bp: [Zdi-CDup_054]; 100 - 134 bp
 ‣ number of reads -
-    • Alb: 
-    • Contemp: 
+    • Alb: 0.0 - 46.6 mil; 252.1 mil: [Zdi_ADup_021]
+    • Contemp: 0.9 - 23.6 mil
 ```
 
 ---
@@ -582,7 +585,18 @@ Submitted batch job 3496068
 <td>
 
 ```
-repair
+‣ % duplication -
+    • Alb: 0.1 - 6.9%
+    • Contemp: 0.3 - 4.2%
+‣ GC content -
+    • Alb: 36 - 51%
+    • Contemp: 41 - 46%
+‣ length -
+    • Alb: 64 - 122 bp
+    • Contemp: 81 - 134 bp
+‣ number of reads -
+    • Alb: 0.0 - 252.1 mil
+    • Contemp: 0.9 - 23.6 mil
 ```
 </td>
 </tr>
@@ -702,35 +716,38 @@ Submitted batch job 3498437
 ```
 
 #### Review Output (coverageMappedReads/out__ReadStats.tsv):
-*
+* The number of reads for Albatross libraries is very variable
+	* 8/47 have above 10 million reads
+	* 23/47 have above 1 million reads
+* For Contemporary samples, 30/49 are above 10 million reads
 
 ```
 ‣ numreads:
-    • Alb: 
-    • Contemp: 
+    • Alb: 6,000 - 468,552,572
+    • Contemp: 1,443,772 - 36,741,308
 
 ‣ meanreadlength:
-    • Alb: 
-    • Contemp: 
+    • Alb: 63.46 - 96.16 bp
+    • Contemp: 81.69 - 133.41
 
 ‣ meandepth_wcvg:
-    • Alb: 
-    • Contemp: 
+    • Alb: 1.01 - 35.96
+    • Contemp: 1.11 - 5.19
 
 ‣ numpos:
-    • 
+    • 689,690,477
 
 ‣ numpos_wcvg:
-    • Alb: 
-    • Contemp: 
+    • Alb: 245,510 - 656,187,444
+    • Contemp: 75,465,844 - 582,878,204
 
 ‣ meandepth:
-    • Alb: 
-    • Contemp: 
+    • Alb: 0.00036 - 34.21
+    • Contemp: 0.12 - 4.38
 
 ‣ pctpos_wcvg:
-    • Alb: 
-    • Contemp: 
+    • Alb: 0.036 - 95.14
+    • Contemp: 10.94 - 84.51
 ```
 ---
 
