@@ -1,4 +1,103 @@
-# GenErode pipeline
+<img src="https://lifg.australian.museum/Image/9uTxr6do.jpeg?version=full" alt="Zdi" width="300"/>
+
+# GenErode: _Zenarchopterus dispar_ lcWGS
+
+Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_Wahab) for Pbb.
+
+Done by Gianna Mazzei (September 2024).
+
+---
+
+## GenErode Processing
+
+<details><summary>1. Set-Up</summary>
+
+### 1. Set-Up
+
+Make a copy of the template folder, renaming it according to your species name.
+```
+cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/GenErode_templatedir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+```
+Then, create the necessary subdirectories
+```
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/config
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/gerp_outgroups
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/mitochondria
+```
+Add 1st_sequencing_run Zdi species data to the subdirectories:
+```
+rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_raw/Zdi-A*.fq.gz /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical
+
+rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_raw/Zdi-C*.fq.gz /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern
+```
+Make sure they all synced properly:
+```
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_raw/Zdi-A*.fq.gz  | wc -l
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical | wc -l
+94
+94
+
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_raw/Zdi-C*.fq.gz | wc -l
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern | wc -l
+128
+128
+```
+
+Now add 2nd_sequencing_run Zdi species data to the subdirectories:
+```
+rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_raw/Zdi-A*.fq.gz /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical
+
+rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_raw/Zdi-C*.fq.gz /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern
+```
+Check it worked:
+```
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_raw/Zdi-A*.fq.gz  | wc -l
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical/*2.1.fq.gz | wc -l
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical/*2.2.fq.gz | wc -l
+94
+47
+47
+
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_raw/Zdi-C*.fq.gz  | wc -l
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern/*2.1.fq.gz | wc -l
+ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern/*2.2.fq.gz | wc -l
+98
+49
+49
+```
+Add reference genome:
+```
+rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/mkBAM_ddocent/reference.genbank.Zdi.fasta /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference
+```
+
+---
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</details>
+
+<details><summary>Credits</summary>
+
+# Credits
 
 <img src="docs/source/img/logga_viridis2.png" alt="logo" width="25%"/> 
 
@@ -51,3 +150,5 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 
 Logo: Jonas Söderberg
+
+</details>
