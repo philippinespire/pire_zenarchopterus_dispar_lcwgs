@@ -107,7 +107,7 @@ To begin to populate the `gerp_outgroups` directory, we need to download genomes
 
 # Xenentodon cancila
 [hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/014/839/995/GCA_014839995.1_fXenCan1.pri/GCA_014839995.1_fXenCan1.pri_genomic.fna.gz
-[hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_014839995.1_fXenCan1.pri_genomic.fna.gz  Xenentodon_cancila.fa.gz
+[hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_014839995.1_fXenCan1.pri_genomic.fna.gz Xenentodon_cancila.fa.gz
 ```
 
 **Atheriniformes**
@@ -236,36 +236,36 @@ I created a txt file listing the names of all the species in the `gerp_outgroups
 Species List:
 ```
 Zenarchopeterus dispar
-Cololabis saira
-Oryzias curvinotus
-Xenentodon cancila
-Melanotaenia boesemani
-Neostethus bicornis
-Odontesthes bonariensis
-Telmatherina bonti
+Amphilophus citrinellus
 Anableps anableps
+Archocentrus centrarchus
+Astatotilapia calliptera
+Chromidotilapia guntheri
+Cololabis saira
 Cyprinodon diabolis
+Etroplus suratensis
 Fundulus diaphanus
 Gambusia affinis
 Girardinichthys multiradiatus
 Kryptolebias marmoratus
-Nematolebias whitei
-Nothobranchius furzeri
-Poecilia formosa
-Valencia hispanica
-Xiphophorus birchmanni
-Amphilophus citrinellus
-Archocentrus centrarchus
-Astatotilapia calliptera
-Chromidotilapia guntheri
-Etroplus suratensis
 Maylandia zebra
+Melanotaenia boesemani
+Nematolebias whitei
 Neolamprologus multifasciatus
+Neostethus bicornis
+Nothobranchius furzeri
+Odontesthes bonariensis
 Oreochromis aureus
+Oryzias curvinotus
 Parachromis managuensis
 Pelmatolapia mariae
 Petenia splendida
 Pholidichthys leucotaenia
+Poecilia formosa
+Telmatherina bonti
+Valencia hispanica
+Xenentodon cancila
+Xiphophorus birchmanni
 ```
 
 
