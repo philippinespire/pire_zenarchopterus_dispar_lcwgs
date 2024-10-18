@@ -281,11 +281,11 @@ giannamazzei@Giannas-Laptop ~ % cd ~/Downloads
 
 giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_outgroups.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
 
-giannamazzei@Giannas-Laptop Downloads % scp Zdiprunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
 ```
 **TimeTree Output**:
 
-<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdiprunetree.jpg" alt="Zdi prunetree" width="700"/>
+<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
 
 
 
