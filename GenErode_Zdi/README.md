@@ -283,9 +283,27 @@ giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_outgroups.nwk hpc-0356@waha
 
 giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
 ```
-**TimeTree Output**:
 
-<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
+Now, in the .nwk file (I renamed it first), rename the focal species with the name of the reference assembly file.
+```
+[hpc-0356@wahab-01 GenErode_Zdi]$ mv Zdi_gerp_outgroups.nwk Zdi_gerp_tree.nwk
+[hpc-0356@wahab-01 GenErode_Zdi]$ sed -i 's/Dermogenys_collettei/reference.genbank.Zdi.fasta/g' Zdi_gerp_tree.nwk
+```
+<div align="center">
+ 
+ ### TimeTree Output:
+ 
+ <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
+</div>
+
+---
+
+</details>
+
+<details><summary>3. Edit the config files</summary>
+
+### 3. Edit the config files
+
 
 
 
