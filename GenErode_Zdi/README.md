@@ -231,11 +231,13 @@ To begin to populate the `gerp_outgroups` directory, we need to download genomes
 
 
 
-I created a txt file listing the names of all the species in the `gerp_outgroups` directory, adding Zenarchopterus dispar, and uploaded this to [TimeTree of Life](https://timetree.org/).
+I created a txt file listing the names of all the species in the `gerp_outgroups` directory and uploaded this to [TimeTree of Life](https://timetree.org/). We need to add Zenarchopterus dispar to this list, but neither the species nor its genus is recognized by the database. However, within the same family (Zenarchopteridae) the species Dermogenys collettei is recognized. 
+
+**I will be using Dermogenys collettei as a proxy for Zenarchopterus dispar.**
 
 Species List:
 ```
-Zenarchopeterus dispar
+Dermogenys collettei
 Amphilophus citrinellus
 Anableps anableps
 Archocentrus centrarchus
@@ -267,6 +269,23 @@ Valencia hispanica
 Xenentodon cancila
 Xiphophorus birchmanni
 ```
+<p>
+
+I downloaded the tree as a Newick File (and jpg) and uploaded it to my `GenErode_Zdi` directory.
+</p>
+
+```
+[hpc-0356@wahab-01 gerp_outgroups]$ logout
+
+giannamazzei@Giannas-Laptop ~ % cd ~/Downloads
+
+giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_outgroups.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+
+giannamazzei@Giannas-Laptop Downloads % scp Zdiprunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+```
+**TimeTree Output**:
+
+<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdiprunetree.jpg" alt="Zdi prunetree" width="700"/>
 
 
 
