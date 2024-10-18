@@ -77,6 +77,17 @@ rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing
 
 </details>
 
+<details><summary>2. Get Newick tree</summary>
+
+### 2. Get Newick tree
+
+To begin to populate the `gerp_outgroups` directory, we need to download genomes from ~30 other fishes. Zenarchopterus dispar is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are only 3 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I have to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 12 unique genomes. All of these total exactly 30.
+
+<div align="center">
+ <img src="https://github.com/philippinespire/pire_parupeneus_barberinus_lcwgs/blob/main/GenErode_Zdi/Zdi_relationships.png" alt="Zdi_relationships" width="400"/>
+</div>
+
+
 
 
 
