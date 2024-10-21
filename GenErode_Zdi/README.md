@@ -538,6 +538,19 @@ ZdiCDup065_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_065-Ex1-5B-lcwgs-1-2.1.fq
 ZdiCDup066_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_066-Ex1-5C-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_066-Ex1-5C-lcwgs-1-2.2.fq.gz
 ZdiCDup071_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_071-Ex1-12H-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_071-Ex1-12H-lcwgs-1-2.2.fq.gz
 ```
+The next step is to copy the Sumatran rhino test config file to Zdi's config directory and then edit the file, but the majority of edits made to it do not need to be changed per species, so I will copy a config file that I previously edited for Pbb.
+```
+[hpc-0356@wahab-01 config]$ cp /archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/GenErode_Pbb/config/config.yaml .
+```
+Then I edited the file to include Zdi specific information:
+
+* **ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference/reference.genbank.Zdi.fasta"**
+* **historical_samples: "config/Zdi_historical_samples.txt"** 
+* **modern_samples: "config/Zdi_modern_samples.txt"**
+* **historical_rescaled_samplenames: []**
+* **gerp_ref_path: 
+"/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/gerp_outgroups"**
+* **tree: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/Zdi_gerp_tree.nwk"**
 
 
 
