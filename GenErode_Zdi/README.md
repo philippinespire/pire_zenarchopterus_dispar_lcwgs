@@ -538,22 +538,37 @@ ZdiCDup065_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_065-Ex1-5B-lcwgs-1-2.1.fq
 ZdiCDup066_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_066-Ex1-5C-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_066-Ex1-5C-lcwgs-1-2.2.fq.gz
 ZdiCDup071_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_071-Ex1-12H-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_071-Ex1-12H-lcwgs-1-2.2.fq.gz
 ```
-The next step is to copy the Sumatran rhino test config file to Zdi's config directory and then edit the file, but the majority of edits made to it do not need to be changed per species, so I will copy a config file that I previously edited for Pbb.
+The next step is to copy the Sumatran rhino test config file to Zdi's config directory and then edit the file, but the majority of edits made to it do not need to be changed per species, so I will copy a config file that I previously edited for Pbb. All of the edits to that file are listed [here](https://github.com/philippinespire/pire_parupeneus_barberinus_lcwgs/tree/main/GenErode_Pbb).
 ```
 [hpc-0356@wahab-01 config]$ cp /archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/GenErode_Pbb/config/config.yaml .
 ```
 Then I edited the file to include Zdi specific information:
 
-* **ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference/reference.genbank.Zdi.fasta"**
-* **historical_samples: "config/Zdi_historical_samples.txt"** 
-* **modern_samples: "config/Zdi_modern_samples.txt"**
-* **historical_rescaled_samplenames: []**
-* **gerp_ref_path: 
-"/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/gerp_outgroups"**
-* **tree: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/Zdi_gerp_tree.nwk"**
+* **ref_path:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference/reference.genbank.Zdi.fasta"
+* **historical_samples:** "config/Zdi_historical_samples.txt"
+* **modern_samples:** "config/Zdi_modern_samples.txt"
+* **historical_rescaled_samplenames:** ["ZdiADup001","ZdiADup002","ZdiADup003","ZdiADup004","ZdiADup005","ZdiADup006","ZdiADup007","ZdiADup008","ZdiADup009","ZdiADup010","ZdiADup011","ZdiADup012","ZdiADup013","ZdiADup014","ZdiADup015","ZdiADup016","ZdiADup017","ZdiADup018","ZdiADup019","ZdiADup020","ZdiADup021","ZdiADup022","ZdiADup023","ZdiADup024","ZdiADup025","ZdiADup026","ZdiADup027","ZdiADup028","ZdiADup029","ZdiADup030","ZdiADup031","ZdiADup032","ZdiADup033","ZdiADup034","ZdiADup035","ZdiADup036","ZdiADup037","ZdiADup038","ZdiADup039","ZdiADup040","ZdiADup041","ZdiADup042","ZdiADup043","ZdiADup044","ZdiADup045","ZdiADup046","ZdiADup047"]
+* **gerp_ref_path:** 
+"/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/gerp_outgroups"
+* **tree:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/Zdi_gerp_tree.nwk"
 
+---
+</details>
 
+<details><summary>4. Run GenErode</summary>
 
+### 4. Run GenErode
+
+Copy the sbatch script
+```
+[hpc-0356@wahab-01 GenErode_Zdi]$ cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/run_GenErode.sbatch .
+```
+Run GenErode:
+```
+[hpc-0356@wahab-01 GenErode_Zdi]$ sbatch run_GenErode.sbatch
+```
+#### Failed jobs and their errors:
+* **3617731** (currently running)
 
 
 
