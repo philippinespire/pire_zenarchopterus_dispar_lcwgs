@@ -568,7 +568,10 @@ Run GenErode:
 [hpc-0356@wahab-01 GenErode_Zdi]$ sbatch run_GenErode.sbatch
 ```
 #### Failed jobs and their errors:
-* **3617731** (currently running)
+* **3617731**:
+    * `FileNotFoundError: [Errno 2] No such file or directory: 'results/logs/2_mapping/historical/reference.genbank.Zdi`
+    * this directory does exist, though, so I will just rerun the script
+* **3621604** (currently running)
 
 
 
