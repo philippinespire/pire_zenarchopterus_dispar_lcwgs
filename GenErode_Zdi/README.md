@@ -568,14 +568,24 @@ Run GenErode:
 [hpc-0356@wahab-01 GenErode_Zdi]$ sbatch run_GenErode.sbatch
 ```
 #### Failed jobs and their errors:
+
 * **3617731:**
     * `FileNotFoundError: [Errno 2] No such file or directory:'results/logs/2_mapping/historical/reference.genbank.Zdi'`
     * this directory does exist, though, so I will just rerun the script
+
 * **3621604:** 
     * `Error message: sacct: error: slurm_persist_conn_open_without_init: failed to open persistent connection to host:head-2.ib.cluster:6819: Connection timed out`
-* **3624474:** (currently running)
 
+* **3624474:**
+    * errors with `Xenentodon_cancila` files but we can't identify the issue. May have been due to the timeout from before so I will rerun with an incomplete tag this time.
+    * ```
+      [hpc-0356@wahab-01 GenErode_Zdi]$ cp run_GenErode.sbatch ./run_GenErode_incomplete.sbatch
+      [hpc-0356@wahab-01 GenErode_Zdi]$ nano run_GenErode_incomplete.sbatch
+          # add --rerun-incomplete tag
+      [hpc-0356@wahab-01 GenErode_Zdi]$ sbatch run_GenErode_incomplete.sbatch
+      ```
 
+* **3624828:** (currently running)
 
 
 
