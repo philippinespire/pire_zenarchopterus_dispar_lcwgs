@@ -584,6 +584,9 @@ Run GenErode:
 * **3624828:**
     *  more errors involving `Xenentodon_cancila` but we cannot identify the issue. Because I have 31 gerp outgroups and I need a minimum of 30, I will remove Xenentodon cancila from the list
     *  I am revising everything in step **2. Get Newick Tree** to account for this change
+ 
+* **3670697:** *first job since removing Xenentodon cancila and getting new nwk files
+   * used regular `sbatch run_GenErode.sbatch` since this was essentially running it for the first time again
 
 
 
