@@ -4,7 +4,7 @@
 
 Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_Wahab) for Pbb.
 
-Done by Gianna Mazzei (September 2024).
+Done by Gianna Mazzei (October 2024).
 
 ---
 
@@ -81,7 +81,7 @@ rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing
 
 ### 2. Get Newick tree
 
-To begin to populate the `gerp_outgroups` directory, we need to download genomes from ~30 other fishes. Zenarchopterus dispar is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are only 3 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I had to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 13 unique genomes. The sister order to Cichliformes, Polycentridae, had no genomes. All of these total 31.
+To begin to populate the `gerp_outgroups` directory, we need to download genomes from ~30 other fishes. Zenarchopterus dispar is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are only 2 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I had to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 13 unique genomes. The sister order to Cichliformes, Polycentridae, had no genomes. All of these total 30.
 
 <div align="center">
  <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_relationships.png" alt="Zdi_relationships" width="450"/>
@@ -105,9 +105,7 @@ To begin to populate the `gerp_outgroups` directory, we need to download genomes
 [hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/023/969/325/GCA_023969325.1_ASM2396932v1/GCA_023969325.1_ASM2396932v1_genomic.fna.gz
 [hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_023969325.1_ASM2396932v1_genomic.fna.gz Oryzias_curvinotus.fa.gz
 
-# Xenentodon cancila
-[hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/014/839/995/GCA_014839995.1_fXenCan1.pri/GCA_014839995.1_fXenCan1.pri_genomic.fna.gz
-[hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_014839995.1_fXenCan1.pri_genomic.fna.gz Xenentodon_cancila.fa.gz
+# Xenentodon cancila was removed from this list as it was causing problems for GenErode
 ```
 
 **Atheriniformes**
@@ -266,7 +264,6 @@ Pholidichthys leucotaenia
 Poecilia formosa
 Telmatherina bonti
 Valencia hispanica
-Xenentodon cancila
 Xiphophorus birchmanni
 ```
 <p>
@@ -279,14 +276,13 @@ I downloaded the tree as a Newick File (and jpg) and uploaded it to my `GenErode
 
 giannamazzei@Giannas-Laptop ~ % cd ~/Downloads
 
-giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_outgroups.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_tree.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
 
 giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
 ```
 
-Now, in the .nwk file (I renamed it first), rename the focal species with the name of the reference assembly file.
+Now, in the .nwk file, rename the focal species with the name of the reference assembly file.
 ```
-[hpc-0356@wahab-01 GenErode_Zdi]$ mv Zdi_gerp_outgroups.nwk Zdi_gerp_tree.nwk
 [hpc-0356@wahab-01 GenErode_Zdi]$ sed -i 's/Dermogenys_collettei/reference.genbank.Zdi.fasta/g' Zdi_gerp_tree.nwk
 ```
 <div align="center">
@@ -585,7 +581,9 @@ Run GenErode:
       [hpc-0356@wahab-01 GenErode_Zdi]$ sbatch run_GenErode_incomplete.sbatch
       ```
 
-* **3624828:** (currently running)
+* **3624828:**
+    *  more errors involving `Xenentodon_cancila` but we cannot identify the issue. Because I have 31 gerp outgroups and I need a minimum of 30, I will remove Xenentodon cancila from the list
+    *  I am revising everything in step **2. Get Newick Tree** to account for this change
 
 
 
