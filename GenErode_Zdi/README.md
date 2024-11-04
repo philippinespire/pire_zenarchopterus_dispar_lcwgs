@@ -20,12 +20,12 @@ cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wa
 ```
 Then, create the necessary subdirectories
 ```
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/config
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/historical
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/modern
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/mitochondria
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/config
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/gerp_outgroups
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/mitochondria
 ```
 Add 1st_sequencing_run Zdi species data to the subdirectories:
 ```
@@ -81,7 +81,9 @@ rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing
 
 ### 2. Get Newick tree
 
-To begin to populate the `gerp_outgroups` directory, we need to download genomes from  at least 30 other fishes. _Zenarchopterus dispar_ is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are only 2 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I had to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 12 unique genomes. The sister order to Cichliformes, Polycentridae, had no genomes. Previously included was _Xenentodon cancila_, which belonged to Beloniformes, but this species was causing issues when trying to run GenErode. Because of this, we now only have 29 genomes. The next closest order is Ambassidae, which only has one chromosome level genome. Now we have 30 genomes. 
+To begin to populate the `gerp_outgroups` directory, we need to download genomes from  at least 30 other fishes. _Zenarchopterus dispar_ is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are only 2 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I had to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 12 unique genomes. The sister order to Cichliformes, Polycentridae, had no genomes. This equals 30 genomes.
+
+Previously included was _Xenentodon cancila_, which belonged to Beloniformes, but this species was causing issues when trying to run GenErode. Because of this, we now only have 29 genomes. The next closest order is Ambassidae, which only has one chromosome level genome. Now we have 30 genomes. 
 
 <div align="center">
  <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_relationships.png" alt="Zdi_relationships" width="450"/>
