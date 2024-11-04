@@ -86,7 +86,7 @@ To begin to populate the `gerp_outgroups` directory, we need to download genomes
 Previously included was _Xenentodon cancila_, which belonged to Beloniformes, but this species was causing issues when trying to run GenErode. Because of this, we now only have 29 genomes. The next closest order is Ambassidae, which only has one chromosome level genome. Now we have 30 genomes. 
 
 <div align="center">
- <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_relationships.png" alt="Zdi_relationships" width="450"/>
+ <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_relationships_2.png" alt="Zdi_relationships" width="450"/>
 </div>
 <p>
 
