@@ -83,10 +83,10 @@ rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing
 
 To begin to populate the `gerp_outgroups` directory, we need to download genomes from  at least 30 other fishes. _Zenarchopterus dispar_ is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are only 2 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I had to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 12 unique genomes. The sister order to Cichliformes, Polycentridae, had no genomes. This equals 30 genomes.
 
-Previously included was _Xenentodon cancila_, which belonged to Beloniformes, but this species was causing issues when trying to run GenErode. Because of this, we now only have 29 genomes. The next closest order is Ambassidae, which only has one chromosome level genome. Now we have 30 genomes. 
+Previously included was _Xenentodon cancila_, which belonged to Beloniformes, but this species was causing issues when trying to run GenErode. Because of this, we now only have 29 genomes. The next closest group is the family Ambassidae within the order Perciformes, which only has one chromosome level genome. Now we have 30 genomes. 
 
 <div align="center">
- <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_relationships_2.png" alt="Zdi_relationships" width="450"/>
+ <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_relationships_2.png" alt="Zdi_relationships" width="500"/>
 </div>
 <p>
 
@@ -278,7 +278,7 @@ Xiphophorus birchmanni
 ```
 <p>
 
-I downloaded the tree as a Newick File (and jpg) and uploaded it to my `GenErode_Zdi` directory.
+I downloaded the tree as a Newick File (and jpg) and uploaded it to my `GenErode_Zdi_2` directory.
 </p>
 
 ```
@@ -286,20 +286,20 @@ I downloaded the tree as a Newick File (and jpg) and uploaded it to my `GenErode
 
 giannamazzei@Giannas-Laptop ~ % cd ~/Downloads
 
-giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_tree.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_tree.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
 
-giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
 ```
 
 Now, in the .nwk file, rename the focal species with the name of the reference assembly file.
 ```
-[hpc-0356@wahab-01 GenErode_Zdi]$ sed -i 's/Dermogenys_collettei/reference.genbank.Zdi.fasta/g' Zdi_gerp_tree.nwk
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ sed -i 's/Dermogenys_collettei/reference.genbank.Zdi.fasta/g' Zdi_gerp_tree.nwk
 ```
 <div align="center">
  
  ### TimeTree Output:
  
- <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
+ <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi_2/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
 </div>
 
 ---
@@ -592,31 +592,55 @@ Run GenErode:
       ```
 
 * **3624828:**
-    *  more errors involving `Xenentodon_cancila` but we cannot identify the issue. Because I have 31 gerp outgroups and I need a minimum of 30, I will remove Xenentodon cancila from the list
-    <details><summary>Making a new directory:</summary>
-    ```
-    [hpc-0356@wahab-01 pire_zenarchopterus_dispar_lcwgs]$ mkdir GenErode_Zdi_2
-     # remake directories
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir config
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir historical
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir modern
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir mitochondria
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir reference
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir gerp_outgroups
-    # populate them
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/modern/ .
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/historical/ .
-     [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/gerp_outgroups/ .  # having removed Xenentodon cancila first
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/config/ .
-    [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/reference/reference.genbank.Zdi.fasta reference/. 
-    
-    
-    
-
+    *  more errors involving `Xenentodon_cancila` but we cannot identify the issue. I have to remove that species, but that leaves me with only 29 genomes. See **2. Get Newick Tree** for more details.
+    * <details><summary> >>>> Making a new directory: GenErode_Zdi_2 <<<< </summary>
+      
+      ```
+      [hpc-0356@wahab-01 pire_zenarchopterus_dispar_lcwgs]$ mkdir GenErode_Zdi_2
+       # remake directories
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir config
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir historical
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir modern
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir mitochondria
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir reference
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir gerp_outgroups
   
-    
-  
+      # populate them
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/modern/ .
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/historical/ .
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/gerp_outgroups/ .  # having removed Xenentodon cancila first
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/config/ .
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/reference/reference.genbank.Zdi.fasta reference/.
 
+      # edit config.yaml file with new path
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ nano config.yaml
+      ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference/reference.genbank.Zdi.fasta"
+      gerp_ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups"
+      tree: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/Zdi_gerp_tree.nwk"
+  
+       # add temple dir folders
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/GenErode_templatedir/* .
+  
+       # add new nwk files
+       [hpc-0356@wahab-01 GenErode_Zdi_2]$ cd ~/Downloads
+       giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_tree.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
+       giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
+       [hpc-0356@wahab-01 GenErode_Zdi_2]$ sed -i 's/Dermogenys_collettei/reference.genbank.Zdi.fasta/g' Zdi_gerp_tree.nwk
+       ```
+       </details>
+
+ ### _The following have been run in `GenErode_Zdi_2`_
+
+Copy the sbatch script
+```
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/run_GenErode.sbatch .
+```
+Run GenErode:
+```
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ sbatch run_GenErode.sbatch
+```
+#### Failed jobs and their errors:
+* 
 
 
 </details>
