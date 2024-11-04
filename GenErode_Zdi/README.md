@@ -20,12 +20,12 @@ cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wa
 ```
 Then, create the necessary subdirectories
 ```
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/config
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/gerp_outgroups
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/mitochondria
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/config
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/historical
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/modern
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups
+mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/mitochondria
 ```
 Add 1st_sequencing_run Zdi species data to the subdirectories:
 ```
@@ -81,7 +81,7 @@ rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing
 
 ### 2. Get Newick tree
 
-To begin to populate the `gerp_outgroups` directory, we need to download genomes from ~30 other fishes. Zenarchopterus dispar is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are only 2 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I had to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 13 unique genomes. The sister order to Cichliformes, Polycentridae, had no genomes. All of these total 30.
+To begin to populate the `gerp_outgroups` directory, we need to download genomes from  at least 30 other fishes. _Zenarchopterus dispar_ is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are only 2 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I had to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 12 unique genomes. The sister order to Cichliformes, Polycentridae, had no genomes. Previously included was _Xenentodon cancila_, which belonged to Beloniformes, but this species was causing issues when trying to run GenErode. Because of this, we now only have 29 genomes. The next closest order is Ambassidae, which only has one chromosome level genome. Now we have 30 genomes. 
 
 <div align="center">
  <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_relationships.png" alt="Zdi_relationships" width="450"/>
@@ -225,6 +225,14 @@ To begin to populate the `gerp_outgroups` directory, we need to download genomes
 [hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/020/510/985/GCA_020510985.1_fPhoLeu1.pri/GCA_020510985.1_fPhoLeu1.pri_genomic.fna.gz
 [hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_020510985.1_fPhoLeu1.pri_genomic.fna.gz Pholidichthys_leucotaenia.fa.gz
 ```
+
+**Beloniformes**
+```
+# Parambassis ranga
+[hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/634/625/GCF_900634625.1_fParRan2.1/GCF_900634625.1_fParRan2.1_genomic.fna.gz
+[hpc-0356@wahab-01 gerp_outgroups]$ mv GCF_900634625.1_fParRan2.1_genomic.fna.gz Parambassis_ranga.fa.gz
+```
+
 </details>
 
 
@@ -583,14 +591,29 @@ Run GenErode:
 
 * **3624828:**
     *  more errors involving `Xenentodon_cancila` but we cannot identify the issue. Because I have 31 gerp outgroups and I need a minimum of 30, I will remove Xenentodon cancila from the list
-    *  I am revising everything in step **2. Get Newick Tree** to account for this change
- 
-* **3670697:** *first job since removing Xenentodon cancila and getting new nwk files
-   * used regular `sbatch run_GenErode.sbatch` since this was essentially running it for the first time again
+    <details><summary>Making a new directory:</summary>
+    ```
+    [hpc-0356@wahab-01 pire_zenarchopterus_dispar_lcwgs]$ mkdir GenErode_Zdi_2
+     # remake directories
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir config
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir historical
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir modern
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir mitochondria
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir reference
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir gerp_outgroups
+    # populate them
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/modern/ .
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/historical/ .
+     [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/gerp_outgroups/ .  # having removed Xenentodon cancila first
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/config/ .
+    [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/reference/reference.genbank.Zdi.fasta reference/. 
+    
+    
+    
 
-
-
-
+  
+    
+  
 
 
 
