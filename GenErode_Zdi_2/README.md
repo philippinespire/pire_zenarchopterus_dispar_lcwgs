@@ -16,16 +16,16 @@ Done by Gianna Mazzei (October 2024).
 
 Make a copy of the template folder, renaming it according to your species name.
 ```
-cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/GenErode_templatedir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/GenErode_templatedir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
 ```
 Then, create the necessary subdirectories
 ```
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/config
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/historical
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/modern
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/mitochondria
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir config
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir historical
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir modern
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir reference
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir gerp_outgroups
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir mitochondria
 ```
 Add 1st_sequencing_run Zdi species data to the subdirectories:
 ```
@@ -266,6 +266,7 @@ Odontesthes bonariensis
 Oreochromis aureus
 Oryzias curvinotus
 Parachromis managuensis
+Parambassis ranga
 Pelmatolapia mariae
 Petenia splendida
 Pholidichthys leucotaenia
@@ -284,9 +285,9 @@ I downloaded the tree as a Newick File (and jpg) and uploaded it to my `GenErode
 
 giannamazzei@Giannas-Laptop ~ % cd ~/Downloads
 
-giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_tree.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_tree.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
 
-giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
+giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
 ```
 
 Now, in the .nwk file, rename the focal species with the name of the reference assembly file.
@@ -297,7 +298,7 @@ Now, in the .nwk file, rename the focal species with the name of the reference a
  
  ### TimeTree Output:
  
- <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
+ <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi_2/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
 </div>
 
 ---
