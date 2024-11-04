@@ -20,7 +20,7 @@
 # headers without special characters and has to be uncompressed. 
 # The file name will be reused by the pipeline and can have the file 
 # name extensions *.fasta, *.fa or *.fna.
-ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference/reference.genbank.Zdi.fasta"
+ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference/reference.genbank.Zdi.fasta"
 #################################################################
 
 
@@ -489,7 +489,7 @@ gerp: True
 # FASTA format for GERP++ score estimation.
 # Files must be gzipped and FASTA file name extensions can be 
 # "*.fa.gz", "*.fasta.gz" or "*.fna.gz".
-gerp_ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/gerp_outgroups"
+gerp_ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups"
 
 # Full path to phylogenetic tree of all species included in the analysis 
 # (including the target species) in NEWICK format and including divergence 
@@ -498,7 +498,7 @@ gerp_ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenE
 # of GERP scores (see dated phylogenetic trees from www.timetree.org).
 # Species names in the tree must be identical to the FASTA file names 
 # without ".fa.gz", ".fasta.gz" or ".fna.gz".
-tree: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/Zdi_gerp_tree.nwk"
+tree: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/Zdi_gerp_tree.nwk"
 
 # Minimum and maximum GERP score for a site to be included into calculations 
 # of relative mutational load.
