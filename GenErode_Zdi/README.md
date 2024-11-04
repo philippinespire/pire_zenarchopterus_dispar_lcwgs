@@ -278,7 +278,7 @@ Xiphophorus birchmanni
 ```
 <p>
 
-I downloaded the tree as a Newick File (and jpg) and uploaded it to my `GenErode_Zdi` directory.
+I downloaded the tree as a Newick File (and jpg) and uploaded it to my `GenErode_Zdi_2` directory.
 </p>
 
 ```
@@ -610,7 +610,13 @@ Run GenErode:
       [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/historical/ .
       [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/gerp_outgroups/ .  # having removed Xenentodon cancila first
       [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/config/ .
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/reference/reference.genbank.Zdi.fasta reference/. 
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/reference/reference.genbank.Zdi.fasta reference/.
+
+      # edit config.yaml file with new path
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ nano config.yaml
+      ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference/reference.genbank.Zdi.fasta"
+      gerp_ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups"
+      tree: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/Zdi_gerp_tree.nwk"
   
        # add temple dir folders
       [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/GenErode_templatedir/* .
