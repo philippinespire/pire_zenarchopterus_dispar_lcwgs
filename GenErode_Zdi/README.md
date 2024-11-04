@@ -226,7 +226,7 @@ To begin to populate the `gerp_outgroups` directory, we need to download genomes
 [hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_020510985.1_fPhoLeu1.pri_genomic.fna.gz Pholidichthys_leucotaenia.fa.gz
 ```
 
-**Beloniformes**
+**Ambassidae**
 ```
 # Parambassis ranga
 [hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/634/625/GCF_900634625.1_fParRan2.1/GCF_900634625.1_fParRan2.1_genomic.fna.gz
