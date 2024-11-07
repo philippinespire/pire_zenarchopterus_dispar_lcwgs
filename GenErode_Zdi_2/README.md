@@ -81,12 +81,12 @@ rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing
 
 ### 2. Get Newick tree
 
-To begin to populate the `gerp_outgroups` directory, we need to download genomes from  at least 30 other fishes. _Zenarchopterus dispar_ is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are only 2 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I had to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 12 unique genomes. The sister order to Cichliformes, Polycentridae, had no genomes. This equals 30 genomes.
+To begin to populate the `gerp_outgroups` directory, we need to download genomes from  at least 30 other fishes. _Zenarchopterus dispar_ is within the Zenarchopteridae family within the order Beloniformes. On Genbank, there are 3 unique chromosome level genomes in this order. Within the same clade, Atherinomorphae, the next closest groups are Atheriniformes and Cyprinodontiformes, with 4 and 11 chromosome level genomes, respectively. After this, I had to expand to the next closest clade, Cichlomorphae. Within this clade, the order Cichliformes has 12 unique genomes. The sister order to Cichliformes, Polycentridae, had no genomes. This equals 30 genomes.
 
-Previously included was _Xenentodon cancila_, which belonged to Beloniformes, but this species was causing issues when trying to run GenErode. Because of this, we now only have 29 genomes. The next closest group is the family Ambassidae within the order Perciformes, which only has one chromosome level genome. Now we have 30 genomes. 
+Unfortunately, _Xenentodon cancila_, which belonged to Beloniformes, caused issues when trying to run GenErode. Because of this, we now only have 29 genomes. There is a 13th whole genome in the order Cichliformes, but I avoided it due to it being an unclassified species (_Rhamphochromis sp. 'chilingali'_) and unrecognized by TimeTree. To evade the issue, I'm going to download the _Rhamphochromis sp. 'chilingali'_ genome but list _Rhamphochromis esox_ as the species name for creating the TimeTree, as this species is recognized for some reason.
 
 <div align="center">
- <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi/Zdi_relationships_2.png" alt="Zdi_relationships" width="500"/>
+ <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi_2/Zdi_relationships_2.png" alt="Zdi_relationships" width="500"/>
 </div>
 <p>
 
@@ -226,13 +226,10 @@ Previously included was _Xenentodon cancila_, which belonged to Beloniformes, bu
 # Pholidichthys leucotaenia
 [hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/020/510/985/GCA_020510985.1_fPhoLeu1.pri/GCA_020510985.1_fPhoLeu1.pri_genomic.fna.gz
 [hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_020510985.1_fPhoLeu1.pri_genomic.fna.gz Pholidichthys_leucotaenia.fa.gz
-```
 
-**Ambassidae**
-```
-# Parambassis ranga
-[hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/900/634/625/GCF_900634625.1_fParRan2.1/GCF_900634625.1_fParRan2.1_genomic.fna.gz
-[hpc-0356@wahab-01 gerp_outgroups]$ mv GCF_900634625.1_fParRan2.1_genomic.fna.gz Parambassis_ranga.fa.gz
+# *Added* Rhamphochromis sp. 'chilingali'
+[hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/963/969/265/GCA_963969265.1_fRhaChi2.1/GCA_963969265.1_fRhaChi2.1_genomic.fna.gz
+[hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_963969265.1_fRhaChi2.1_genomic.fna.gz Rhamphochromis_sp.chilingali.fa.gz
 ```
 
 </details>
@@ -245,7 +242,7 @@ I created a txt file listing the names of all the species in the `gerp_outgroups
 
 Species List:
 ```
-Dermogenys collettei
+*Dermogenys collettei
 Amphilophus citrinellus
 Anableps anableps
 Archocentrus centrarchus
@@ -272,6 +269,7 @@ Pelmatolapia mariae
 Petenia splendida
 Pholidichthys leucotaenia
 Poecilia formosa
+*Rhamphochromis esox
 Telmatherina bonti
 Valencia hispanica
 Xiphophorus birchmanni
