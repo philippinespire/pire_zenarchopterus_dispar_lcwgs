@@ -638,7 +638,9 @@ Run GenErode:
 [hpc-0356@wahab-01 GenErode_Zdi_2]$ sbatch run_GenErode.sbatch
 ```
 #### Failed jobs and their errors:
-* **3674736** -> (currently running)
+* **3674736** -> now I am running into the exact same errors for _Cololabis saira_ as I did for _Xenentodon cancila_, despite it working properly during our previous run.
+    * The issue is likely not from the genome file for either of these species, but rather issues from our Zdi reference genome being at the scaffold level rather than complete.
+    * Now, I need to make another new directory, where I will add Xenentodon cancila back (I will still keep the Rhamphochromis_chilingali that I added since it can't hurt to have another genome, of course unless it throws an error) and I will modify the reference genome to remove small scaffolds and hope this resolves our errors.
 
 
 </details>
