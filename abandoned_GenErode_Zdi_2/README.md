@@ -229,7 +229,7 @@ Unfortunately, _Xenentodon cancila_, which belonged to Beloniformes, caused issu
 
 # *Added* Rhamphochromis sp. 'chilingali'
 [hpc-0356@wahab-01 gerp_outgroups]$ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/963/969/265/GCA_963969265.1_fRhaChi2.1/GCA_963969265.1_fRhaChi2.1_genomic.fna.gz
-[hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_963969265.1_fRhaChi2.1_genomic.fna.gz Rhamphochromis_sp.chilingali.fa.gz
+[hpc-0356@wahab-01 gerp_outgroups]$ mv GCA_963969265.1_fRhaChi2.1_genomic.fna.gz Rhamphochromis_chilingali.fa.gz
 ```
 
 </details>
@@ -238,7 +238,7 @@ Unfortunately, _Xenentodon cancila_, which belonged to Beloniformes, caused issu
 
 I created a txt file listing the names of all the species in the `gerp_outgroups` directory and uploaded this to [TimeTree of Life](https://timetree.org/). We need to add Zenarchopterus dispar to this list, but neither the species nor its genus is recognized by the database. However, within the same family (Zenarchopteridae) the species Dermogenys collettei is recognized. 
 
-**I will be using Dermogenys collettei as a proxy for Zenarchopterus dispar.**
+**I will be using Dermogenys collettei as a proxy for Zenarchopterus dispar and Rhamphochromis esox in place of Rhamphochromis sp. 'chilingali'**
 
 Species List:
 ```
@@ -289,9 +289,10 @@ giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_tree.nwk hpc-0356@wahab.hpc
 giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
 ```
 
-Now, in the .nwk file, rename the focal species with the name of the reference assembly file.
+Now, in the .nwk file, rename the focal species with the name of the reference assembly file, as well as rename the species for Rhamphochromis:
 ```
 [hpc-0356@wahab-01 GenErode_Zdi_2]$ sed -i 's/Dermogenys_collettei/reference.genbank.Zdi.fasta/g' Zdi_gerp_tree.nwk
+[hpc-0356@wahab-01 GenErode_Zdi_2]$ sed -i 's/Rhamphochromis_esox/Rhamphochromis_chilingali/g' Zdi_gerp_tree.nwk
 ```
 <div align="center">
  
@@ -548,13 +549,12 @@ The next step is to copy the Sumatran rhino test config file to Zdi's config dir
 ```
 Then I edited the file to include Zdi specific information:
 
-* **ref_path:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference/reference.genbank.Zdi.fasta"
+* **ref_path:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference/reference.genbank.Zdi.fasta"
 * **historical_samples:** "config/Zdi_historical_samples.txt"
 * **modern_samples:** "config/Zdi_modern_samples.txt"
 * **historical_rescaled_samplenames:** ["ZdiADup001","ZdiADup002","ZdiADup003","ZdiADup004","ZdiADup005","ZdiADup006","ZdiADup007","ZdiADup008","ZdiADup009","ZdiADup010","ZdiADup011","ZdiADup012","ZdiADup013","ZdiADup014","ZdiADup015","ZdiADup016","ZdiADup017","ZdiADup018","ZdiADup019","ZdiADup020","ZdiADup021","ZdiADup022","ZdiADup023","ZdiADup024","ZdiADup025","ZdiADup026","ZdiADup027","ZdiADup028","ZdiADup029","ZdiADup030","ZdiADup031","ZdiADup032","ZdiADup033","ZdiADup034","ZdiADup035","ZdiADup036","ZdiADup037","ZdiADup038","ZdiADup039","ZdiADup040","ZdiADup041","ZdiADup042","ZdiADup043","ZdiADup044","ZdiADup045","ZdiADup046","ZdiADup047"]
-* **gerp_ref_path:** 
-"/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/gerp_outgroups"
-* **tree:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/Zdi_gerp_tree.nwk"
+* **gerp_ref_path:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups"
+* **tree:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/Zdi_gerp_tree.nwk"
 
 ---
 </details>
@@ -638,7 +638,9 @@ Run GenErode:
 [hpc-0356@wahab-01 GenErode_Zdi_2]$ sbatch run_GenErode.sbatch
 ```
 #### Failed jobs and their errors:
-* 
+* **3674736** -> now I am running into the exact same errors for _Cololabis saira_ as I did for _Xenentodon cancila_, despite it working properly during our previous run.
+    * The issue is likely not from the genome file for either of these species, but rather issues from our Zdi reference genome being at the scaffold level rather than complete.
+    * Now, I need to make another new directory, where I will add Xenentodon cancila back (I will still keep the Rhamphochromis_chilingali that I added since it can't hurt to have another genome, of course unless it throws an error) and I will modify the reference genome to remove small scaffolds and hope this resolves our errors.
 
 
 </details>
