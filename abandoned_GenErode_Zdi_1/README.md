@@ -4,7 +4,7 @@
 ### This directory has been abandoned due to file errors. 
 ---
 
-## GenErode: _Zenarchopterus dispar_ lcWGS
+## GenErode_Zdi_1: _Zenarchopterus dispar_ lcWGS
 
 Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_Wahab).
 
