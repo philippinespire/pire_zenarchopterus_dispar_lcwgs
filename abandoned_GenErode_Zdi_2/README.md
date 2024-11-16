@@ -10,69 +10,36 @@ Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_
 
 Done by Gianna Mazzei (October 2024).
 
-<details><summary>1. Set-Up</summary>
+<details><summary>1. Set-Up/Get config files</summary>
 
-### 1. Set-Up
+### 1. Set-Up/Get config files
 
-Make a copy of the template folder, renaming it according to your species name.
-```
-cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/GenErode_templatedir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi
-```
-Then, create the necessary subdirectories
-```
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/config
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/gerp_outgroups
-mkdir /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/mitochondria
-```
-Add 1st_sequencing_run Zdi species data to the subdirectories:
-```
-rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_raw/Zdi-A*.fq.gz /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical
+This is copying the folders and files I previously set up in [GenErode_Zdi_1](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/abandoned_GenErode_Zdi_1). Detailed information has been recorded in that directory.
 
-rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_raw/Zdi-C*.fq.gz /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern
-```
-Make sure they all synced properly:
-```
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_raw/Zdi-A*.fq.gz  | wc -l
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical | wc -l
-94
-94
+      [hpc-0356@wahab-01 pire_zenarchopterus_dispar_lcwgs]$ mkdir GenErode_Zdi_2
+       # remake directories
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir config
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir historical
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir modern
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir mitochondria
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir reference
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir gerp_outgroups
+  
+      # populate them
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/modern/ .
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/historical/ .
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/gerp_outgroups/ .  # having removed Xenentodon cancila first
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/config/ .
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/reference/reference.genbank.Zdi.fasta reference/.
 
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/fq_raw/Zdi-C*.fq.gz | wc -l
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern | wc -l
-128
-128
-```
-
-Now add 2nd_sequencing_run Zdi species data to the subdirectories:
-```
-rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_raw/Zdi-A*.fq.gz /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical
-
-rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_raw/Zdi-C*.fq.gz /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern
-```
-Check it worked:
-```
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_raw/Zdi-A*.fq.gz  | wc -l
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical/*2.1.fq.gz | wc -l
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/historical/*2.2.fq.gz | wc -l
-94
-47
-47
-
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run/fq_raw/Zdi-C*.fq.gz  | wc -l
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern/*2.1.fq.gz | wc -l
-ls -1 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/modern/*2.2.fq.gz | wc -l
-98
-49
-49
-```
-Add reference genome:
-```
-rsync /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run/mkBAM_ddocent/reference.genbank.Zdi.fasta /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi/reference
-```
-
+      # edit config.yaml file with new path
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ nano config.yaml
+      ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference/reference.genbank.Zdi.fasta"
+      gerp_ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups"
+      tree: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/Zdi_gerp_tree.nwk"
+  
+       # add temple dir folders
+      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/GenErode_templatedir/* .
 ---
 
 </details>
@@ -86,7 +53,7 @@ To begin to populate the `gerp_outgroups` directory, we need to download genomes
 Unfortunately, _Xenentodon cancila_, which belonged to Beloniformes, caused issues when trying to run GenErode. Because of this, we now only have 29 genomes. There is a 13th whole genome in the order Cichliformes, but I avoided it due to it being an unclassified species (_Rhamphochromis sp. 'chilingali'_) and unrecognized by TimeTree. To evade the issue, I'm going to download the _Rhamphochromis sp. 'chilingali'_ genome but list _Rhamphochromis esox_ as the species name for creating the TimeTree, as this species is recognized for some reason.
 
 <div align="center">
- <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi_2/Zdi_relationships_2.png" alt="Zdi_relationships" width="500"/>
+ <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/abandoned_GenErode_Zdi_2/Zdi_relationships_2.png" alt="Zdi_relationships" width="500"/>
 </div>
 <p>
 
@@ -298,336 +265,17 @@ Now, in the .nwk file, rename the focal species with the name of the reference a
  
  ### TimeTree Output:
  
- <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi_2/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
+ <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/abandoned_GenErode_Zdi_2/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
 </div>
 
 ---
 
 </details>
 
-<details><summary>3. Edit the config files</summary>
 
-### 3. Edit the config files
+<details><summary>3. Run GenErode</summary>
 
-I wrote a script to try and automate this process.
-
-I began by copying it from where I originally made it:
-```
-[hpc-0356@wahab-01 GenErode_Zdi]$ cp /archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/test_GenErode_Pbb/config_file_population.sh .
-```
-Within the file, I have two variables you need to set on lines 9 and 10
-```
-species_code="Zdi"  # Replace XXX with the actual species code, ex. "Pbb"
-species_name="zenarchopterus_dispar"  # Replace with the actual species name, ex. "parupeneus_barberinus"
-```
-Now running the script should populate the config text files, if this works the way I hope it does.
-```
-[hpc-0356@wahab-01 GenErode_Zdi]$ ./config_file_population.sh 
-```
-It worked!!
-
-**Zdi_historical_samples.txt:**
-```
-[hpc-0356@wahab-01 config]$ cat Zdi_historical_samples.txt 
-samplename_index_lane readgroup_id readgroup_platform path_to_R1_fastq_file path_to_R2_fastq_file
-ZdiADup001_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_001-Ex1-11B-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_001-Ex1-11B-lcwgs-1-1.2.fq.gz
-ZdiADup002_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_002-Ex1-9G-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_002-Ex1-9G-lcwgs-1-1.2.fq.gz
-ZdiADup003_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_003-Ex1-9H-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_003-Ex1-9H-lcwgs-1-1.2.fq.gz
-ZdiADup004_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_004-Ex1-10A-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_004-Ex1-10A-lcwgs-1-1.2.fq.gz
-ZdiADup005_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_005-Ex1-10B-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_005-Ex1-10B-lcwgs-1-1.2.fq.gz
-ZdiADup006_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_006-Ex1-10C-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_006-Ex1-10C-lcwgs-1-1.2.fq.gz
-ZdiADup007_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_007-Ex1-10D-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_007-Ex1-10D-lcwgs-1-1.2.fq.gz
-ZdiADup008_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_008-Ex1-10E-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_008-Ex1-10E-lcwgs-1-1.2.fq.gz
-ZdiADup009_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_009-Ex1-10F-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_009-Ex1-10F-lcwgs-1-1.2.fq.gz
-ZdiADup010_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_010-Ex1-10G-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_010-Ex1-10G-lcwgs-1-1.2.fq.gz
-ZdiADup011_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_011-Ex1-10H-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_011-Ex1-10H-lcwgs-1-1.2.fq.gz
-ZdiADup012_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_012-Ex1-11A-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_012-Ex1-11A-lcwgs-1-1.2.fq.gz
-ZdiADup013_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_013-Ex1-12F-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_013-Ex1-12F-lcwgs-1-1.2.fq.gz
-ZdiADup014_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_014-Ex1-11C-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_014-Ex1-11C-lcwgs-1-1.2.fq.gz
-ZdiADup015_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_015-Ex1-11D-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_015-Ex1-11D-lcwgs-1-1.2.fq.gz
-ZdiADup016_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_016-Ex1-11E-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_016-Ex1-11E-lcwgs-1-1.2.fq.gz
-ZdiADup017_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_017-Ex1-11F-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_017-Ex1-11F-lcwgs-1-1.2.fq.gz
-ZdiADup018_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_018-Ex1-11G-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_018-Ex1-11G-lcwgs-1-1.2.fq.gz
-ZdiADup019_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_019-Ex1-11H-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_019-Ex1-11H-lcwgs-1-1.2.fq.gz
-ZdiADup020_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_020-Ex1-12A-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_020-Ex1-12A-lcwgs-1-1.2.fq.gz
-ZdiADup021_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_021-Ex1-12B-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_021-Ex1-12B-lcwgs-1-1.2.fq.gz
-ZdiADup022_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_022-Ex1-12C-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_022-Ex1-12C-lcwgs-1-1.2.fq.gz
-ZdiADup023_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_023-Ex1-12D-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_023-Ex1-12D-lcwgs-1-1.2.fq.gz
-ZdiADup024_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_024-Ex1-12E-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_024-Ex1-12E-lcwgs-1-1.2.fq.gz
-ZdiADup025_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_025-Ex1-2A-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_025-Ex1-2A-lcwgs-1-1.2.fq.gz
-ZdiADup026_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_026-Ex1-12G-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_026-Ex1-12G-lcwgs-1-1.2.fq.gz
-ZdiADup027_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_027-Ex1-12H-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_027-Ex1-12H-lcwgs-1-1.2.fq.gz
-ZdiADup028_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_028-Ex1-9F-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_028-Ex1-9F-lcwgs-1-1.2.fq.gz
-ZdiADup029_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_029-Ex1-1A-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_029-Ex1-1A-lcwgs-1-1.2.fq.gz
-ZdiADup030_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_030-Ex1-1B-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_030-Ex1-1B-lcwgs-1-1.2.fq.gz
-ZdiADup031_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_031-Ex1-1C-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_031-Ex1-1C-lcwgs-1-1.2.fq.gz
-ZdiADup032_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_032-Ex1-1D-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_032-Ex1-1D-lcwgs-1-1.2.fq.gz
-ZdiADup033_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_033-Ex1-1E-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_033-Ex1-1E-lcwgs-1-1.2.fq.gz
-ZdiADup034_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_034-Ex1-1F-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_034-Ex1-1F-lcwgs-1-1.2.fq.gz
-ZdiADup035_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_035-Ex1-1G-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_035-Ex1-1G-lcwgs-1-1.2.fq.gz
-ZdiADup036_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_036-Ex1-1H-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_036-Ex1-1H-lcwgs-1-1.2.fq.gz
-ZdiADup037_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_037-Ex1-3D-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_037-Ex1-3D-lcwgs-1-1.2.fq.gz
-ZdiADup038_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_038-Ex1-2B-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_038-Ex1-2B-lcwgs-1-1.2.fq.gz
-ZdiADup039_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_039-Ex1-2C-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_039-Ex1-2C-lcwgs-1-1.2.fq.gz
-ZdiADup040_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_040-Ex1-2D-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_040-Ex1-2D-lcwgs-1-1.2.fq.gz
-ZdiADup041_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_041-Ex1-2E-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_041-Ex1-2E-lcwgs-1-1.2.fq.gz
-ZdiADup042_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_042-Ex1-2F-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_042-Ex1-2F-lcwgs-1-1.2.fq.gz
-ZdiADup043_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_043-Ex1-2G-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_043-Ex1-2G-lcwgs-1-1.2.fq.gz
-ZdiADup044_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_044-Ex1-2H-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_044-Ex1-2H-lcwgs-1-1.2.fq.gz
-ZdiADup045_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_045-Ex1-3A-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_045-Ex1-3A-lcwgs-1-1.2.fq.gz
-ZdiADup046_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_046-Ex1-3B-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_046-Ex1-3B-lcwgs-1-1.2.fq.gz
-ZdiADup047_Ex1_L2 2277W2LT4:2 illumina historical/Zdi-ADup_047-Ex1-3C-lcwgs-1-1.1.fq.gz historical/Zdi-ADup_047-Ex1-3C-lcwgs-1-1.2.fq.gz
-ZdiADup001_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_001-Ex1-11B-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_001-Ex1-11B-lcwgs-1-2.2.fq.gz
-ZdiADup002_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_002-Ex1-9G-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_002-Ex1-9G-lcwgs-1-2.2.fq.gz
-ZdiADup003_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_003-Ex1-9H-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_003-Ex1-9H-lcwgs-1-2.2.fq.gz
-ZdiADup004_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_004-Ex1-10A-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_004-Ex1-10A-lcwgs-1-2.2.fq.gz
-ZdiADup005_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_005-Ex1-10B-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_005-Ex1-10B-lcwgs-1-2.2.fq.gz
-ZdiADup006_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_006-Ex1-10C-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_006-Ex1-10C-lcwgs-1-2.2.fq.gz
-ZdiADup007_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_007-Ex1-10D-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_007-Ex1-10D-lcwgs-1-2.2.fq.gz
-ZdiADup008_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_008-Ex1-10E-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_008-Ex1-10E-lcwgs-1-2.2.fq.gz
-ZdiADup009_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_009-Ex1-10F-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_009-Ex1-10F-lcwgs-1-2.2.fq.gz
-ZdiADup010_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_010-Ex1-10G-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_010-Ex1-10G-lcwgs-1-2.2.fq.gz
-ZdiADup011_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_011-Ex1-10H-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_011-Ex1-10H-lcwgs-1-2.2.fq.gz
-ZdiADup012_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_012-Ex1-11A-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_012-Ex1-11A-lcwgs-1-2.2.fq.gz
-ZdiADup013_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_013-Ex1-12F-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_013-Ex1-12F-lcwgs-1-2.2.fq.gz
-ZdiADup014_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_014-Ex1-11C-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_014-Ex1-11C-lcwgs-1-2.2.fq.gz
-ZdiADup015_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_015-Ex1-11D-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_015-Ex1-11D-lcwgs-1-2.2.fq.gz
-ZdiADup016_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_016-Ex1-11E-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_016-Ex1-11E-lcwgs-1-2.2.fq.gz
-ZdiADup017_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_017-Ex1-11F-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_017-Ex1-11F-lcwgs-1-2.2.fq.gz
-ZdiADup018_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_018-Ex1-11G-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_018-Ex1-11G-lcwgs-1-2.2.fq.gz
-ZdiADup019_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_019-Ex1-11H-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_019-Ex1-11H-lcwgs-1-2.2.fq.gz
-ZdiADup020_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_020-Ex1-12A-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_020-Ex1-12A-lcwgs-1-2.2.fq.gz
-ZdiADup021_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_021-Ex1-12B-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_021-Ex1-12B-lcwgs-1-2.2.fq.gz
-ZdiADup022_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_022-Ex1-12C-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_022-Ex1-12C-lcwgs-1-2.2.fq.gz
-ZdiADup023_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_023-Ex1-12D-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_023-Ex1-12D-lcwgs-1-2.2.fq.gz
-ZdiADup024_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_024-Ex1-12E-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_024-Ex1-12E-lcwgs-1-2.2.fq.gz
-ZdiADup025_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_025-Ex1-2A-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_025-Ex1-2A-lcwgs-1-2.2.fq.gz
-ZdiADup026_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_026-Ex1-12G-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_026-Ex1-12G-lcwgs-1-2.2.fq.gz
-ZdiADup027_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_027-Ex1-12H-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_027-Ex1-12H-lcwgs-1-2.2.fq.gz
-ZdiADup028_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_028-Ex1-9F-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_028-Ex1-9F-lcwgs-1-2.2.fq.gz
-ZdiADup029_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_029-Ex1-1A-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_029-Ex1-1A-lcwgs-1-2.2.fq.gz
-ZdiADup030_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_030-Ex1-1B-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_030-Ex1-1B-lcwgs-1-2.2.fq.gz
-ZdiADup031_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_031-Ex1-1C-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_031-Ex1-1C-lcwgs-1-2.2.fq.gz
-ZdiADup032_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_032-Ex1-1D-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_032-Ex1-1D-lcwgs-1-2.2.fq.gz
-ZdiADup033_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_033-Ex1-1E-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_033-Ex1-1E-lcwgs-1-2.2.fq.gz
-ZdiADup034_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_034-Ex1-1F-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_034-Ex1-1F-lcwgs-1-2.2.fq.gz
-ZdiADup035_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_035-Ex1-1G-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_035-Ex1-1G-lcwgs-1-2.2.fq.gz
-ZdiADup036_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_036-Ex1-1H-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_036-Ex1-1H-lcwgs-1-2.2.fq.gz
-ZdiADup037_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_037-Ex1-3D-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_037-Ex1-3D-lcwgs-1-2.2.fq.gz
-ZdiADup038_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_038-Ex1-2B-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_038-Ex1-2B-lcwgs-1-2.2.fq.gz
-ZdiADup039_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_039-Ex1-2C-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_039-Ex1-2C-lcwgs-1-2.2.fq.gz
-ZdiADup040_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_040-Ex1-2D-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_040-Ex1-2D-lcwgs-1-2.2.fq.gz
-ZdiADup041_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_041-Ex1-2E-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_041-Ex1-2E-lcwgs-1-2.2.fq.gz
-ZdiADup042_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_042-Ex1-2F-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_042-Ex1-2F-lcwgs-1-2.2.fq.gz
-ZdiADup043_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_043-Ex1-2G-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_043-Ex1-2G-lcwgs-1-2.2.fq.gz
-ZdiADup044_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_044-Ex1-2H-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_044-Ex1-2H-lcwgs-1-2.2.fq.gz
-ZdiADup045_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_045-Ex1-3A-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_045-Ex1-3A-lcwgs-1-2.2.fq.gz
-ZdiADup046_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_046-Ex1-3B-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_046-Ex1-3B-lcwgs-1-2.2.fq.gz
-ZdiADup047_Ex1_L4 227NLCLT4:4 illumina historical/Zdi-ADup_047-Ex1-3C-lcwgs-1-2.1.fq.gz historical/Zdi-ADup_047-Ex1-3C-lcwgs-1-2.2.fq.gz
-```
-**Zdi_historical_samples.txt:**
-```
-[hpc-0356@wahab-01 config]$ cat Zdi_modern_samples.txt 
-samplename_index_lane readgroup_id readgroup_platform path_to_R1_fastq_file path_to_R2_fastq_file
-ZdiCDup001_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_001-Ex1-5D-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_001-Ex1-5D-lcwgs-1-1.2.fq.gz
-ZdiCDup002_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_002-Ex1-5E-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_002-Ex1-5E-lcwgs-1-1.2.fq.gz
-ZdiCDup003_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_003-Ex1-5F-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_003-Ex1-5F-lcwgs-1-1.2.fq.gz
-ZdiCDup004_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_004-Ex1-5G-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_004-Ex1-5G-lcwgs-1-1.2.fq.gz
-ZdiCDup005_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_005-Ex1-5H-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_005-Ex1-5H-lcwgs-1-1.2.fq.gz
-ZdiCDup006_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_006-Ex1-6A-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_006-Ex1-6A-lcwgs-1-1.2.fq.gz
-ZdiCDup007_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_007-Ex1-6B-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_007-Ex1-6B-lcwgs-1-1.2.fq.gz
-ZdiCDup008_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_008-Ex1-6C-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_008-Ex1-6C-lcwgs-1-1.2.fq.gz
-ZdiCDup010_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_010-Ex1-6D-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_010-Ex1-6D-lcwgs-1-1.2.fq.gz
-ZdiCDup011_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_011-Ex1-6E-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_011-Ex1-6E-lcwgs-1-1.2.fq.gz
-ZdiCDup012_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_012-Ex1-6F-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_012-Ex1-6F-lcwgs-1-1.2.fq.gz
-ZdiCDup013_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_013-Ex1-6G-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_013-Ex1-6G-lcwgs-1-1.2.fq.gz
-ZdiCDup014_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_014-Ex1-6H-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_014-Ex1-6H-lcwgs-1-1.2.fq.gz
-ZdiCDup015_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_015-Ex1-7A-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_015-Ex1-7A-lcwgs-1-1.2.fq.gz
-ZdiCDup016_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_016-Ex1-7B-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_016-Ex1-7B-lcwgs-1-1.2.fq.gz
-ZdiCDup017_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_017-Ex1-7C-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_017-Ex1-7C-lcwgs-1-1.2.fq.gz
-ZdiCDup018_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_018-Ex1-7D-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_018-Ex1-7D-lcwgs-1-1.2.fq.gz
-ZdiCDup019_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_019-Ex1-7E-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_019-Ex1-7E-lcwgs-1-1.2.fq.gz
-ZdiCDup020_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_020-Ex1-7F-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_020-Ex1-7F-lcwgs-1-1.2.fq.gz
-ZdiCDup021_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_021-Ex1-7G-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_021-Ex1-7G-lcwgs-1-1.2.fq.gz
-ZdiCDup022_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_022-Ex1-7H-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_022-Ex1-7H-lcwgs-1-1.2.fq.gz
-ZdiCDup023_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_023-Ex1-8A-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_023-Ex1-8A-lcwgs-1-1.2.fq.gz
-ZdiCDup024_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_024-Ex1-8B-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_024-Ex1-8B-lcwgs-1-1.2.fq.gz
-ZdiCDup025_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_025-Ex1-8C-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_025-Ex1-8C-lcwgs-1-1.2.fq.gz
-ZdiCDup026_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_026-Ex1-8D-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_026-Ex1-8D-lcwgs-1-1.2.fq.gz
-ZdiCDup027_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_027-Ex1-8E-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_027-Ex1-8E-lcwgs-1-1.2.fq.gz
-ZdiCDup028_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_028-Ex1-8F-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_028-Ex1-8F-lcwgs-1-1.2.fq.gz
-ZdiCDup029_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_029-Ex1-8G-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_029-Ex1-8G-lcwgs-1-1.2.fq.gz
-ZdiCDup030_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_030-Ex1-8H-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_030-Ex1-8H-lcwgs-1-1.2.fq.gz
-ZdiCDup031_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_031-Ex1-9A-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_031-Ex1-9A-lcwgs-1-1.2.fq.gz
-ZdiCDup032_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_032-Ex1-9B-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_032-Ex1-9B-lcwgs-1-1.2.fq.gz
-ZdiCDup033_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_033-Ex1-9C-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_033-Ex1-9C-lcwgs-1-1.2.fq.gz
-ZdiCDup034_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_034-Ex1-9D-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_034-Ex1-9D-lcwgs-1-1.2.fq.gz
-ZdiCDup035_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_035-Ex1-9E-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_035-Ex1-9E-lcwgs-1-1.2.fq.gz
-ZdiCDup036_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_036-Ex1-9F-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_036-Ex1-9F-lcwgs-1-1.2.fq.gz
-ZdiCDup037_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_037-Ex1-9G-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_037-Ex1-9G-lcwgs-1-1.2.fq.gz
-ZdiCDup038_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_038-Ex1-9H-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_038-Ex1-9H-lcwgs-1-1.2.fq.gz
-ZdiCDup039_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_039-Ex1-10A-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_039-Ex1-10A-lcwgs-1-1.2.fq.gz
-ZdiCDup040_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_040-Ex1-10B-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_040-Ex1-10B-lcwgs-1-1.2.fq.gz
-ZdiCDup041_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_041-Ex1-10C-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_041-Ex1-10C-lcwgs-1-1.2.fq.gz
-ZdiCDup042_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_042-Ex1-10D-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_042-Ex1-10D-lcwgs-1-1.2.fq.gz
-ZdiCDup043_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_043-Ex1-10E-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_043-Ex1-10E-lcwgs-1-1.2.fq.gz
-ZdiCDup044_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_044-Ex1-10F-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_044-Ex1-10F-lcwgs-1-1.2.fq.gz
-ZdiCDup045_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_045-Ex1-10G-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_045-Ex1-10G-lcwgs-1-1.2.fq.gz
-ZdiCDup046_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_046-Ex1-10H-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_046-Ex1-10H-lcwgs-1-1.2.fq.gz
-ZdiCDup047_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_047-Ex1-11A-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_047-Ex1-11A-lcwgs-1-1.2.fq.gz
-ZdiCDup048_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_048-Ex1-11B-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_048-Ex1-11B-lcwgs-1-1.2.fq.gz
-ZdiCDup049_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_049-Ex1-11C-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_049-Ex1-11C-lcwgs-1-1.2.fq.gz
-ZdiCDup050_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_050-Ex1-11D-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_050-Ex1-11D-lcwgs-1-1.2.fq.gz
-ZdiCDup051_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_051-Ex1-11E-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_051-Ex1-11E-lcwgs-1-1.2.fq.gz
-ZdiCDup053_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_053-Ex1-11F-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_053-Ex1-11F-lcwgs-1-1.2.fq.gz
-ZdiCDup054_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_054-Ex1-11G-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_054-Ex1-11G-lcwgs-1-1.2.fq.gz
-ZdiCDup055_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_055-Ex1-11H-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_055-Ex1-11H-lcwgs-1-1.2.fq.gz
-ZdiCDup056_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_056-Ex1-12A-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_056-Ex1-12A-lcwgs-1-1.2.fq.gz
-ZdiCDup057_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_057-Ex1-12B-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_057-Ex1-12B-lcwgs-1-1.2.fq.gz
-ZdiCDup058_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_058-Ex1-12C-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_058-Ex1-12C-lcwgs-1-1.2.fq.gz
-ZdiCDup059_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_059-Ex1-12D-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_059-Ex1-12D-lcwgs-1-1.2.fq.gz
-ZdiCDup060_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_060-Ex1-12E-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_060-Ex1-12E-lcwgs-1-1.2.fq.gz
-ZdiCDup061_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_061-Ex1-12F-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_061-Ex1-12F-lcwgs-1-1.2.fq.gz
-ZdiCDup062_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_062-Ex1-12G-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_062-Ex1-12G-lcwgs-1-1.2.fq.gz
-ZdiCDup064_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_064-Ex1-5A-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_064-Ex1-5A-lcwgs-1-1.2.fq.gz
-ZdiCDup065_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_065-Ex1-5B-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_065-Ex1-5B-lcwgs-1-1.2.fq.gz
-ZdiCDup066_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_066-Ex1-5C-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_066-Ex1-5C-lcwgs-1-1.2.fq.gz
-ZdiCDup071_Ex1_L2 2277W2LT4:2 illumina modern/Zdi-CDup_071-Ex1-12H-lcwgs-1-1.1.fq.gz modern/Zdi-CDup_071-Ex1-12H-lcwgs-1-1.2.fq.gz
-ZdiCDup001_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_001-Ex1-5D-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_001-Ex1-5D-lcwgs-1-2.2.fq.gz
-ZdiCDup002_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_002-Ex1-5E-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_002-Ex1-5E-lcwgs-1-2.2.fq.gz
-ZdiCDup003_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_003-Ex1-5F-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_003-Ex1-5F-lcwgs-1-2.2.fq.gz
-ZdiCDup004_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_004-Ex1-5G-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_004-Ex1-5G-lcwgs-1-2.2.fq.gz
-ZdiCDup005_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_005-Ex1-5H-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_005-Ex1-5H-lcwgs-1-2.2.fq.gz
-ZdiCDup006_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_006-Ex1-6A-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_006-Ex1-6A-lcwgs-1-2.2.fq.gz
-ZdiCDup007_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_007-Ex1-6B-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_007-Ex1-6B-lcwgs-1-2.2.fq.gz
-ZdiCDup008_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_008-Ex1-6C-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_008-Ex1-6C-lcwgs-1-2.2.fq.gz
-ZdiCDup010_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_010-Ex1-6D-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_010-Ex1-6D-lcwgs-1-2.2.fq.gz
-ZdiCDup011_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_011-Ex1-6E-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_011-Ex1-6E-lcwgs-1-2.2.fq.gz
-ZdiCDup012_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_012-Ex1-6F-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_012-Ex1-6F-lcwgs-1-2.2.fq.gz
-ZdiCDup013_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_013-Ex1-6G-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_013-Ex1-6G-lcwgs-1-2.2.fq.gz
-ZdiCDup014_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_014-Ex1-6H-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_014-Ex1-6H-lcwgs-1-2.2.fq.gz
-ZdiCDup015_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_015-Ex1-7A-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_015-Ex1-7A-lcwgs-1-2.2.fq.gz
-ZdiCDup016_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_016-Ex1-7B-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_016-Ex1-7B-lcwgs-1-2.2.fq.gz
-ZdiCDup017_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_017-Ex1-7C-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_017-Ex1-7C-lcwgs-1-2.2.fq.gz
-ZdiCDup018_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_018-Ex1-7D-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_018-Ex1-7D-lcwgs-1-2.2.fq.gz
-ZdiCDup019_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_019-Ex1-7E-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_019-Ex1-7E-lcwgs-1-2.2.fq.gz
-ZdiCDup021_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_021-Ex1-7G-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_021-Ex1-7G-lcwgs-1-2.2.fq.gz
-ZdiCDup022_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_022-Ex1-7H-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_022-Ex1-7H-lcwgs-1-2.2.fq.gz
-ZdiCDup026_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_026-Ex1-8D-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_026-Ex1-8D-lcwgs-1-2.2.fq.gz
-ZdiCDup031_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_031-Ex1-9A-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_031-Ex1-9A-lcwgs-1-2.2.fq.gz
-ZdiCDup033_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_033-Ex1-9C-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_033-Ex1-9C-lcwgs-1-2.2.fq.gz
-ZdiCDup034_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_034-Ex1-9D-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_034-Ex1-9D-lcwgs-1-2.2.fq.gz
-ZdiCDup035_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_035-Ex1-9E-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_035-Ex1-9E-lcwgs-1-2.2.fq.gz
-ZdiCDup037_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_037-Ex1-9G-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_037-Ex1-9G-lcwgs-1-2.2.fq.gz
-ZdiCDup038_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_038-Ex1-9H-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_038-Ex1-9H-lcwgs-1-2.2.fq.gz
-ZdiCDup039_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_039-Ex1-10A-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_039-Ex1-10A-lcwgs-1-2.2.fq.gz
-ZdiCDup040_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_040-Ex1-10B-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_040-Ex1-10B-lcwgs-1-2.2.fq.gz
-ZdiCDup041_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_041-Ex1-10C-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_041-Ex1-10C-lcwgs-1-2.2.fq.gz
-ZdiCDup042_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_042-Ex1-10D-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_042-Ex1-10D-lcwgs-1-2.2.fq.gz
-ZdiCDup043_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_043-Ex1-10E-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_043-Ex1-10E-lcwgs-1-2.2.fq.gz
-ZdiCDup045_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_045-Ex1-10G-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_045-Ex1-10G-lcwgs-1-2.2.fq.gz
-ZdiCDup046_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_046-Ex1-10H-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_046-Ex1-10H-lcwgs-1-2.2.fq.gz
-ZdiCDup047_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_047-Ex1-11A-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_047-Ex1-11A-lcwgs-1-2.2.fq.gz
-ZdiCDup050_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_050-Ex1-11D-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_050-Ex1-11D-lcwgs-1-2.2.fq.gz
-ZdiCDup051_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_051-Ex1-11E-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_051-Ex1-11E-lcwgs-1-2.2.fq.gz
-ZdiCDup054_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_054-Ex1-11G-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_054-Ex1-11G-lcwgs-1-2.2.fq.gz
-ZdiCDup056_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_056-Ex1-12A-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_056-Ex1-12A-lcwgs-1-2.2.fq.gz
-ZdiCDup057_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_057-Ex1-12B-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_057-Ex1-12B-lcwgs-1-2.2.fq.gz
-ZdiCDup058_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_058-Ex1-12C-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_058-Ex1-12C-lcwgs-1-2.2.fq.gz
-ZdiCDup059_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_059-Ex1-12D-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_059-Ex1-12D-lcwgs-1-2.2.fq.gz
-ZdiCDup060_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_060-Ex1-12E-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_060-Ex1-12E-lcwgs-1-2.2.fq.gz
-ZdiCDup061_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_061-Ex1-12F-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_061-Ex1-12F-lcwgs-1-2.2.fq.gz
-ZdiCDup062_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_062-Ex1-12G-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_062-Ex1-12G-lcwgs-1-2.2.fq.gz
-ZdiCDup064_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_064-Ex1-5A-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_064-Ex1-5A-lcwgs-1-2.2.fq.gz
-ZdiCDup065_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_065-Ex1-5B-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_065-Ex1-5B-lcwgs-1-2.2.fq.gz
-ZdiCDup066_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_066-Ex1-5C-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_066-Ex1-5C-lcwgs-1-2.2.fq.gz
-ZdiCDup071_Ex1_L4 227NLCLT4:4 illumina modern/Zdi-CDup_071-Ex1-12H-lcwgs-1-2.1.fq.gz modern/Zdi-CDup_071-Ex1-12H-lcwgs-1-2.2.fq.gz
-```
-The next step is to copy the Sumatran rhino test config file to Zdi's config directory and then edit the file, but the majority of edits made to it do not need to be changed per species, so I will copy a config file that I previously edited for Pbb. All of the edits to that file are listed [here](https://github.com/philippinespire/pire_parupeneus_barberinus_lcwgs/tree/main/GenErode_Pbb).
-```
-[hpc-0356@wahab-01 config]$ cp /archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/GenErode_Pbb/config/config.yaml .
-```
-Then I edited the file to include Zdi specific information:
-
-* **ref_path:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference/reference.genbank.Zdi.fasta"
-* **historical_samples:** "config/Zdi_historical_samples.txt"
-* **modern_samples:** "config/Zdi_modern_samples.txt"
-* **historical_rescaled_samplenames:** ["ZdiADup001","ZdiADup002","ZdiADup003","ZdiADup004","ZdiADup005","ZdiADup006","ZdiADup007","ZdiADup008","ZdiADup009","ZdiADup010","ZdiADup011","ZdiADup012","ZdiADup013","ZdiADup014","ZdiADup015","ZdiADup016","ZdiADup017","ZdiADup018","ZdiADup019","ZdiADup020","ZdiADup021","ZdiADup022","ZdiADup023","ZdiADup024","ZdiADup025","ZdiADup026","ZdiADup027","ZdiADup028","ZdiADup029","ZdiADup030","ZdiADup031","ZdiADup032","ZdiADup033","ZdiADup034","ZdiADup035","ZdiADup036","ZdiADup037","ZdiADup038","ZdiADup039","ZdiADup040","ZdiADup041","ZdiADup042","ZdiADup043","ZdiADup044","ZdiADup045","ZdiADup046","ZdiADup047"]
-* **gerp_ref_path:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups"
-* **tree:** "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/Zdi_gerp_tree.nwk"
-
----
-</details>
-
-<details><summary>4. Run GenErode</summary>
-
-### 4. Run GenErode
-
-Copy the sbatch script
-```
-[hpc-0356@wahab-01 GenErode_Zdi]$ cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/run_GenErode.sbatch .
-```
-Run GenErode:
-```
-[hpc-0356@wahab-01 GenErode_Zdi]$ sbatch run_GenErode.sbatch
-```
-#### Failed jobs and their errors:
-
-* **3617731:**
-    * `FileNotFoundError: [Errno 2] No such file or directory:'results/logs/2_mapping/historical/reference.genbank.Zdi'`
-    * this directory does exist, though, so I will just rerun the script
-
-* **3621604:** 
-    * `Error message: sacct: error: slurm_persist_conn_open_without_init: failed to open persistent connection to host:head-2.ib.cluster:6819: Connection timed out`
-
-* **3624474:**
-    * errors with `Xenentodon_cancila` files but we can't identify the issue. May have been due to the timeout from before so I will rerun with an incomplete tag this time.
-    * ```
-      [hpc-0356@wahab-01 GenErode_Zdi]$ cp run_GenErode.sbatch ./run_GenErode_incomplete.sbatch
-      [hpc-0356@wahab-01 GenErode_Zdi]$ nano run_GenErode_incomplete.sbatch
-          # add --rerun-incomplete tag
-      [hpc-0356@wahab-01 GenErode_Zdi]$ sbatch run_GenErode_incomplete.sbatch
-      ```
-
-* **3624828:**
-    *  more errors involving `Xenentodon_cancila` but we cannot identify the issue. I have to remove that species, but that leaves me with only 29 genomes. See **2. Get Newick Tree** for more details.
-    * <details><summary> >>>> Making a new directory: GenErode_Zdi_2 <<<< </summary>
-      
-      ```
-      [hpc-0356@wahab-01 pire_zenarchopterus_dispar_lcwgs]$ mkdir GenErode_Zdi_2
-       # remake directories
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir config
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir historical
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir modern
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir mitochondria
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir reference
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ mkdir gerp_outgroups
-  
-      # populate them
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/modern/ .
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/historical/ .
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/gerp_outgroups/ .  # having removed Xenentodon cancila first
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/config/ .
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r ../GenErode_Zdi/reference/reference.genbank.Zdi.fasta reference/.
-
-      # edit config.yaml file with new path
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ nano config.yaml
-      ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/reference/reference.genbank.Zdi.fasta"
-      gerp_ref_path: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/gerp_outgroups"
-      tree: "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2/Zdi_gerp_tree.nwk"
-  
-       # add temple dir folders
-      [hpc-0356@wahab-01 GenErode_Zdi_2]$ cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/GenErode_templatedir/* .
-  
-       # add new nwk files
-       [hpc-0356@wahab-01 GenErode_Zdi_2]$ cd ~/Downloads
-       giannamazzei@Giannas-Laptop Downloads % scp Zdi_gerp_tree.nwk hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
-       giannamazzei@Giannas-Laptop Downloads % scp Zdi_prunetree.jpg hpc-0356@wahab.hpc.odu.edu:/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_2
-       [hpc-0356@wahab-01 GenErode_Zdi_2]$ sed -i 's/Dermogenys_collettei/reference.genbank.Zdi.fasta/g' Zdi_gerp_tree.nwk
-       ```
-       </details>
-
- ### _The following have been run in `GenErode_Zdi_2`_
+### 3. Run GenErode
 
 Copy the sbatch script
 ```
@@ -640,9 +288,9 @@ Run GenErode:
 #### Failed jobs and their errors:
 * **3674736** -> now I am running into the exact same errors for _Cololabis saira_ as I did for _Xenentodon cancila_, despite it working properly during our previous run.
     * The issue is likely not from the genome file for either of these species, but rather issues from our Zdi reference genome being at the scaffold level rather than complete.
-    * Now, I need to make another new directory, where I will add Xenentodon cancila back (I will still keep the Rhamphochromis_chilingali that I added since it can't hurt to have another genome, of course unless it throws an error) and I will modify the reference genome to remove small scaffolds and hope this resolves our errors.
+    * Now, I need to make [another new directory](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/GenErode_Zdi_3), where I will add Xenentodon cancila back (I will still keep the Rhamphochromis_chilingali that I added since it can't hurt to have another genome, of course unless it throws an error) and I will modify the reference genome to remove small scaffolds and hope this resolves our errors.
 
-
+---
 </details>
 
 <details><summary>Credits</summary>
