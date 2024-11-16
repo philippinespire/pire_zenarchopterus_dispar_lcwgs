@@ -223,9 +223,9 @@ Now the reference genome has been processed and we can move forward with running
 ---
 </details>
 
-<details><summary>4. Run GenErode</summary>
+<details><summary>5. Run GenErode</summary>
 
-### 4. Run GenErode
+### 5. Run GenErode
 
 Copy the sbatch script
 ```
@@ -235,8 +235,7 @@ Run GenErode:
 ```
 [hpc-0356@wahab-01 GenErode_Zdi_3]$ sbatch run_GenErode.sbatch
 ```
-
-Submitted batch job 3709865 (Nov 15 2024)
+* Submitted batch job **3709865** (Nov 15 2024)
 
 ---
 </details>
