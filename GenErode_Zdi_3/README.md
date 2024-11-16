@@ -19,7 +19,7 @@ I began by making a new GenErode directory and copied over the template folder c
 [hpc-0356@wahab-01 pire_zenarchopterus_dispar_lcwgs]$ mdir GenErode_Zdi_3
 cp -r /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/GenErode_templatedir/* /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_3
 ```
-Now, instead of making the necessary subdirectories and populating them, I will copy ones over that have already been populated from a previous directory since this this directory is the 3rd iteration.
+Now, instead of making the necessary subdirectories and populating them, I will copy ones over that have already been populated from a [previous directory](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/abandoned_GenErode_Zdi_2) since this this directory is the 3rd iteration.
 ```
 [hpc-0356@wahab-01 abandoned_GenErode_Zdi_2]$ cp -r historical ../GenErode_Zdi_3/.
 [hpc-0356@wahab-01 abandoned_GenErode_Zdi_2]$ cp -r modern ../GenErode_Zdi_3/.
