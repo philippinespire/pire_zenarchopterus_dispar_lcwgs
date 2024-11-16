@@ -178,8 +178,123 @@ Now, in the .nwk file, rename the focal species with the name of the reference a
 
 </details>
 
-<details><summary>4. Process the reference file</summary>
+<details><summary>4. Process the reference genome</summary>
 
-### 4. Process the reference file
+### 4. Process the reference genome
+
+As I've noted previously, we believe the cause of our previous GenErode failures is from our Zdi reference genome containing scaffolds that are too small. 
+
+I'm now going to process the file, following [step 1 of this unrelated pipeline](https://github.com/philippinespire/REUs/tree/master/2022_REU/PSMC).
+
+First, I need to copy the relevant script:
+```
+[hpc-0356@wahab-01 GenErode_Zdi_3]$ cp /home/e1garcia/shotgun_PIRE/REUs/2022_REU/PSMC/scripts/removesmalls.pl reference/.
+```
+Now, lets filter out the smaller scaffolds, keeping only scaffolds longer than 20kb.
+```
+[hpc-0356@wahab-01 reference]$ perl removesmalls.pl 20000 reference.genbank.Zdi.fasta > reference.genbank.Zdi.20k.fasta
+```
+Now let's check the length of the filtered assembly, which tells you the number of scaffolds left after filtering, and compare it to the pre-filtered genome:
+```
+# filtered:
+[hpc-0356@wahab-01 reference]$ cat reference.genbank.Zdi.20k.fasta | grep "^>" | wc -l
+2841
+
+# original:
+[hpc-0356@wahab-01 reference]$ cat reference.genbank.Zdi.fasta | grep "^>" | wc -l
+69922
+```
+Great, now that this number has significantly decreased, we know the script worked to filter out reads shorter than 20kb.
+
+See total length of the filtered assemblies & compare:
+```
+[hpc-0356@wahab-01 reference]$ cat reference.genbank.Zdi.20k.fasta | grep -v "^>" | tr "\n" "\t" | sed 's/\t//g' | wc -c
+456648442
+
+[hpc-0356@wahab-01 reference]$ cat reference.genbank.Zdi.fasta | grep -v "^>" | tr "\n" "\t" | sed 's/\t//g' | wc -c
+689690477
+```
+Finally, change the names of the scaffolds to numerals (1,2,3...x).
+```
+[hpc-0356@wahab-01 reference]$ awk -i inplace '/^>/{print ">" ++i; next}{print}' reference.genbank.Zdi.20k.fasta
+```
+Now the reference genome has been processed and we can move forward with running GenErode.
+
+---
+</details>
+
+<details><summary>4. Run GenErode</summary>
+
+### 4. Run GenErode
+
+Copy the sbatch script
+```
+[hpc-0356@wahab-01 GenErode_Zdi_3]$ cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_Wahab/run_GenErode.sbatch .
+```
+Run GenErode:
+```
+[hpc-0356@wahab-01 GenErode_Zdi_3]$ sbatch run_GenErode.sbatch
+```
+
+Submitted batch job 3709865 (Nov 15 2024)
+
+---
+</details>
+
+<details><summary>Credits</summary>
+
+# Credits
+
+<img src="docs/source/img/logga_viridis2.png" alt="logo" width="25%"/> 
+
+GitHub repository for GenErode, a Snakemake pipeline for the analysis 
+of whole-genome sequencing data from historical and modern samples to 
+study patterns of genome erosion.
+
+## Documentation
+
+The full pipeline documentation can be found on the [repository wiki](https://github.com/NBISweden/GenErode/wiki).
+
+## Citation
+
+If you've used GenErode to produce results, please cite our paper:
+
+Kutschera VE, Kierczak M, van der Valk T, von Seth J, Dussex N, Lord E, Dehasque M, Stanton DWG, Emami P, Nystedt B, Dalén L, Díez-del-Molino D (2022) GenErode: a bioinformatics pipeline to investigate genome erosion in endangered and extinct species. BMC Bioinformatics 23, 228 https://doi.org/10.1186/s12859-022-04757-0
+
+## Pipeline overview
+
+<img src="docs/source/img/figure_1_generode_pipeline_v7.png" alt="processing" width="75%"/>
+
+Figure 1: Overview of the GenErode pipeline data processing tracks. Input 
+and output files formats, dependencies between steps, and main software used
+are shown. Optional steps are highlighted in red. 
+
+<img src="docs/source/img/figure_2_generode_pipeline_v7.png" alt="analysis" width="75%"/>
+
+Figure 2: Overview of the GenErode pipeline data analysis tracks and final reports.
+Input file formats and main software used are shown.
 
 
+## Licence information
+
+GenErode pipeline
+
+Copyright (C) 2022  Verena Kutschera
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+Logo: Jonas Söderberg
+
+</details>
