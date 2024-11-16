@@ -1,6 +1,6 @@
 <img src="https://lifg.australian.museum/Image/9uTxr6do.jpeg?version=full" alt="Zdi" width="300"/>
 
-# GenErode_Zdi_3: _Zenarchopterus dispar_ lcWGS
+# `GenErode_Zdi_3`: _Zenarchopterus dispar_ lcWGS
 
 Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_Wahab) for Zdi.
 
