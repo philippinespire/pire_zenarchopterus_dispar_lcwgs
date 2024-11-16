@@ -2,7 +2,7 @@
 
 # GenErode: _Zenarchopterus dispar_ lcWGS
 
-Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_Wahab) for Pbb.
+Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_Wahab) for Zdi.
 
 Done by Gianna Mazzei (November 2024).
 
