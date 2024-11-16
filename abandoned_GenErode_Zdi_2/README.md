@@ -1,14 +1,14 @@
 <img src="https://lifg.australian.museum/Image/9uTxr6do.jpeg?version=full" alt="Zdi" width="300"/>
 
-# GenErode: _Zenarchopterus dispar_ lcWGS
-
-Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_Wahab) for Pbb.
-
-Done by Gianna Mazzei (October 2024).
-
+## -> Current GenErode work is being done in [this directory](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/GenErode_Zdi_3). <-
+### This directory has been abandoned due to file errors. 
 ---
 
-## GenErode Processing
+## GenErode: _Zenarchopterus dispar_ lcWGS
+
+Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_Wahab).
+
+Done by Gianna Mazzei (October 2024).
 
 <details><summary>1. Set-Up</summary>
 
