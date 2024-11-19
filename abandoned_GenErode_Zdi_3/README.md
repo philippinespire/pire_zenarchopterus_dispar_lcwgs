@@ -1,7 +1,10 @@
 <img src="https://lifg.australian.museum/Image/9uTxr6do.jpeg?version=full" alt="Zdi" width="300"/>
 
-# `GenErode_Zdi_3`: _Zenarchopterus dispar_ lcWGS
+## → Current GenErode work is being done in [`GenErode_Zdi_4`](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/GenErode_Zdi_4). ←
+### This directory has been abandoned due to a path error in the config.yaml file. (November 19 2024)
+---
 
+## `GenErode_Zdi_3`: _Zenarchopterus dispar_ lcWGS
 Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_Wahab) for Zdi.
 
 Done by Gianna Mazzei (November 2024).
