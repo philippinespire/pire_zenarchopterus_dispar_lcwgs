@@ -238,7 +238,10 @@ Run GenErode:
 <ins>**Jobs and their notes**</ins>
 * **3709865** (Nov 15 2024): job failure with `bwa aln` when working on `ZdiADup014_Ex1_L2`
   *  This error has to do with mapping to the reference genome, but I did not run into this problem when running GenErode before, so I am just going to rerun GenErode and see if the error persists
-* **3718024** (Nov 18 2024)
+* **3718024** (Nov 18 2024): error in parsing gerp outgroup files
+    *  This was the same error I've run into in every directory...
+    *  I forgot to update my ref path in the `config.yaml` file to the processed ref genome: `reference.genbank.Zdi.20k.fasta`!
+    *  Now I have to make yet [another directory](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/GenErode_Zdi_4).
 
 ---
 </details>
