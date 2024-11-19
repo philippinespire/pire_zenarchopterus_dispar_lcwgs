@@ -174,7 +174,7 @@ Now, in the .nwk file, rename the focal species with the name of the reference a
  
   ### TimeTree Output:
  
- <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/GenErode_Zdi_3/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
+ <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/abandoned_GenErode_Zdi_3/Zdi_prunetree.jpg" alt="Zdi prunetree" width="700"/>
 </div>
 
 ---
