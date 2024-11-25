@@ -76,7 +76,8 @@ Run GenErode:
 [hpc-0356@wahab-01 GenErode_Zdi_4]$ sbatch run_GenErode.sbatch
 ```
 <ins>**Jobs Log**</ins>
-* **3739022** (Nov 19 2024)
+* **3739022** (Nov 19 2024) -> random failure. going to add `--rerun-incomplete` tag to a copy of the sbatch script and rerun
+* **3797055** (Nov 24 2024)
 
 ---
 </details>
