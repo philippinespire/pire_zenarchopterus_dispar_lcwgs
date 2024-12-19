@@ -19,3 +19,9 @@ fq.gz processing of 2nd sequencing run done by Gianna Mazzei (completed Septembe
 ## [GenErode](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/GenErode_Zdi_4)
 
 GenErode processing being done by Gianna Mazzei (started September 2024).
+
+---
+
+## [ATLAS](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/ATLAS_Zdi)
+
+ATLAS processing being done by Gianna Mazzei (started December 2024).
