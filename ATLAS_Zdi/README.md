@@ -191,6 +191,8 @@ ls /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/recal_o
 
 <details><summary>5. Estimate Theta</summary>
 
+### 5. Estimate Theta
+
 Now, we will estimate theta for both historic and modern samples using the `*merged.rmdup.merged.realn.bam` and `*.merged.rmdup.merged.realn_RGInfo.json` files in our output directory and perform downsampling.
 
 Make an output directory:
