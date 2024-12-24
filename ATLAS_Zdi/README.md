@@ -160,10 +160,10 @@ ls /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/GenErode_Zdi_4/re
 
 ## output
 ls /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/recal_output/ZdiA*.merged.rmdup.merged.realn.bam | wc -l
-
+47
 
 ls /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/recal_output/ZdiA*.merged.rmdup.merged.realn_RGInfo.json | wc -l
-
+47
 ```
 
 Run recalibration on **modern** files:
@@ -186,6 +186,25 @@ ls /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/recal_o
 ls /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/recal_output/ZdiC*.merged.rmdup.merged.realn_RGInfo.json | wc -l
 64
 ```
+---
+</details>
 
+<details><summary>5. Estimate Theta</summary>
+
+Now, we will estimate theta for both historic and modern samples using the `*merged.rmdup.merged.realn.bam` and `*.merged.rmdup.merged.realn_RGInfo.json` files in our output directory and perform downsampling.
+
+Make an output directory:
+```
+[hpc-0373@wahab-01 ATLAS_Zdi]$ mkdir theta_output
+```
+Run `atlas_theta_albrecal_array.bash`:
+```
+# format:
+# bash atlas_theta_albrecal_array.bash [directory with recalibrated output files] [output directory]
+
+[hpc-0356@wahab-01 ATLAS_Zdi]$ bash atlas_theta_albrecal_array.bash /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/recal_output/ /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/theta_output/
+```
+---
+</details>
 
 
