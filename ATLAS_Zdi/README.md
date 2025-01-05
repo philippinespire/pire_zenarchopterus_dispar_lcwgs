@@ -209,4 +209,30 @@ Run `atlas_theta_albrecal_array.bash`:
 ---
 </details>
 
+<details><summary>6. Update .gitignore</summary>
 
+### 6. Update `.gitignore`
+
+In order to track and push these changes I need to update the `.gitignore` file to ignore the `*_log` files in the `ATLAS_Zdi/theta_output` dir because the files are too large to upload
+
+```
+[hpc-0373@wahab-01 pire_zenarchopterus_dispar_lcwgs]$ nano .gitignore
+
+# Ignore large log files
+ATLAS_Zdi/theta_output/*_log
+```
+Then, push gitignore
+```
+git pull
+git add .gitignore
+git commit -m "updating gitignore to ignore large log files in ATLAS_Zdi/theta_output"
+git push
+```
+Now, push as normal
+```
+git add --all
+git commit -m "uploading ATLAS outputs"
+git push
+```
+---
+</details>
