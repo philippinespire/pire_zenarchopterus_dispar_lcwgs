@@ -88,3 +88,6 @@ out_PCAngsd_selection_minMaf0.0_e100.selection.npy
 !test04.100k.snpStat
 !*[Dd]ecode.tsv
 !*ReadStats.tsv
+
+# Ignore large log files
+ATLAS_Zdi/theta_output/*_log
