@@ -236,3 +236,26 @@ git push
 ```
 ---
 </details>
+
+<details><summary>7. Wrangle Theta</summary>
+
+### 7. Wrangle Theta
+
+Begin by copying the wrangle R script from another directory to the `theta_output` dir:
+```
+[hpc-0373@wahab-01 ATLAS_Zdi]$ cp /archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/ATLAS_Lva/theta/wrangle_plot_theta_template.R theta_output
+```
+
+Edit it for this species:
+```
+[hpc-0373@wahab-01 theta_output] nano wrangle_plot_theta_template.R
+## edits:
+# line 22
+inDir = "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/theta_output"
+# line 25
+outDir = "/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/plots"
+# line 32
+spp_code="Zdi"
+# line 35
+site_code="Dup"
+```
