@@ -109,7 +109,7 @@ Copy scripts to ATLAS dir:
 [hpc-0373@wahab-01 ATLAS_Zdi]$ cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/ATLAS_wahab/*.sbatch .
 [hpc-0373@wahab-01 ATLAS_Zdi]$ cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/ATLAS_wahab/*.bash .
 ```
-**For Step 4:**
+**Prep for Step 4:**
 
 Edit the `atlas_recal_readuntilbeds_array.sbatch` script to reflect the number of .bed files you want to use and their names. 
 ```
@@ -124,7 +124,7 @@ Edit the `atlas_recal_readuntilbeds_array.bash` script to reflect the path for t
     20	       /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/ATLAS_Zdi/atlas_recal_readuntilbeds_array.sbatch ${BAMDIR} ${REFLOC} ${OUTDIR})
 ```
 
-**For Step 5:**
+**Prep for Step 5:**
 
 Edit the `atlas_theta_albrecal_array.bash` script to reflect the path for the `atlas_theta_albrecal_array.sbatch` script.
 ```
