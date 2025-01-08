@@ -240,9 +240,33 @@ git push
 ---
 </details>
 
-<details><summary>7. Wrangle Theta</summary>
+<details><summary>7. Clean Up</summary>
 
-### 7. Wrangle Theta
+### 7. Clean Up
+
+I organized the files in `ATLAS_Zdi`:
+
+```
+[hpc-0373@wahab-01 ATLAS_Zdi]$ mkdir bed_files
+[hpc-0373@wahab-01 ATLAS_Zdi]$ mv *.bed bed_files/
+
+[hpc-0373@wahab-01 ATLAS_Zdi]$ mkdir out_files
+[hpc-0373@wahab-01 ATLAS_Zdi]$ mv *.out out_files/
+
+[hpc-0373@wahab-01 ATLAS_Zdi]$ mkdir scripts
+[hpc-0373@wahab-01 ATLAS_Zdi]$ mv *h scripts
+```
+So now it looks like this:
+```
+[hpc-0373@wahab-01 ATLAS_Zdi]$ ls
+bed_files  out_files  README.md  recal_output  scripts  theta_output
+```
+---
+</details>
+
+<details><summary>8. Wrangle Theta</summary>
+
+### 8. Wrangle Theta
 
 Begin by copying the wrangle R script from another directory to the `theta_output` dir:
 ```
@@ -262,3 +286,7 @@ spp_code="Zdi"
 # line 35
 site_code="Dup"
 ```
+
+I tracked these changes to git, then cloned the entire pire_parupeneus_barberinus_lcwgs repo to ~/pire_lcwgs_data so that I can access it on wahab.
+
+
