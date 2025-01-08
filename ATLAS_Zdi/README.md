@@ -287,6 +287,6 @@ spp_code="Zdi"
 site_code="Dup"
 ```
 
-I tracked these changes to git, then cloned the entire pire_parupeneus_barberinus_lcwgs repo to ~/pire_lcwgs_data so that I can access it on wahab.
+I tracked these changes to git, then cloned the entire pire_parupeneus_barberinus_lcwgs repo to ~/pire_lcwgs_data so that I can access it on wahab. (note: I did already have this repo cloned from a while ago, so I deleted it an re-cloned it).
 
 
