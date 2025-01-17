@@ -293,17 +293,17 @@ I tracked these changes to git, then cloned the entire pire_zenarchopterus_dispa
 
 **Theta:**
 
-<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-theta.png" alt="Zdi" width="600"/> <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-theta_0.2.png" alt="Zdi" width="600"/>
+<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-theta.png" alt="Zdi" width="500"/> <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-theta_0.2.png" alt="Zdi" width="500"/>
 
 **Depth:**
 
-<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-depth.png" alt="Zdi" width="600"/> <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-depth_0.2.png" alt="Zdi" width="600"/>
+<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-depth.png" alt="Zdi" width="500"/> <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-depth_0.2.png" alt="Zdi" width="500"/>
 
 
 **Theta vs Depth:**
 
-<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-read_number_variation.png" alt="Zdi" width="600"/> <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-read_number_variation_0.2.png" alt="Zdi" width="600"/>
+<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-read_number_variation.png" alt="Zdi" width="500"/> <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi-read_number_variation_0.2.png" alt="Zdi" width="500"/>
 
 **Downsampling:**
 
-<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi_downsampling_0.3.png" alt="Zdi" width="600"/> <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi_downsampling_1.png" alt="Zdi" width="600"/>
+<img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi_downsampling_0.3.png" alt="Zdi" width="500"/> <img src="https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/ATLAS_Zdi/plots/Zdi_downsampling_1.png" alt="Zdi" width="500"/>
