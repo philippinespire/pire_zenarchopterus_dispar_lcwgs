@@ -10,7 +10,7 @@ fq.gz processing done by Gianna Mazzei (completed September 2024).
 
 ---
 	
-## 1. fq.gz Pre-processing
+## fq.gz Pre-processing
 
 This portion follows the instructions on [this repo](https://github.com/philippinespire/pire_fq_gz_processing).
 
