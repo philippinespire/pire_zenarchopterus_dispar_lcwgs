@@ -4,12 +4,12 @@
 
 ## 1st sequencing run (test lane)
 
-Analysis of low-coverage whole genome sequencing data for Zdi 1st_sequencing_run.
+Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar_ from Dupon Bay (ADup, CDup).
 
-fq.gz processing done by Gianna Mazzei (completed 6/17/24).
+fq.gz processing done by Gianna Mazzei (June 2024)).
 
 ---
-<details><summary>1. fq.gz Pre-processing</summary>
+
 	
 ## 1. fq.gz Pre-processing
 
@@ -1851,12 +1851,6 @@ Once that was retrieved, I uploaded each sequence to [BLAST](https://blast.ncbi.
 </details>
 
 ---
----
-
-</details>
-
-
-<details><summary>2. Process Sequencing Metadata</summary>
 
 ## 2. Process Sequencing Metadata
 <p>
