@@ -6,7 +6,7 @@
 
 Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar_ from Dupon Bay (ADup, CDup).
 
-fq.gz processing done by Gianna Mazzei (June 2024)).
+fq.gz processing done by Gianna Mazzei (June 2024).
 
 ---
 
