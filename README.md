@@ -4,6 +4,10 @@
 
 Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar_ (Zdi).
 
+```
+/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/
+```
+
 ---
 
 ## [1st Sequencing Run (Test Lane)](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/tree/main/1st_sequencing_run)
