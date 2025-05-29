@@ -1,0 +1,9 @@
+PCAngsd v1.21
+Time: 13/04/2025 15:45:07
+Directory: /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/angsd_analysis
+Options:
+	--beagle angsd_depth1_15_notrans_noinv_subset.beagle.gz
+	--threads 16
+	--out angsd_notrans_snps_pca_its500_noinv_subset
+	--maf 0.001
+	--iter 500
