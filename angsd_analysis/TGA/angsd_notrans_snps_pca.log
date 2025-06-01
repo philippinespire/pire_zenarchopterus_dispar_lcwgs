@@ -1,0 +1,17 @@
+PCAngsd v1.21
+Time: 19/05/2025 23:30:09
+Directory: /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/angsd_analysis
+Options:
+	--beagle angsd_depth1_15_notrans.beagle.gz
+	--threads 16
+	--out angsd_notrans_snps_pca
+	--maf 0.001
+	--iter 500
+
+Loaded 1352106 sites and 111 individuals.
+Number of sites after MAF filtering (0.001): 1352106
+
+PCAngsd did not converge using 1 eigenvectors!
+Saved covariance matrix as angsd_notrans_snps_pca.cov
+
+Total elapsed time: 26m13s
