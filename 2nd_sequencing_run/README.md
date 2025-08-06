@@ -4,7 +4,7 @@
 
 ## 2nd sequencing run
 
-Analysis of low-coverage whole genome sequencing data for Zdi 2nd_sequencing_run.
+Analysis of low-coverage whole genome sequencing data for Zdi 2nd_sequencing_run from Dupon Bay, Isabel, Leyte, Philippines (ADup, CDup).
 
 fq.gz processing done by Gianna Mazzei (completed September 2024).
 
