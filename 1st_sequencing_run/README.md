@@ -4,7 +4,7 @@
 
 ## 1st sequencing run (test lane)
 
-Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar_ from Dupon Bay (ADup, CDup).
+Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar_ from Dupon Bay, Isabel, Leyte, Philippines (ADup, CDup).
 
 fq.gz processing done by Gianna Mazzei (June 2024).
 
@@ -2023,5 +2023,6 @@ cd pire_sequencing_metadata/out/
 <img src="https://github.com/philippinespire/process_sequencing_metadata/blob/main/out/sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png" alt="sequencing_metadata_test_lane_0024_Zdi_lcwgs_totalseqs_histogram.png" width="500"/>
 
 ---
+
 
 
