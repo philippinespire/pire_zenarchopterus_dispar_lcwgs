@@ -8,9 +8,9 @@ Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar
 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/
 ```
 
-Metadata (GEOME) | Raw fastq Files (NCBI SRA) | Genotype Likelihoods (Zenodo)
+Metadata (GEOME) | Raw fastq Files (NCBI SRA) | Genotype Likelihood (Zenodo)
 |---|---|---|
-| https://n2t.net/ark:/21547/Fpq2 (1908)<br>https://n2t.net/ark:/21547/Fpw2 (2022) | PRJNA1171961 (1908)<br>PRJNA1171888 (2022) | TBD |
+| https://n2t.net/ark:/21547/Fpq2 (1908)<br>https://n2t.net/ark:/21547/Fpw2 (2022) | PRJNA1171961 (1908)<br>PRJNA1171888 (2022) | https://doi.org/10.5281/zenodo.17172692 |
 
 ---
 
