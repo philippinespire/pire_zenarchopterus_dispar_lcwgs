@@ -8,10 +8,9 @@ Analysis of low-coverage whole genome sequencing data for _Zenarchopterus dispar
 /archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/
 ```
 
-| GEOME Expedition Name	| GEOME Expedition GUID	| NCBI Project Title| NCBI Bioproject Accession Number | Sequencing Run(s) | Data Public? |
-|---|---|---|---|---|---|
-| Zdi_1908_Isabel_Leyte_lcwgs	| https://n2t.net/ark:/21547/Fpq2 |	Zenarchopterus_dispar_1908_Isabel_Leyte_lcwgs | PRJNA1171961 | 1 & 2 | No |
-| Zdi_2022_Isabel_Leyte_lcwgs	| https://n2t.net/ark:/21547/Fpw2	|  Zenarchopterus_dispar_2022_Isabel_Leyte_lcwgs | PRJNA1171888 | 1 & 2 | No |
+Metadata (GEOME) | Raw fastq Files (NCBI SRA) | Genotype Likelihoods (Zenodo)
+|---|---|---|
+| https://n2t.net/ark:/21547/Fpq2 (1908)<br>https://n2t.net/ark:/21547/Fpw2 (2022) | PRJNA1171961 (1908)<br>PRJNA1171888 (2022) | TBD |
 
 ---
 
